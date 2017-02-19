@@ -1,0 +1,45 @@
+/*==========Modal===========*/
+.arcticmodal-overlay { color: transparent; }
+.arcticmodal-overlay,
+.arcticmodal-container { position: fixed; left: 0; top: 0; right: 0; bottom: 0; z-index: 999; }
+.arcticmodal-container { overflow: auto; margin: 0; padding: 0; border: 0; border-collapse: collapse; overflow-y: scroll; }
+*:first-child+html .arcticmodal-container { height: 100% }
+.arcticmodal-container_i { height: 100%; margin: 0 auto; }
+.arcticmodal-container_i2 { padding: 24px; margin: 0; border: 0; vertical-align: middle; }
+.arcticmodal-error { padding: 20px; border-radius: 10px; background: #000; color: #fff; }
+.arcticmodal-loading { width: 80px; height: 80px; border-radius: 10px; background: #000 url(../images/loading.gif) no-repeat 50% 50%; }
+.modals, .arcticmodal-close { cursor: pointer; }
+.modal { display: none; }
+
+.box-m {
+	width: 506px;
+	padding: 0 47px 27px;
+	background: #fff;
+	position: relative;
+}
+.close {
+	width: 19px;
+	height: 19px;
+	background: url(../images/close.png) no-repeat;
+	position: absolute;
+	top: 16px;
+	right: 17px;
+	-webkit-transition: .3s ease-in-out;
+	-moz-transition: .3s ease-in-out;
+	-ms-transition: .3s ease-in-out;
+	-o-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+.close:hover { opacity: 0.7; }
+.box-m .name { margin: 0 -47px 36px; padding: 17px 20px 13px; background: #228b22; font: 18px/20px 'Roboto', sans-serif; letter-spacing: -0.005em; color: #fff; }
+.box-m input { width: 492px; margin-bottom: 9px; }
+
+.call { background-image: url(../images/call.png); background-position: 246px bottom; background-repeat: no-repeat; }
+.call .txt { padding-bottom: 34px; font: 14px/16px 'Roboto', sans-serif; letter-spacing: -0.001em; text-align: center; color: #000; }
+.call .txt div { color: #228b22; }
+.call .text { padding: 5px 0 11px 17px; font: 10px/12px 'Roboto', sans-serif; letter-spacing: -0.001em; color: #c0c0c0; }
+.call .result { padding: 0 0 11px 17px; pad font: 13px/15px 'Roboto', sans-serif; color: #c00; }
+.call .btns { width: 246px; padding: 0; }
+.call label.error { display: none; padding: 0; width: 0; }
+.call input.error { border-color: #c00; }
+/*==========Modal===========*/

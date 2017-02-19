@@ -1,0 +1,550 @@
+
+<div id="main-sliders"><!--start slider-->
+
+    <div id="wrapper">
+        <!-- Slideshow 1 -->
+        <ul class="rslides rslides1" id="slider1">
+            <li id="rslides1_s0" class="" style="display: block; float: none; position: absolute; opacity: 0; z-index: 1; transition: opacity 900ms ease-in-out;"><img src="/templates/css/images/face_layout/slide1n.jpg" alt=""></li>
+            <li id="rslides1_s1" class="" style="float: none; position: absolute; opacity: 0; z-index: 1; display: list-item; transition: opacity 900ms ease-in-out;"><img src="/templates/css/images/face_layout/slide2n.jpg" alt=""></li>
+            <li id="rslides1_s2" class="rslides1_on" style="float: left; position: relative; opacity: 1; z-index: 2; display: list-item; transition: opacity 900ms ease-in-out;"><img src="/templates/css/images/face_layout/slide3n.jpg" alt=""></li>
+        </ul>
+    </div>
+
+    <!---<div id="sub-slider">
+          <div class="welcome bounceInDown  wow animated" style="visibility: visible; animation-name: bounceInDown;">
+                <h1>The key to<span> your financial </span>Success</h1>
+            </div>
+            <div class="awsome flash  wow animated" style="visibility: visible; animation-name: flash;">
+                <p>your ability to boost your gains</p>
+            </div>
+            <div class="rl">
+
+                <div class="regis bounceInLeft  wow animated" style="visibility: visible; animation-name: bounceInLeft;">
+                    <a href="?a=signup" class="a-link">Start Earning Now</a>
+                </div>
+                <div class="login-slid bounceInRight  wow animated" style="visibility: visible; animation-name: bounceInRight;">
+                    <a href="?a=cust&page=about" class="a-link">Learn More</a>
+                </div>
+
+            </div>
+
+        </div>---->
+</div>
+<div id="main-plan"><!--start plan -->
+    <div id="sub-plan">
+        <div class="plan-head">
+            <h5>OUR INVESTMENT PLAN</h5>
+        </div>
+        <div class="borderw">
+            <img src="/templates/css/images/face_layout/planbo.png">
+        </div>
+        <!------------ <div class="all-plan">
+             <div class="plan-header">
+                 <ul class="tab">
+                   <li><a  style="background-image: url(images/planah.png);" class="tablinks tone" id="0" onclick="openCity(event, 'London')"></a></li>
+                   <li><a class="tablinks ttwo" id="1" onclick="openCity(event, 'Paris')"></a></li>
+                   <li><a class="tablinks tthree" id="2" onclick="openCity(event, 'Tokyo')"></a></li>
+                   <li><a class="tablinks tfour" id="3" onclick="openCity(event, 'dhaka')"></a></li>
+                   <li><a class="tablinks tfive" id="4" onclick="openCity(event, 'khulna')"></a></li>
+                   <li><a class="tablinks tsix" id="5" onclick="openCity(event, 'ctg')"></a></li>
+                 </ul>
+             </div>
+         </div>-------->
+        <div class="plan-down-all">
+            <div id="London" class="tabcontent flash wow  animated" style="display: block; visibility: visible; animation-name: flash;">
+                <div class="plan-one">
+                    <div class="planright">
+                        <?php if(isset($this->listPolicy) && !empty($this->listPolicy)){?>
+                        <?php foreach($this->listPolicy as $row){?>
+                        <div class="terms">
+                            <div class="terms-one">
+                                <div class="terms-left">
+                                    <p>Plan Terms :   </p>
+                                </div>
+                                <div class="terms-right">
+                                    <p><?php echo 1*($row['recived']- $row['amount'])?> BTC For <?php echo $row['duration']?> Days</p>
+                                </div>
+                            </div>
+                            <div class="terms-one">
+                                <div class="terms-left">
+                                    <p>PH Invest :       &nbsp;    </p>
+                                </div>
+                                <div class="terms-right">
+                                    <p>                  <?php echo $row['amount']?> BTC </p>
+                                </div>
+                            </div>
+                            <div class="terms-one">
+                                <div class="terms-left">
+                                    <p>GH Invest :</p>
+                                </div>
+                                <div class="terms-right">
+                                    <p>  <?php echo $row['recived']?> BTC</p>
+                                </div>
+                            </div>
+                            <div class="terms-one">
+                                <div class="terms-left">
+                                    <p>Earnings On :         </p>
+                                </div>
+                                <div class="terms-right">
+                                    <p>      Monday - Friday</p>
+                                </div>
+                            </div>
+                        </div>
+                            <?php } ?>
+                        <?php } ?>
+
+
+                    </div>
+                    <div class="invest-now" STYLE="margin-top: 10px;">
+
+                        <div class="quick-info" style="float: left;">
+                            <div class="left-quick">
+                                <i class="fa fa-download" aria-hidden="true"></i>
+                            </div>
+                            <div class="right-quick">
+                                <div class="sub-info-box">
+                                    <p>Total Invested</p>
+                                </div>
+                                <h1 class="q-h1"><?php echo isset($this->data['total_recived_blance'])? 1*$this->data['total_recived_blance']+$this->amountGHInt:$this->amountGHInt;?> BTC</h1>
+                            </div>
+                        </div>
+
+                        <div class="quick-info" style="float: left">
+                            <div class="left-quick">
+                                <i class="fa fa-upload" aria-hidden="true"></i>
+                            </div>
+                            <div class="right-quick">
+                                <div class="sub-info-box3">
+                                    <p>Revenue Paid</p>
+                                </div>
+                                <h1 class="q-h1"><?php echo isset($this->data['total_send_balance'])? 1*$this->data['total_send_balance']+$this->amountPHInt:$this->amountPHInt;?> BTC</h1>
+                            </div>
+                        </div>
+                        <div class="quick-info" style="background: none; border: none;">
+                            <div style="border: 0px;" class="terms-one">
+                                <a style="width: 43%;font-size: 16px;border-radius: 0px;margin: auto;margin-top: 6px;" href="/customer/login" class="a-link">Invest Now</a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div id="Paris" class="tabcontent" style="display:none;">
+                <div class="plan-one">
+                    <div class="plan-percent">
+                        <div class="plan-amount">
+                            <p>195%<span>
+								Profit</span></p>
+                        </div>
+                    </div>
+                    <div class="planright">
+                        <div class="terms">
+                            <div class="terms-one">
+                                <div class="terms-left">
+                                    <p>Plan Terms :   </p>
+                                </div>
+                                <div class="terms-right">
+                                    <p> Daily For 23 Days</p>
+                                </div>
+                            </div>
+                            <div class="terms-one">
+                                <div class="terms-left">
+                                    <p>Minimum Invest :       &nbsp;    </p>
+                                </div>
+                                <div class="terms-right">
+                                    <p>                  $10.00 </p>
+                                </div>
+                            </div>
+                            <div class="terms-one">
+                                <div class="terms-left">
+                                    <p>Maximum Invest :       </p>
+                                </div>
+                                <div class="terms-right">
+                                    <p>  $1000.00</p>
+                                </div>
+                            </div>
+                            <div class="terms-one">
+                                <div class="terms-left">
+                                    <p>Principal Return :         </p>
+                                </div>
+                                <div class="terms-right">
+                                    <p>      Back</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="invest-now">
+                            <a href="?a=signup" class="a-link">INVEST NOW</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="Tokyo" class="tabcontent" style="display:none;">
+                <div class="plan-one">
+                    <div class="plan-percent">
+                        <div class="plan-amount">
+                            <p>158%<span>
+								Profit</span></p>
+                        </div>
+                    </div>
+                    <div class="planright">
+                        <div class="terms">
+                            <div class="terms-one">
+                                <div class="terms-left">
+                                    <p>Plan Terms :   </p>
+                                </div>
+                                <div class="terms-right">
+                                    <p> Daily For 23 Days</p>
+                                </div>
+                            </div>
+                            <div class="terms-one">
+                                <div class="terms-left">
+                                    <p>Minimum Invest :       &nbsp;    </p>
+                                </div>
+                                <div class="terms-right">
+                                    <p>                  $10.00 </p>
+                                </div>
+                            </div>
+                            <div class="terms-one">
+                                <div class="terms-left">
+                                    <p>Maximum Invest :       </p>
+                                </div>
+                                <div class="terms-right">
+                                    <p>  $1000.00</p>
+                                </div>
+                            </div>
+                            <div class="terms-one">
+                                <div class="terms-left">
+                                    <p>Principal Return :         </p>
+                                </div>
+                                <div class="terms-right">
+                                    <p>      Back</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="invest-now">
+                            <a href="?a=signup" class="a-link">INVEST NOW</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="dhaka" class="tabcontent" style="display:none;">
+                <div class="plan-one">
+                    <div class="plan-percent">
+                        <div class="plan-amount">
+                            <p>145%<span>
+								Profit</span></p>
+                        </div>
+                    </div>
+                    <div class="planright">
+                        <div class="terms">
+                            <div class="terms-one">
+                                <div class="terms-left">
+                                    <p>Plan Terms :   </p>
+                                </div>
+                                <div class="terms-right">
+                                    <p> Daily For 23 Days</p>
+                                </div>
+                            </div>
+                            <div class="terms-one">
+                                <div class="terms-left">
+                                    <p>Minimum Invest :       &nbsp;    </p>
+                                </div>
+                                <div class="terms-right">
+                                    <p>                  $10.00 </p>
+                                </div>
+                            </div>
+                            <div class="terms-one">
+                                <div class="terms-left">
+                                    <p>Maximum Invest :       </p>
+                                </div>
+                                <div class="terms-right">
+                                    <p>  $1000.00</p>
+                                </div>
+                            </div>
+                            <div class="terms-one">
+                                <div class="terms-left">
+                                    <p>Principal Return :         </p>
+                                </div>
+                                <div class="terms-right">
+                                    <p>      Back</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="invest-now">
+                            <a href="?a=signup" class="a-link">INVEST NOW</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="khulna" class="tabcontent" style="display:none;">
+                <div class="plan-one">
+                    <div class="plan-percent">
+                        <div class="plan-amount">
+                            <p>655%<span>
+								Profit</span></p>
+                        </div>
+                    </div>
+                    <div class="planright">
+                        <div class="terms">
+                            <div class="terms-one">
+                                <div class="terms-left">
+                                    <p>Plan Terms :   </p>
+                                </div>
+                                <div class="terms-right">
+                                    <p> Daily For 23 Days</p>
+                                </div>
+                            </div>
+                            <div class="terms-one">
+                                <div class="terms-left">
+                                    <p>Minimum Invest :       &nbsp;    </p>
+                                </div>
+                                <div class="terms-right">
+                                    <p>                  $10.00 </p>
+                                </div>
+                            </div>
+                            <div class="terms-one">
+                                <div class="terms-left">
+                                    <p>Maximum Invest :       </p>
+                                </div>
+                                <div class="terms-right">
+                                    <p>  $1000.00</p>
+                                </div>
+                            </div>
+                            <div class="terms-one">
+                                <div class="terms-left">
+                                    <p>Principal Return :         </p>
+                                </div>
+                                <div class="terms-right">
+                                    <p>      Back</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="invest-now">
+                            <a href="?a=signup" class="a-link">INVEST NOW</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="ctg" class="tabcontent" style="display:none;">
+                <div class="plan-one">
+                    <div class="plan-percent">
+                        <div class="plan-amount">
+                            <p>255%<span>
+								Profit</span></p>
+                        </div>
+                    </div>
+                    <div class="planright">
+                        <div class="terms">
+                            <div class="terms-one">
+                                <div class="terms-left">
+                                    <p>Plan Terms :   </p>
+                                </div>
+                                <div class="terms-right">
+                                    <p> Daily For 23 Days</p>
+                                </div>
+                            </div>
+                            <div class="terms-one">
+                                <div class="terms-left">
+                                    <p>Minimum Invest :       &nbsp;    </p>
+                                </div>
+                                <div class="terms-right">
+                                    <p>                  $10.00 </p>
+                                </div>
+                            </div>
+                            <div class="terms-one">
+                                <div class="terms-left">
+                                    <p>Maximum Invest :       </p>
+                                </div>
+                                <div class="terms-right">
+                                    <p>  $1000.00</p>
+                                </div>
+                            </div>
+                            <div class="terms-one">
+                                <div class="terms-left">
+                                    <p>Principal Return :         </p>
+                                </div>
+                                <div class="terms-right">
+                                    <p>      Back</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="invest-now">
+                            <a href="?a=signup" class="a-link">INVEST NOW</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="main-about"><!--start about bg-->
+    <div id="sub-about">
+        <div class="about-left">
+            <div class="about-head">
+                <h4>WHY CHOOSE US?</h4>
+            </div>
+            <div class="borderg">
+                <img src="/templates/css/images/face_layout/why.png">
+            </div>
+            <div class="about-down">
+                <div class="choose-left">
+                    <div class="choose-one fadeIn  wow animated" data-wow-duration="2s" data-wow-delay="0.4s" style="visibility: visible; animation-duration: 2s; animation-delay: 0.4s; animation-name: fadeIn;">
+                        <p><img src="/templates/css/images/face_layout/ficon.png">Professional Management Team</p>
+                    </div>
+                    <div class="choose-one fadeIn  wow animated" data-wow-duration="2s" data-wow-delay="0.6s" style="visibility: visible; animation-duration: 2s; animation-delay: 0.6s; animation-name: fadeIn;">
+                        <p><img src="/templates/css/images/face_layout/ficon.png">Legal Registered Company</p>
+                    </div>
+                    <div class="choose-one fadeIn  wow animated" data-wow-duration="2s" data-wow-delay="0.8s" style="visibility: visible; animation-duration: 2s; animation-delay: 0.8s; animation-name: fadeIn;">
+                        <p><img src="/templates/css/images/face_layout/ficon.png">Strong DDoS protection</p>
+                    </div>
+                    <div class="choose-one fadeIn  wow animated" data-wow-duration="2s" data-wow-delay="1.0s" style="visibility: visible; animation-duration: 2s; animation-delay: 1s; animation-name: fadeIn;">
+                        <p><img src="/templates/css/images/face_layout/ficon.png">GeoTrust EV-SSL encryption</p>
+                    </div>
+                    <div class="choose-one fadeIn  wow animated" data-wow-duration="2s" data-wow-delay="1.2s" style="visibility: visible; animation-duration: 2s; animation-delay: 1.2s; animation-name: fadeIn;">
+                        <p><img src="/templates/css/images/face_layout/ficon.png">Genuine Investment Platform</p>
+                    </div>
+                    <div class="choose-one fadeIn  wow animated" data-wow-duration="2s" data-wow-delay="1.4s" style="visibility: visible; animation-duration: 2s; animation-delay: 1.4s; animation-name: fadeIn;">
+                        <p><img src="/templates/css/images/face_layout/ficon.png">Instant Withdrawal</p>
+                    </div>
+                </div>
+                <!--<div class="video zoomIn  wow animated" data-wow-duration="2s" data-wow-delay="0.4s" style="visibility: visible; animation-duration: 2s; animation-delay: 0.4s; animation-name: zoomIn;">
+
+                    <iframe width="397" height="226" src="https://www.youtube.com/embed/Y2mXgKFhnIo?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen=""></iframe>
+
+                </div>-->
+            </div>
+        </div>
+        <div id="sub-news">
+
+            <div class="transformation-history">
+                <div class="hed-line-t">
+                    <div class="about-head">
+                        <h4>Latest Transactions</h4>
+                    </div>
+                    <div class="borderg">
+                        <img src="/templates/css/images/face_layout/news.png">
+                    </div>
+                </div>
+                <div class="all-Transaction">
+                    <?php if(isset($this->data ) && !empty($this->data)){?>
+                    <?php foreach($this->data as $row){?>
+                    <div class="Transaction-line fadeInDown wow  animated" style="visibility: visible; animation-name: fadeInDown;">
+                        <p class="first-t"><?php echo $row['Date'] ?></p>
+                        <p class="second-t"><?php echo $row['UserName'] ?></p>
+                        <p class="third-t"><?php echo $row['Status'] ?></p>
+                        <p class="fourth-t"><img src="/templates/css/images/face_layout/48.gif"></p>
+                        <p class="fifth-t"><?php echo $row['Amount'] ?></p>
+                    </div>
+                        <?php }?>
+                    <?php }?>
+
+
+
+
+                </div>
+            </div>
+
+
+
+
+
+        </div>
+
+
+
+
+
+
+        <div class="refer-right">
+
+
+            <div class="about-head">
+                <h4>Our Commission</h4>
+            </div>
+            <div class="borderg">
+                <img src="/templates/css/images/face_layout/pcb.png" width="100%">
+            </div>
+
+            <div class="refer-icon">
+                <img src="/templates/css/images/face_layout/network.png" width="229">
+            </div>
+           <!-- <div class="referral-commission">
+
+                <div class="ref-info">
+                    <div class="com-text">
+                        <p>Referral Commission</p>
+                    </div>
+                    <div class="percent">
+                        <p>1st Level</p>
+                        <p style="background-color: #067d06;">5%</p>
+                    </div>
+                    <div style="margin-top: 10px;" class="percent">
+                        <p>2nd Level</p>
+                        <p style="background-color: #067d06;">3%</p>
+                    </div>
+                </div>
+
+                <div class="ref-info">
+                    <div class="com-text">
+                        <p>Representative Commission</p>
+                    </div>
+                    <div class="percent">
+                        <p>1st Level</p>
+                        <p style="background-color: #067d06;">10%</p>
+                    </div>
+                    <div style="margin-top:10px;" class="percent">
+                        <p>2nd Level</p>
+                        <p style="background-color: #067d06;">5%</p>
+                    </div>
+                </div>
+
+            </div>-->
+        </div>
+
+
+        <!--------<div class="proftical fadeInRight animated wow"data-wow-duration="2s" data-wow-delay="0.4s">
+            <div class="about-head">
+            	<h4>Profit Calculator</h4>
+            </div>
+            <div class="borderg">
+            	<img src="images/pcb.png"/>
+            </div>
+            <div class="calcu-box">
+            	<div class="calculator-box">
+
+                    <div class="select">
+                        <select id="calc_plan">
+                            <option value="1">3.5% Daily For 60 Days</option>
+                        </select>
+                    </div>
+                    <div class="enter-amount">
+                        <p>Type Amount</p>
+                    </div>
+                    <div class="amount-type">
+                        <input id="inv_amount" type="text" name="text" value="100">
+                    </div>
+                    <div class="trf">
+                        <div class="tr">
+                            <div class="tr-tittle">
+                                <p>Total Profit</p>
+                            </div>
+                            <div class="tr-amount">
+                                <p id="net_profit">$00.00</p>
+                            </div>
+                        </div>
+                        <div class="tr">
+                            <div class="tr-tittle">
+                                <p>Total Return</p>
+                            </div>
+                            <div style="background-color: #387d38;color: #fff;border-radius: 0px;" class="tr-amount">
+                                <p id="total_return">$00.00</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>-------->
+
+
+    </div>
+</div>

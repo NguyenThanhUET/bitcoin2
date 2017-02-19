@@ -1,0 +1,19 @@
+.bootbox  .modal-dialog {
+	border-radius: 5px !important;
+}
+.modal-backdrop.fade.in {
+	opacity: 0.5;
+}
+.modal-footer .btn-primary {
+	background-color: #4d90fe;
+	color: white;
+	text-shadow: none;
+	border-radius: 2px !important;
+}
+.bootbox-close-button {
+	background-image: url("../img/remove-icon-small.png") !important;
+	margin-top :-7px !important;
+}
+.modal.fade.in {
+	top: 20%;
+}

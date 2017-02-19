@@ -1,0 +1,57 @@
+<?php $about = $this->about;?>
+<div class="col-lg-3 left-sidebar">
+	<div class="sidebar-box produc-box">
+		<h6 class="tittle">Hỗ trợ trực tuyến</h6>
+		<div class="wrapper">
+			<ul class="custom-menu">
+				<li><i class="fa fa-user"></i> <b>HOTLINE</b><br> 
+					<i class="fa fa-phone-square"></i> <?php echo $about['about_mobile'];?> 
+					<a href="skype:?chat"><br> </a>
+					<a style="padding-left: 0px;" href="mailto:<?php echo $about['about_email'];?>">
+					<i class="fa fa-envelope"></i> <?php echo $about['about_email'];?></a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="sidebar-box produc-news">
+		<h6 class="tittle">Bài viết mới</h6>
+		<h6>
+			<div class="wrapper">
+				<div class="content">
+					<?php if(!empty($this->news)){?>
+					<?php foreach ($this->news as $key=> $row){
+						if($key < 7){
+						?>
+					<div class="post-item">
+						<div class="inner">
+							<div class="post-image">
+								<img src="<?php echo $row['news_image'];?>"  alt="" style="height: 50px; width: 50px">
+							</div>
+							<div class="post-content">
+								<a href="/frontend/news/detail/news_id/<?php echo $row['news_id'];?>"><?php echo $row['news_title'];?></a>
+								<br>
+							</div>
+						</div>
+					</div>
+					<?php }}?>
+					<?php }?>
+				</div>
+			</div>
+		</h6>
+	</div>
+	<div class="sidebar-box produc-box">
+		<h6 class="tittle">Liên kết website</h6>
+		<div class="wrapper">
+			<ul class="custom-menu part_div">
+				<a target="_blank" href="http://dav.gov.vn/"> 
+					<img src="http://pharbaco.com.vn/upload/adver/Untitled.jpg">
+				</a>
+				<a target="_blank" href="http://vinapharm.com.vn/"> 
+					<img src="http://pharbaco.com.vn/upload/adver/partner/tctyduoc.jpg">
+				</a>
+				<a target="_blank" href="http://moh.gov.vn">
+					<img src="http://pharbaco.com.vn/upload/adver/TenBYT.png">
+				</a>
+			</ul>
+		</div>
+	</div>
+</div>

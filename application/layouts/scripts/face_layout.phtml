@@ -1,0 +1,195 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title><?php echo $this->title;?></title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="/templates/images/green_dollar.ico" type="image/x-icon">
+	<link rel="stylesheet" type="text/css" href="/templates/css/form/face_layout/style.css">
+	<link rel="stylesheet" type="text/css" href="/templates/css/form/face_layout/script.css">
+	<link rel="stylesheet" type="text/css" href="/templates/css/form/face_layout/animate.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="/templates/css/form/face_layout/font-awesome.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Arimo|Roboto:400,900|Roboto+Condensed:300" rel="stylesheet">
+	<!--<script async="" src="https://static.addtoany.com/menu/svg/icons.19.svg.js"></script>-->
+	<script async="" src="https://tawk.to/f31e617bd2a2a5ce8f9aa9064a43803c1d8ec97f" charset="UTF-8" crossorigin="*">
+
+	</script>
+	<!--<script id="facebook-jssdk" src="//connect.facebook.net/en_US/sdk.js#xfbml=1&amp;version=v2.8"></script>-->
+	<script src="/templates/js/jquery-1.11.0.min.js"></script>
+	<!--<script src="/templates/js/form/face_layout/wow.js"></script>
+	<script>
+		wow = new WOW();
+		wow.init();
+	</script>-->
+	<!--<script src="/templates/js/form/face_layout/calculator.js"></script>-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js" type="text/javascript">
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+	<script src="/templates/js/form/face_layout/responsiveslides.min.js"></script>
+	<script src="/templates/js/moment-with-locales.js"></script>
+	<script src="/templates/js/botrun.js"></script>
+
+	<!--<script src="/templates/js/form/main.js"></script>-->
+	<!--Start of Tawk.to Script-->
+	<div id='tawk_5875e8b8e8239e1d97728e52'></div>
+	<!--Start of Tawk.to Script-->
+	<script type="text/javascript">
+		var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+		(function(){
+			var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+			s1.async=true;
+			s1.src='https://embed.tawk.to/5875e8b8e8239e1d97728e52/1b66e78j5';
+			s1.charset='UTF-8';
+			s1.setAttribute('crossorigin','*');
+			s0.parentNode.insertBefore(s1,s0);
+		})();
+	</script>
+	<!--End of Tawk.to Script-->
+	<!--End of Tawk.to Script-->
+	<link href="/templates/css/form/face_layout.css" rel="stylesheet">
+</head>
+<body>
+<?php
+$amountGHInt = $this->amountGHInt;
+$amountPHInt = $this->amountPHInt;
+$actionName = Zend_Controller_Front::getInstance()->getRequest()->getActionName();
+?>
+<div id="main-header">
+	<!--<div id="sub-header">
+		<div class="mail">
+			<p><img src="/templates/css/images/face_layout/mail.png"> support@palmills.com</p>
+		</div>
+		<div class="mail" style="float: right;">
+			<p><img src="/templates/css/images/face_layout/phone.png"> +44(203)5141276 (9:00 AM - 5:00 PM)</p>
+		</div>
+	</div>-->
+</div>
+<div id="mid-header">
+	<div id="submid-header">
+		<div class="logo">
+			<a href="/"><img src="/templates/css/images/face_layout/logo.png" class="zoomInDown wow   animated" style="visibility: visible; animation-name: zoomInDown;"></a>
+		</div>
+		<div class="server">
+			<div class="sericon">
+				<img src="/templates/css/images/face_layout/server.png">
+			</div>
+			<div class="server-text">
+				<div class="servtime">
+					<p><span id="date_time" ></span></p>
+				</div>
+			</div>
+		</div>
+		<div class="language">
+			<div class="dropdown">
+				<button class="dropbtn"><img src="/templates/css/images/face_layout/eng.png"> English &nbsp;  <i class="fa fa-caret-down" aria-hidden="true"></i></button>
+				<!--- <div class="dropdown-content">
+                   <a href="#"><img src="images/chaina.png"> Canada</a>
+
+                   <a href="#"><img src="images/chaina.png"> China</a>
+                 </div>---->
+			</div>
+		</div>
+		<div class="reg-login">
+
+			<div class="registration">
+				<a href="/customer/login"><img src="/templates/css/images/face_layout/log.png"> Log in</a>
+			</div>
+			<div class="member">
+				<a href="/customer/register"><img src="/templates/css/images/face_layout/register.png"> Register</a>
+			</div>
+
+		</div>
+	</div>
+</div>
+<div id="main-menu">
+	<div id="sub-menu">
+		<div class="menu">
+			<ul>
+				<li class="<?php if ($actionName == 'index'){?>hover<?php } ?>"><a href="/">Home</a></li>
+				<li class="<?php if ($actionName == 'aboutus'){?>hover<?php } ?>"><a href="/aboutus">About Us</a></li>
+				<li class="<?php if ($actionName == 'terms'){?>hover<?php } ?>"><a href="/terms">Terms &amp; Conditions</a></li>
+				<li class="<?php if ($actionName == 'faq'){?>hover<?php } ?>"><a href="/faq">FAQ</a></li>
+				<!--<li class="<?php /*if ($actionName == 'supportcentre'){*/?>hover<?php /*} */?>"><a href="/support">Support Centre</a></li>-->
+			</ul>
+		</div>
+	</div>
+</div>
+<!--BEGIN PAGE WRAPPER-->
+<div id="page-wrapper"><!--BEGIN TITLE & BREADCRUMB PAGE-->
+	<?php echo $this->layout()->content; ?>
+</div>
+<!--END CONTENT--><!--BEGIN FOOTER-->
+<!--<div id="main-payment">
+	<div id="sub-payment">
+		<div class="payment">
+			<ul>
+				<li><img src="images/perfect.png" width="130px"></li>
+				<li><img src="images/payeer.png" width="130px"></li>
+				<li><img src="images/bitcoin.png" width="130px"></li>
+				<li><img src="images/advcash.png" width="130px" style="    margin-top: -3px;"></li>
+				<li><a href="https://sealsplash.geotrust.com/splash?&amp;dn=palmills.com" target="_blank"><img src="images/geo.png" width="130px"></a></li>
+				<li><a href="https://secure.sitelock.com/public/verify/palmills.com" target="_blank"><img src="images/sitelock.png" width="130px"></a></li>
+
+				<li><a href="https://beta.companieshouse.gov.uk/company/10427145" target="_blank"><img style="margin-top: -13px;" src="images/ch.png" width="130px"></a></li><a href="https://beta.companieshouse.gov.uk/company/10427145" target="_blank">
+
+				</a></ul><a href="https://beta.companieshouse.gov.uk/company/10427145" target="_blank">
+			</a></div><a href="https://beta.companieshouse.gov.uk/company/10427145" target="_blank">
+		</a></div><a href="https://beta.companieshouse.gov.uk/company/10427145" target="_blank">
+	</a>
+</div>-->
+<div id="main-footer">
+	<a href="/" target="_blank"><!--start footer-->
+	</a>
+	<div id="sub-footer"><a href="/" target="_blank">
+		</a><div class="footerup"><a href="/" target="_blank">
+			</a><div class="fologo"><a href="/" target="_blank">
+				</a><a href="#"><img src="/templates/css/images/face_layout/logo.png"></a>
+			</div>
+			<div class="fo-menu">
+				<ul>
+					<li><a href="/">Home</a></li>
+					<li><a href="/aboutus">About Us</a></li>
+					<li><a href="/terms">Terms &amp; Conditions</a></li>
+					<li><a href="/faq">FAQ</a></li>
+					<!--<li><a href="/support">Support</a></li>-->
+				</ul>
+			</div>
+			<!--<div class="text-demo">
+				<div class="loc">
+					<p><i class="fa fa-map-marker" aria-hidden="true"></i></p>
+				</div>
+				<div class="loc-text">
+					<p><span>Bio Palm Oil Plantations Ltd</span><br>
+
+						325, Bowes Road Arnos Grove,<br>
+						London, N11 1BA, UK</p>
+				</div>
+			</div>-->
+		</div>
+	</div>
+	<div id="main-state-"><!--start statistics-->
+		<div id="sub-state-">
+			<div class="top-menu">
+				<ul>
+
+					<li><i class="fa fa-users" aria-hidden="true"></i> &nbsp; Total Accounts : <?php echo (1*$this->totalPerson + 1*$this->dataInvest['total_customer']);?></li>
+					<li><i class="fa fa-download" aria-hidden="true"></i> &nbsp; Total Invested : <?php echo isset($this->data['total_recived_blance'])? 1*$this->data['total_recived_blance']+$amountGHInt:$amountGHInt;?> BTC</li>
+					<li><i class="fa fa-upload" aria-hidden="true"></i> &nbsp; Total Paid : <?php echo isset($this->data['total_send_balance'])? 1*$this->data['total_send_balance']+$amountPHInt:$amountPHInt;?> BTC</li>
+					<li><i class="fa fa-plane" aria-hidden="true"></i> &nbsp; Online Visitors : <span id="visitor"><?php echo $this->visitorInit;?></span></li>
+				</ul>
+			</div>
+		</div>
+	</div><!--end statis-->
+	<div id="sub-footer">
+		<div class="reserved">
+			<p>© 2016, Bio Palm Oil Plantations Ltd. All Rights Reserved.</p>
+		</div>
+	</div>
+</div>
+<input type="hidden" id="visitMin" value="<?php echo $this->visitMin;?>">
+<input type="hidden" id="visitMax" value="<?php echo (1*$this->visitMax + 1*$this->dataInvest['total_customer']);?>">
+<input type="hidden" id="refreshVistor" value="<?php echo (1*$this->refreshVistor);?>">
+</body>
+</html>

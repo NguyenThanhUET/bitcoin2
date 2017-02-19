@@ -1,0 +1,155 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head><title><?php echo $this->title;?></title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="shortcut icon" href="/templates/images/green_dollar.ico">
+	<link rel="apple-touch-icon" href="images/icons/favicon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="images/icons/favicon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="images/icons/favicon-114x114.png">
+	<!--Loading bootstrap css-->
+	<link type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,800italic,400,700,800">
+	<link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Oswald:400,700,300">
+	<link type="text/css" rel="stylesheet" href="/templates/css/vendors/jquery-ui-1.10.3.custom/css/ui-lightness/jquery-ui-1.10.3.custom.css">
+	<link type="text/css" rel="stylesheet" href="/templates/css/jquery.alerts.css">
+	<link type="text/css" rel="stylesheet" href="/templates/font-awesome/css/font-awesome.min.css">
+	<link type="text/css" rel="stylesheet" href="/templates/css/bootstrap.css">
+	<!--Loading style vendors-->
+	<link type="text/css" rel="stylesheet" href="/templates/css/vendors/animate.css/animate.css">
+	<link type="text/css" rel="stylesheet" href="/templates/css/vendors/iCheck/skins/all.css">
+
+	<link type="text/css" rel="stylesheet" href="/templates/css/vendors/jquery-pace/pace.css">
+	<link type="text/css" rel="stylesheet" href="/templates/css/vendors/jquery-news-ticker/jquery.news-ticker.css">
+	<!--LOADING STYLESHEET FOR PAGE-->
+	<link type="text/css" rel="stylesheet" href="/templates/css/vendors/calendar/zabuto_calendar.min.css">
+	<!--Loading style-->
+	<link type="text/css" rel="stylesheet" href="/templates/css/themes/style1/green-blue.css" id="theme-change" class="style-change color-change">
+	<link type="text/css" rel="stylesheet" href="/templates/css/style-responsive.css">
+	<link type="text/css" rel="stylesheet" href="/templates/css/common.css">
+	<link rel="shortcut icon" href="images/favicon.ico">
+	<script src="/templates/js/jquery-1.11.0.min.js"></script>
+	<script src="/templates/js/jquery-migrate-1.2.1.js"></script>
+	<script src="/templates/js/jquery-ui.js"></script>
+	<script src="/templates/js/jquery.alerts.js"></script>
+	<!--loading bootstrap js-->
+	<script src="/templates/js/bootstrap.min.js"></script>
+	<script src="/templates/js//bootstrap-hover-dropdown.js"></script>
+	<script src="/templates/js/html5shiv.js"></script>
+	<script src="/templates/js/respond.min.js"></script>
+
+	<script src="/templates/js/vendors/metisMenu/jquery.metisMenu.js"></script>
+	<script src="/templates/js/vendors/slimScroll/jquery.slimscroll.js"></script>
+	<script src="/templates/js/vendors/jquery-cookie/jquery.cookie.js"></script>
+
+	<script src="/templates/js/vendors/iCheck/icheck.min.js"></script>
+	<script src="/templates/js/vendors/iCheck/custom.min.js"></script>
+
+	<script src="/templates/js/vendors/jquery-news-ticker/jquery.news-ticker.js"></script>
+	<script src="/templates/js/jquery.menu.js"></script>
+	<script src="/templates/js/vendors/jquery-pace/pace.min.js"></script>
+	<script src="/templates/js/vendors/holder/holder.js"></script>
+	<script src="/templates/js/vendors/responsive-tabs/responsive-tabs.js"></script>
+	<!--LOADING SCRIPTS FOR PAGE-->
+	<script src="/templates/js/email-inbox.js"></script>
+</head>
+<body>
+<div class="contents-main">
+	<!--BEGIN BACK TO TOP--><a id="totop" href="#"><i class="fa fa-angle-up"></i></a><!--END BACK TO TOP--><!--BEGIN TOPBAR-->
+	<div id="header-topbar-option-demo" class="page-header-topbar">
+		<nav id="topbar" role="navigation" style="margin-bottom: 0;" data-step="3" class="navbar navbar-default navbar-static-top">
+			<div class="navbar-header">
+				<button type="button" data-toggle="collapse" data-target=".sidebar-collapse" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+				<a id="logo" href="/frontend/member" class="navbar-brand"><span class="fa fa-rocket"></span><span class="logo-text">Moneychoice</span><span style="display: none" class="logo-text-icon">D</span></a></div>
+			<div class="topbar-main">
+				<!--<a id="menu-toggle" href="#" class="hidden-xs"><i class="fa fa-bars"></i></a>-->
+				<!--<ul class="nav navbar-nav">
+					<li class="active"><a href="index.php">Dashboard</a></li>
+
+				</ul>-->
+				<!--<div class="news-update-box hidden-xs"><span class="text-uppercase mrm pull-left">News:</span>
+					<ul id="news-update" class="ticker list-unstyled">
+
+					</ul>
+				</div>-->
+			</div>
+		</nav>
+	</div>
+	<!--END TOPBAR-->
+	<div id="wrapper">
+		<!--BEGIN SIDEBAR MENU-->
+		<nav id="sidebar" role="navigation" data-step="2" data-intro="Template has &lt;b&gt;many navigation styles&lt;/b&gt;" data-position="right" class="navbar-default navbar-static-side">
+			<div class="sidebar-collapse menu-scroll">
+				<ul id="side-menu" class="nav">
+
+
+					<li class="user-panel">
+						<div class="thumb"><img src="/templates/css/images/bussinessman.ico" alt="" class="img-circle"/></div>
+						<div class="info"><p><?php echo $this->user['FullName'] ?></p>
+							<ul class="list-inline list-unstyled">
+								<li><a href="/frontend/member/" data-hover="tooltip" title="Profile"><i class="fa fa-user"></i></a></li>
+								<!--<li><a href="changeavatar.php" data-hover="tooltip" title="Avatar"><i class="fa fa-leaf"></i></a></li>-->
+								<!--<li><a href="tree.php" data-hover="tooltip" title="Referrals"><i class="fa fa-sitemap"></i></a></li>-->
+								<li><a href="/frontend/register/logout" data-hover="tooltip" title="Logout"><i class="fa fa-sign-out"></i></a></li>
+							</ul>
+						</div>
+						<div class="clearfix"></div>
+					</li>
+					<li><a><i class="fa  fa-signal">
+								<div class="icon-bg bg-grey"></div>
+							</i>
+							<span class="menu-title">BUSSINESS</span></a>
+						<ul class="nav nav-second-level">
+							<li><a href="/frontend/member"><span class="submenu-title">Get Bonus </span></a></li>
+							<li><a href="/frontend/member/investstatus"><span class="submenu-title">PH History</span></a></li>
+							<li><a href="/frontend/member/history"><span class="submenu-title">GH History </span></a></li>
+							<li><a href="/frontend/member/tradingreport"><span class="submenu-title">Bussiness Reports</span></a></li>
+						</ul>
+					</li>
+					<!--<li><a href="#"><i class="fa fa-users">
+								<div class="icon-bg bg-grey"></div>
+							</i><span class="menu-title">NETWORK </span><span class="fa arrow"></span></a>
+						<ul class="nav nav-second-level">
+
+							<li><a href="registration"><span class="submenu-title">Register Downline</span></a></li>
+							<li><a href="network"><i class="fa fa-sitemap"></i><span class="submenu-title">My Downline</span></a></li>
+							<li><a href="tree.php"><span class="submenu-title">Refferals</span></a></li>
+						</ul>
+					</li>-->
+
+					<li><a><i class="fa fa-comments">
+								<div class="icon-bg bg-primary"></div>
+							</i><span class="menu-title">SUPPORT</span></a>
+						<ul class="nav nav-second-level">
+
+							<li><a href="/frontend/member/contactadmin"><span class="submenu-title">Contact Admin</span></a></li>
+							<li><a href="/frontend/member/ticketlist"><span class="submenu-title">Ticket List</span></a></li>
+
+						</ul>
+					</li>
+
+
+				</ul>
+			</div>
+		</nav>
+		<!--END SIDEBAR MENU-->
+
+		<!--BEGIN PAGE WRAPPER-->
+		<div id="page-wrapper"><!--BEGIN TITLE & BREADCRUMB PAGE-->
+			<?php echo $this->layout()->content; ?>
+		</div>
+		<!--END CONTENT--><!--BEGIN FOOTER-->
+		<div id="footer">
+			<div class="copyright">2016 © moneychoice.online - MoneyChoise</div>
+		</div>
+		<!--END FOOTER--></div>
+	<!--END PAGE WRAPPER--></div>
+</div>
+
+<!--CORE JAVASCRIPT-->
+<!--<script src="/templates/js/form/main.js"></script>-->
+
+</body>
+</html>

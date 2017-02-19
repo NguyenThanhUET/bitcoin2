@@ -1,0 +1,130 @@
+<div class="page-content">
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="panel panel-blue">
+                <div class="panel-heading">MY INVEST REPORT</div>
+                <div class="panel-body pan">
+                    <form method="post" action="profile">
+                        <div class="table-responsive">
+                            <table class="table table-hover table-bordered">
+                                <tbody>
+                                <tr>
+                                    <td width="60%">Total INVEST</td>
+                                    <td width="40%">
+                                       <?php echo isset($this->data['totalInvest'])?$this->data['totalInvest']:'0';?> Transactions
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td width="60%">Waiting Approve From Administrator</td>
+                                    <td width="40%">
+                                        <?php echo isset($this->data['waitingInvest'])?$this->data['waitingInvest']:'0';?> Transactions
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="60%">Approved INVEST Transaction</td>
+                                    <td width="40%">
+                                        <?php echo isset($this->data['confirmedInvest'])?$this->data['confirmedInvest']:'0';?> Transactions
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td colspan="2"></td>
+                                </tr>
+
+                                <tr>
+                                    <td width="60%">Total INVEST Amount</td>
+                                    <td width="40%">
+                                        <?php echo isset($this->data['amountInvest'])?1*$this->data['amountInvest']:'0';?> BTC
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td width="60%">Waiting Approve Amount</td>
+                                    <td width="40%">
+                                        <?php echo isset($this->data['amountWaitingInvest'])?1*$this->data['amountWaitingInvest']:'0';?> BTC
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="60%">Approved INVEST Amount</td>
+                                    <td width="40%">
+                                        <?php echo isset($this->data['amountConfirmedInvest'])?1*$this->data['amountConfirmedInvest']:'0';?> BTC
+                                    </td>
+                                </tr>
+
+                                </tbody>
+                            </table>
+
+                        </div></form>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-6">
+            <div class="panel panel-blue">
+                <div class="panel-heading">MY GET PROFIT REPORT</div>
+                <div class="panel-body pan">
+
+
+
+                    <form method="post" action="profile">
+
+                        <div class="table-responsive">
+                            <table class="table table-hover table-bordered">
+                                <tbody>
+
+                                <tr>
+                                    <td width="60%">Total Recived Transaction</td>
+                                    <td width="40%">
+                                        <?php echo isset($this->data['totalRecived'])?$this->data['totalRecived']:'0';?> Transactions
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td width="60%">Pending Recived Transaction</td>
+                                    <td width="40%">
+                                        <?php echo isset($this->data['errorRecived'])?$this->data['errorRecived']:'0';?> Transactions
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="60%">Success Recived Transaction</td>
+                                    <td width="40%">
+                                        <?php echo isset($this->data['successRecived'])?$this->data['successRecived']:'0';?> Transactions
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td colspan="2"></td>
+                                </tr>
+
+
+                                <tr>
+                                    <td width="60%">Total GET PROFIT Amount</td>
+                                    <td width="40%">
+                                        <?php echo isset($this->data['amountRecived'])?$this->data['amountRecived']:'0';?> BTC
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td width="60%">Pending GET PROFIT Amount</td>
+                                    <td width="40%">
+                                        <?php echo isset($this->data['amountErrorRecived'])?$this->data['amountErrorRecived']:'0';?> BTC
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td width="60%">Success GET PROFIT Amount</td>
+                                    <td width="40%">
+                                        <?php echo isset($this->data['amountSuccessRecived'])?$this->data['amountSuccessRecived']:'0';?> BTC
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+
+                        </div></form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br>
+
+</div>

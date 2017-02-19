@@ -1,0 +1,108 @@
+/* 
+*******************************************************************************
+* MANNET
+* jquery.alerts.css
+* 
+* å‡¦ç�†æ¦‚è¦�		:	css for dialog
+* ä½œæˆ�æ—¥			:	2015/09/23
+* ä½œæˆ�è€…			:	viettd â€“ viettd@ans-asia.com
+* 
+* æ›´æ–°æ—¥			:	
+* æ›´æ–°è€…			:	
+* æ›´æ–°å†…å®¹		:	
+* 
+* @package		:	COMMON
+* @copyright	:	Copyright (c) ANS-ASIA
+* @version		:	1.0.0
+*******************************************************************************
+*/
+#popup_container {
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 13px;
+	min-width: 350px; /* Dialog will be no smaller than this */
+	max-width: 580px; /* Dialog will wrap after this width */
+	background: rgb(217, 224, 201);
+	/*border: solid 5px #999;*/
+	color: #4F8A10;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+
+#popup_title {
+	font-size: 14px;
+	font-weight: bold;
+	text-align: center;
+	line-height: 1.75em;
+	color: #4F8A10;
+	background: #DFF2BF;
+	border: solid 1px #DFF2BF;
+	border-bottom: solid 1px #DFF2BF;
+	cursor: default;
+	padding: 0em;
+	margin: 0em;
+}
+
+#popup_content {
+	background: 16px 16px no-repeat url(images/info.gif);
+	padding: 1em 1.75em;
+	margin: 0em;
+}
+
+#popup_content.alert {
+	background: 30px 10px no-repeat url(images/done-1.png);
+}
+
+#popup_content.warning {
+	background: 16px 16px no-repeat url(images/important.gif);
+}
+
+#popup_content.confirm {
+	background: 30px 10px no-repeat url(images/question-1.png);
+}
+
+#popup_content.confirm-delete {
+	background: 30px 10px no-repeat url(images/attention.png);
+}
+
+#popup_content.error {
+	background: 30px 10px no-repeat url(images/warning.png);
+}
+
+#popup_content.prompt {
+	background-image: url(images/help.gif);
+}
+
+#popup_content.prohibit {
+	background: 16px 16px no-repeat url(images/prohibit.png);
+}
+#popup_content.sendmail {
+    background: 30px 10px no-repeat url(images/question-1.png);
+}
+#popup_message {
+	padding-left: 48px;
+}
+
+#popup_panel {
+	text-align: center;
+	margin: 1em 0em 0em 1em;
+}
+#sendmail{
+	position: relative;
+    top: 2px;
+    margin-right: 5px;
+}
+.w-button-sendmail{
+	text-align: center;
+	margin-bottom: 15px;
+}
+#popup_prompt {
+	margin: .5em 0em;
+}
+/*smartphone, tablet when screen size (width) < 768px */
+@media (max-width: 768px){
+	#popup_container{
+		min-width: 250px !important;
+		max-width: 250px !important;
+	}
+}

@@ -1,0 +1,238 @@
+<?php
+$uri = $this->serverUrl();
+?>
+<style>
+    #go-to-invest {
+        border: 1px solid #0c799e;
+        width: 100px;
+        padding: 4px;
+        font-size: 14px;
+        font-weight: 500;
+        color: #fff;
+        border-radius: 3px;
+        background: linear-gradient(to bottom,#59d0f8 5%,#49c0e8 100%);
+        cursor: pointer;
+        margin-top: 18px;
+        margin-left: 75px;
+    }
+    .ui-widget-content {
+        background: rgb(243, 242, 242) !important;
+        border: 1px solid #e5e5e5;
+    }
+    .ui-widget-header {
+        background: #17a0bf !important;
+    }
+    input[type="radio"]{
+        outline: none;
+    }
+    .ui-widget-content .ui-state-default:hover, .ui-widget-content .ui-state-default:focus {
+        background: #52c9f1 !important;
+    }
+
+    .ui-widget-content .ui-state-default {
+        background: #4cc3eb;
+    }
+     .ui-widget-header{
+         border: none !important;
+     }
+    .ui-widget-content {
+        background: #e5f9ff !important;
+        border: 1px solid #e5e5e5;
+    }
+</style>
+<div class="page-content">
+
+    <div class="row">
+
+        <br><br>
+        <div class="col-md-4"><div id="sum_box" class="row mbl">
+                <div class="row">
+
+                    <div class="col-md-12">
+
+                        <div class="panel panel-blue">
+                            <div class="panel-body"><p class="icon"><img src="/templates/images/moneybag2.png" height="60px"></p><h4 class="value"><span> <?php echo isset($this->data['invest_blance'])? 1*$this->data['invest_blance']:0;?> BTC </span></h4>
+
+                                <p class="description"><b>Invest Balance</b></p>
+
+                                <div class="progress progress-sm mbn">
+                                    <div role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo ($this->data['invest_blance']*20+1).'%';?>;" class="progress-bar progress-bar-info"><span class="sr-only">60% Complete (success)</span></div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-12">
+                        <div class="panel panel-pink">
+                            <div class="panel-body"><p class="icon"><img src="/templates/images/moneybag.png" height="60"></p><h4 class="value"><span> <?php echo isset($this->data['bonus_balance'])? 1*$this->data['bonus_balance']:0;?> BTC</span></h4>
+
+                                <p class="description"><b>Bonus Balance</b></p>
+
+                                <div class="progress progress-sm mbn">
+                                    <div role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo ($this->data['bonus_balance']*20+1).'%';?>;" class="progress-bar progress-bar-danger"><span class="sr-only">50% Complete (success)</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="panel panel-yellow">
+                            <div class="panel-body"><p class="icon"><i class="icon fa fa-group"></i></p><h4 class="value"><span> <?php echo isset($this->data['total_teferrals'])? 1*$this->data['total_teferrals']:0;?> BTC </span></h4>
+
+                                <p class="description"><b>Total Referrals</b></p>
+
+                                <div class="progress progress-sm mbn">
+                                    <div role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo ($this->data['total_teferrals']*20+1).'%';?>;" class="progress-bar progress-bar-warning"><span class="sr-only">70% Complete (success)</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+
+
+                        <div class="panel panel-blue">
+                            <div class="panel-heading"> INVEST PACKAGE</div>
+                            <div class="panel-body">
+                                <br>
+                                <img src="/templates/images/payment.png">
+                                <br><!--<br><b>BTC : 110$ <br>
+                                    Status : <span class="label label-sm label-danger">Pending</span> </b><br>-->
+                                <br>
+                                <td><a id="<?php if(1*$this->data['invest_valid']<1) {?>btn-expired-invest<?php }else{ ?>btn-invest<?php }?>" class="btn <?php if(1*$this->data['invest_valid']<1) {?>btn-danger<?php }else{ ?>btn-info<?php }?> btn-xs btn-block ">
+                                        <?php if(1*$this->data['invest_valid']<1) {?>Expired Invest<?php }else{ ?>Invest<?php }?>
+                                    </a>
+                                </td>
+                            </div></div>
+
+                    </div>
+
+                </div></div>
+        </div>
+
+        <div class="col-md-8">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="panel">
+                        <div class="panel-body">
+                            <div class="profile-desk">
+                                <form method="post" action="/frontend/member">
+                                    <div class="table-responsive">
+                                        <table class="table table-hover table-bordered">
+                                            <tbody>
+                                            <tr>
+                                                <?php if(isset($this->successMessage)){?>
+                                                    <div class="form-group isa_success">
+                                                        <i class="fa fa-times-circle"></i>
+                                                        <?php echo $this->successMessage; ?>
+                                                    </div>
+                                                <?php }?>
+                                                <?php if(isset($this->errorMessage)){?>
+                                                    <div class="form-group isa_error">
+                                                        <i class="fa fa-times-circle"></i>
+                                                        <?php echo $this->errorMessage; ?>
+                                                    </div>
+                                                <?php }?>
+                                            </tr>
+
+
+                                            <tr>
+                                                <td style="padding-left:20px;">Referral Link</td>
+                                                <td bgcolor="#FFFAEA" class="upp" width="600px" align="left">
+                                                    <strong id="refer-link" style="cursor: pointer;color: blue"><?php echo $uri;?>/frontend/register/index?r=<?php echo $this->user['UserName']?></strong>
+                                                </td>
+                                            </tr><br>
+                                            <tr>
+                                                <td style="padding-left:20px;">Sponsor</td>
+                                                <td><input type="text" class="form-control" name="referer" value="<?php echo $this->user['PeoplesIdentity'] ?>" readonly /></td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding-left:20px;">Username</td>
+                                                <td><input type="text" class="form-control" name="username" value="<?php echo $this->user['UserName'] ?>" readonly /></td>
+                                            </tr>
+
+
+                                            <tr>
+                                                <td style="padding-left:20px;">Email</td>
+                                                <td><input type="text" class="form-control" value="<?php echo $this->user['Email'] ?>" readonly /></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td style="padding-left:20px;">Mobile Number</td>
+                                                <td><input type="text" class="form-control" value="<?php echo $this->user['Mobile'] ?>" readonly /></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td style="padding-left:20px;">Bitcoin Address</td>
+                                                <td><input type="text" name="btc" class="form-control" value="<?php echo $this->user['WalletAddress'] ?>" readonly /></td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding-left:20px;">Your Password</td>
+                                                <td><input type="password" name="pass" class="form-control required" value="" /></td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding-left:20px;">Change Password</td>
+                                                <td><input type="password" name="new-password" class="form-control required" value="" /></td>
+                                            </tr>
+                                           <!-- <tr>
+                                                <td style="padding-left:20px;">Serurity</td>
+                                                <td><input type="password" name="pin" class="form-control" value="" /></td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding-left:20px;">Change Serurity</td>
+                                                <td><input type="password" name="pin" class="form-control" value="" /></td>
+                                            </tr>-->
+
+
+
+                                            <tr>
+                                                <td colspan="2" style="text-align:center;">
+                                                    <button type="submit" class="btn btn-info">Change Password
+                                                </td>
+                                            </tr><br>	</tbody>
+                                        </table>
+                                </form>
+                            </div><br>
+                        </div><br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="main">
+        <div id="dialog" title="Choose invest package">
+            <form action="/frontend/member/invest" method="get">
+                <?php if(isset($this->listfee) && !empty($this->listfee)){ ?>
+                <?php foreach ($this->listfee as $row){ ?>
+                        <?php if($row['ID'] !=4 ){?>
+                <input type="radio" name="pack1" value="<?php echo $row['ID'] ?>"> <?php echo $row['duration'] ?> days
+                        <?php } ?>
+                    <?php } ?>
+                <?php } ?>
+                <br>
+                <input id="go-to-invest" type="submit" value="Invest">
+            </form>
+        </div>
+    </div>
+</div>
+<script src="/templates/js/jquery-ui.js"></script>
+<script>
+
+    $(document).ready(function() {
+        $(function() {
+            $("#dialog").dialog({
+                autoOpen: false
+            });
+            $("#btn-invest").on("click", function() {
+                $("#dialog").dialog("open");
+                $('input[name="pack1"][value="1"]').prop('checked',true);
+            });
+            $("#refer-link").on("click", function() {
+                window.open($(this).html(),"","width=1366,height=768");
+            });
+
+        });
+    });
+
+</script>

@@ -1,0 +1,184 @@
+<?php
+$amountInit =   0.15;
+$amount  = isset($this->investData['amount'])?$this->investData['amount']:$amountInit;
+$blockchain="https://wallet.btc.com/?gclid=Cj0KEQiAy53DBRCo4en29Zvcla0BEiQAVIDccwlfeEAUAvoUsm-YJDfhcSxYlTRmdvQ9TsQaUyfrdhUaAk0f8P8HAQ#/setup/login";
+?>
+<link type="text/css" rel="stylesheet" href="/templates/css/form/invest.css">
+<div class="page-content">
+    <div style="background: transparent; border: 0; box-shadow: none !important" class="tab-content pan mtl mbn responsive">
+        <div id="tab-form-actions" class="tab-pane fade active in">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-blue">
+                        <div class="panel-heading">Invest</div>
+                        <div class="panel-body pan">
+                            <div class="col-md-3">
+                                <img id="upload-image-img" src="/templates/images/no-image.png" style="cursor: pointer; width: 306px;height: 170px ;margin-top: 35px;" />
+                                <input type="file" id="upload-image" style="display: none; margin-top: 10px;" />
+                                <button id="submittran" class="btn-wait tooltip-top3" style="margin-top: 5px;margin-left: 35px; " title=""> &nbsp; <span class="btn-spinner"></span><span id="btn-text">Waiting Verify Image From You &nbsp; </span> </button>
+                            </div>
+                            <div class="col-md-9">
+                                <table class="table table-striped table-bordered table-hover"></table>
+                                <!-- /.table-resonsive -->
+
+                                <script src="/templates/js/cryptoapi_php/cryptobox.min.js" type="text/javascript"></script>
+                                <hr>
+                                <!-- Awaiting Payment -->
+                                <div align="center" style="min-width:540px">
+                                    <div align="center">
+                                        <table width="500" cellpadding="0" cellspacing="7">
+                                            <tbody>
+                                                <tr>
+                                                    <td colspan="2"><div class="refresh" style="display:none"><a href="#"><img border="0" width="150" height="150" alt="Refresh" src="/images/refresh.png"></a></div>
+                                                        <table width="100%" cellpadding="0" cellspacing="5">
+                                                            <tbody>
+                                                            <tr>
+                                                                <td valign="bottom" class="sum">Total:<span class="font12"><?php echo $amount?></span> BTC</td><td>
+                                                                    <a target="_blank" href="https://gourl.io/" class="tooltip-bottom" title="">
+                                                                        <img class="logo" border="0" alt="Bitcoin Payment System" src="/templates/images/payment.png">
+                                                                    </a>
+                                                                </td>
+                                                            </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                                <tr class="coin_yes" style="display:none">
+                                                    <td width="170" class="top5" align="center"><img border="0" alt="Payment Successfully Received!" src="/images/paid.png">
+                                                    </td>
+                                                    <td align="center" valign="top">
+                                                        <div class="result1">Payment Successfully Received!</div>
+                                                        <div class="result2">Received on&nbsp; <span id="dt"><b></b></span></div>
+                                                        <div class="top15"><button class="btn-res tooltip-top2" title="">View Transaction Details</button></div
+                                                            >
+                                                    </td>
+                                                </tr>
+                                                <tr class="coin_no">
+                                                    <td valign="top">
+                                                        <div class="intro">
+                                                            1.	Go to <a target="_blank" href="https://localbitcoins.com/?ch=4rwv">localbitcoins.com</a> and get Bitcoins (BTC) if you don't have it.<br>
+                                                            2.	<a target="_blank" class="tooltip-right2" title="" href="https://bitcoin.org/#download">Send</a> <?php echo $amount?> Bitcoins (in ONE payment) to the address below.<br>
+                                                            &nbsp; &nbsp; If you send <b>any other bitcoin amount</b>, payment system will <b>ignore it</b> !<br>
+                                                        </div>
+                                                        <div class="intro_send">Send EXACTLY <span class="font12"><?php echo $amount?></span> BTC (<a class="tooltip-fee" href="#" title="" style="font-weight: normal;">plus fees</a>) to:</div>
+                                                        <div style="text-align: left">
+                                                            <table cellpadding="0" cellspacing="0"><tbody><tr>
+                                                                    <td>
+                                                                        <div class="addr tooltip-top" title="">
+                                                                            <a id="adminaddress" value="<?php echo $this->adminWallet;?>" href="bitcoin:<?php echo $this->adminWallet;?>?amount=<?php echo $amount?>&amp;label=Payment"><?php echo $this->adminWallet;?></a>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td style="min-width:80px">
+                                                                            <button  class="btn-wallet tooltip-top4" onclick="window.open('<?php echo $blockchain;?>','_blank', 'location=yes,height=570,width=520' );" title="">Open Wallet</button></td>
+                                                                </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <!--<div class="coin_no top12">
+                                            <button class="btn-copy tooltip-top" data-clipboard-target="#adminaddress" title="">Copy Address</button>
+                                        </div>-->
+                                    </div>
+                                    <hr><br>
+                                    <div class="table-responsive">
+                                        <table class="table table-striped">
+                                            <tbody>
+                                            </tbody>
+                                        </table>
+                                    </div> <!-- /.table-responsive -->
+
+                                </div> <!-- /.row -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<script src="/templates/js/jquery-1.11.0.min.js"></script>
+<script>
+    //new Clipboard('.btn-copy');
+    var _packageMode = "<?php echo $this->investPackage;?>";
+    $(document).ready(function() {
+        try {
+            $(document).on('click','#upload-image-img',function(){
+                $('#upload-image').trigger('click');
+            });
+            $(document).on('change','#upload-image',function(){
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    $('#upload-image-img')
+                        .attr('src', e.target.result)
+                };
+                reader.readAsDataURL($(this).context.files[0]);
+                $('#btn-text').html('Click to submit');
+                $('.btn-spinner').remove();
+                $('#submittran').prop('disabled',false);
+            });
+            $(document).on('click','#submittran',function(){
+                //var reader = new FileReader();
+                //reader.readAsDataURL($('#upload-image').context.files[0]);
+                uploadFile('#upload-image',function(){
+                    $('#submittran').prop('disabled',true);
+                    jAlert('Upload successfull','Success',function(r){
+                            if(r){
+                                location.href='/frontend/member/investstatus';
+                            }
+                        });
+                });
+            });
+
+        } catch (e) {
+            alert('ready' + e.message);
+        }
+    });
+    /**
+     * upload file
+     *
+     * @author  :   viettd - 2015/11/18 - create
+     * @param
+     * @param
+     * @return
+     */
+    function uploadFile(input,callback) {
+            var data = new FormData();
+            data.append('fileUpload', $(input).get(0).files[0]);
+            data.append('_packageMode',  _packageMode);
+            $.ajax({
+                url : '/frontend/upload/upload',
+                type : 'POST',
+                loading: true,
+                data : data,
+                enctype:"multipart/form-data",
+                processData : false,
+                contentType : false,
+                success: function(res){
+                    switch (res['status']) {
+                        case "1":
+                            if(callback){
+                                callback();
+                            }
+                            break;
+                        case 201:
+
+                            break;
+                        case 202:
+
+                            break;
+                        default:
+
+                            break;
+                    }
+                },
+                error: function(){
+
+                }
+            });
+        };
+
+</script>

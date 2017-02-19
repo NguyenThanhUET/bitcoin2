@@ -1,0 +1,43 @@
+.form-login{
+    border: 1px solid green !important;
+    border-radius: 5px !important;
+    /*background-color: white;*/
+
+}
+.header-content{
+    background: rgb(38, 142, 4) !important;
+    color: white;
+}
+.btn-info:hover, .btn-info:focus, .btn-info:active, .btn-info.active, .open .dropdown-toggle.btn-info {
+    color: #ffffff !important;
+    background-color: #268e04 !important;
+    border-color: #268e04 !important;
+}
+.page-form .header-content {
+    -webkit-border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
+    border-top-left-radius: 5px !important;
+    border-top-right-radius: 5px !important;
+}
+.page-form{
+    background-color: #f0f2f5 !important;
+    border-radius: 5px !important;
+}
+#signin-page{
+   /* background:none !important;*/
+}
+.page-form .body-content hr {
+    border-color: #268e04;
+}
+.btn-info{
+    color: #ffffff !important;
+    background-color: rgb(38, 142, 4) !important;
+    border-radius: 4px !important;
+    border-color: #268e04 !important;
+}
+.btn-info:hover{
+    color: #ffffff !important;
+    background-color: rgba(38, 142, 4, 0.64) !important;
+    border-radius: 4px !important;
+    border-color: #268e04 !important;
+}

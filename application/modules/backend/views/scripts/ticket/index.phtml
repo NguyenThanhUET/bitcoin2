@@ -1,0 +1,64 @@
+<?php
+$uri = $this->serverUrl();
+?>
+<link type="text/css" rel="stylesheet" href="/templates/css/form/backend/admin_ticket.css">
+<link type="text/css" rel="stylesheet" href="/templates/css/backend_common.css">
+<?php $noimage=$this->noimage; ?>
+<div class="page-content-admin">
+    <div class="message"></div>
+    <div class="w-data-table">
+        <div class="w-header-table-fix-1">
+            <table class="tbl-header-1 table-bordered main-color">
+                <thead>
+                <tr>
+                    <th width="50px">#</th>
+                    <th width="150px">Date</th>
+                    <th width="100px">Customer ID</th>
+                    <th width="">Customer Question</th>
+                    <th width="200px">Admin Answer</th>
+                    <th width="150px">Status</th>
+
+                </tr>
+                </thead>
+            </table>
+        </div>
+        <div class="w-body-table-fix-1 tbl-data-search" >
+            <table id="tbl-seach-1" class="tbl-body-1 table-bordered">
+                <tbody>
+                <?php if(isset($this->data) && !empty($this->data)){ $i= 0;?>
+                    <?php foreach($this->data as $row){ $i++;?>
+                        <tr class="tr-record" record-id="<?php echo $row['ID'];?>">
+                            <td width="50px"><?php echo $i;?></td>
+                            <td width="150px"><?php echo $row['senddate'];?></td>
+                            <td width="100px" class="td-customer-id text-center"><?php echo $row['CustomerID'];?></td>
+                            <td width="" class="td-question"><?php echo $row['question'];?></td>
+                            <td width="200px" class="text-center td-answer">
+                                <?php if (1*$row['status_val']==1){?>
+                                <?php echo $row['answer'];?>
+                                <?php }else{?>
+                                    <a class="answer-link">Click to Answer</a>
+                                <?php }?>
+                            </td>
+                            <td width="150px" class="status-td text-center <?php echo $row['color'];?>"><?php echo $row['status'];?></td>
+                        </tr>
+                    <?php } ?>
+                <?php } ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="title-area">
+        <b>Question From Customer ID : <span id="customer_id_refer"></span></b>
+    </div>
+    <div class="question-area">
+        <textarea id="question-text"disabled="disabled" class="question-text"></textarea>
+    </div>
+    <div class="title-area">
+        <b>Answer:</b>
+    </div>
+    <div class="answer-area">
+        <textarea id="answer-text" messageid="0" class="answer-text"></textarea>
+    </div>
+    <button id="answer-btn">Send Message</button>
+</div>
+<script type="text/javascript" src="/templates/js/form/backend/admin_ticket.js"></script>

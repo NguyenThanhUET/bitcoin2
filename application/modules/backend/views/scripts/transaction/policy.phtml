@@ -1,0 +1,68 @@
+<?php
+$uri = $this->serverUrl();
+?>
+<style>
+    .icon-header{
+        height: 60px !important;
+    }
+    .table-bordered th{
+        background: rgba(61, 61, 61, 0.81);
+        color: #FFFFFF;
+    }
+    .title-label{
+        margin-left: -30px;
+        font-weight: bold;
+    }
+    .width-70{
+        width: 70%;
+    }
+</style>
+<div class="page-content-admin" style="    padding-left: 75px;">
+    <div class="message" style="margin-left: -30px;"></div>
+    <div class="title-label">Spin Information</div>
+    <div class="row col-md-12">
+        <div class="col-md-6">
+            <div class="panel panel-blue">
+                <div class="panel-body pan">
+                    <!-- REPORT AREA-->
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <tbody>
+                            <tr>
+                                <th width="15%">Transaction Type</th>
+                                <th width="20%">Transaction Name</th>
+                                <th width="20%">Duration (days)</th>
+                                <th width="20%">Sent (BTC)</th>
+                                <th width="">Recived (BTC)</th>
+                                <th width=""></th>
+                            </tr>
+                            <?php if(isset($this->listfee) && !empty($this->listfee)){ ?>
+                                <?php foreach ($this->listfee as $row){ ?>
+                                    <tr class="tr-record" record-id="<?php echo $row['ID'];?>">
+                                        <td width="15%"><?php echo isset($row['transaction_typ'])? $row['transaction_typ']:0;?></td>
+                                        <td width="20%"><?php echo isset($row['name'])? $row['name']:'';?></td>
+                                        <td width="20%">
+                                            <input type="number" class="duration form-control width-70" value="<?php echo isset($row['duration'])? $row['duration']:0;?>" />
+                                        </td>
+                                        <td width="20%">
+                                            <input type="number" class="amount form-control width-70" value="<?php echo isset($row['amount'])? $row['amount']:0;?>" /> BTC
+                                        </td>
+                                        <td width="40%">
+                                            <input type="number" class="recived form-control width-70" value="<?php echo isset($row['recived'])? $row['recived']:0;?>" /> BTC
+                                        </td>
+                                        <td width="40%">
+                                            <button class="save">Update</button>
+                                        </td>
+                                    </tr>
+                                <?php } ?>
+                            <?php } ?>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="/templates/js/form/backend/admin_policy.js"></script>

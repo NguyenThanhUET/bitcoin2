@@ -1,0 +1,92 @@
+<?php
+$uri = $this->serverUrl();
+?>
+<link type="text/css" rel="stylesheet" href="/templates/css/form/backend/admin_waiting.css">
+<link type="text/css" rel="stylesheet" href="/templates/css/backend_common.css">
+<?php $noimage=$this->noimage; ?>
+<div class="page-content-admin">
+    <div class="message"></div>
+    <div class="w-data-table">
+        <!--<div class="w-header-table-fix-1">
+            <table class="tbl-header-1 table-bordered main-color">
+                <thead>
+                <tr>
+                    <th width="50px">#</th>
+                    <th width="150px">Date</th>
+                    <th width="70px" rowspan="2">Duration (days)</th>
+                    <th width="100px" rowspan="2">Amount(BTC)</th>
+                    <th width="130px" rowspan="2">Total Profit (BTC)</th>
+                    <th width="100px" rowspan="2">Status</th>
+                    <th rowspan="2">Details Image</th>
+                    <th width="150px" rowspan="2">Confirm</th>
+                    <th width="50px" rowspan="2">Delete</th>
+                </tr>
+                <tr>
+                    <th colspan="2" class="boder-top-white">User Name</th>
+                </tr>
+                </thead>
+            </table>
+        </div>-->
+        <div class="w-body-table-fix-1 tbl-data-search" >
+            <table id="tbl-seach-1" class="tbl-body-1 table-bordered">
+                <thead>
+                <tr>
+                    <th width="50px" rowspan="2">#</th>
+                    <th width="150px">Date</th>
+                    <th width="70px" rowspan="2">Duration (days)</th>
+                    <th width="100px" rowspan="2">Amount(BTC)</th>
+                    <th width="130px" rowspan="2">Total Profit (BTC)</th>
+                    <th width="100px" rowspan="2">Status</th>
+                    <th rowspan="2">Details Image</th>
+                    <th width="150px" rowspan="2">Confirm</th>
+                    <th width="50px" rowspan="2">Delete</th>
+                </tr>
+                <tr>
+                    <th class="boder-top-white">User Name</th>
+                </tr>
+                </thead>
+                <tbody>
+                <?php if(isset($this->data) && !empty($this->data)){ $i= 0;?>
+                    <?php foreach($this->data as $row){ $i++;
+                        $filename = $row['image'];
+                        $filenameTmp    =   $noimage;
+                        if(file_exists($filename)){
+                            $handle = fopen($filename, "rb");
+                            $filenameTmp    =   $filename;
+                        }else{
+                            $handle = fopen($noimage, "rb");
+                        }
+                        $contents = fread($handle, filesize($filenameTmp));
+                        fclose($handle);
+                        ?>
+                        <tr class="tr-record" record-id="<?php echo $row['ID'];?>">
+                            <td width="50px" rowspan="2"><?php echo $row['ID'];?></td>
+                            <td width="150px"><?php echo $row['senddate'];?></td>
+                            <td width="70px" rowspan="2"><?php echo $row['duration'];?> (days)</td>
+                            <td width="100px" rowspan="2"><?php echo $row['amount'];?></td>
+                            <td width="130px" rowspan="2"><?php echo $row['bonus'];?></td>
+                            <td width="100px" rowspan="2" class="text-center"><span class="label label-sm <?php echo $row['color'];?>"><?php echo $row['status'];?></span></td>
+                            <td  rowspan="2"class="image-view text-center"><span class="view-image-btn label label-sm label-info" style="cursor: pointer;">View Image</span>
+                                <div class="modal myModal">
+                                    <span class="close">&times;</span>
+                                    <img class="modal-content img01">
+                                    <div class="caption"></div>
+                                </div>
+                                <img class="myImg" src="data:image;base64,<?php echo base64_encode($contents);?>" style="display: none;">
+                            </td>
+                            <td width="150px" rowspan="2" class="text-center"><span class="confirm-btn label label-sm label-info" style="cursor: pointer;">Click to approved</span></td>
+                            <td width="50px" rowspan="2" class="text-center"><span class="delete-btn label label-sm label-info" style="cursor: pointer; width: 40px;">X</span></td>
+                        </tr>
+                        <tr class="sub-record" record-id="<?php echo $row['ID'];?>">
+                            <td class=""><span class="color-blue"><?php echo $row['UserName'];?></span></td>
+                        </tr>
+                    <?php } ?>
+                <?php } ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+</div>
+<script type="text/javascript" src="/templates/js/form/backend/admin_waiting.js"></script>

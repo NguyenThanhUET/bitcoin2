@@ -1,0 +1,127 @@
+<?php
+$uri = $this->serverUrl();
+?>
+<style>
+    .icon-header{
+        height: 60px !important;
+    }
+    .table-bordered th{
+        background: rgba(61, 61, 61, 0.81);
+        color: #FFFFFF;
+    }
+    .title-label{
+        margin-left: -58px;
+        font-weight: bold;
+    }
+    .title-hr{
+        margin-left: -58px;
+    }
+</style>
+<div class="page-content-admin" style="    padding-left: 75px;">
+    <div class="col-md-12"><div id="sum_box" class="row mbl">
+            <div class="row">
+
+                <div class="col-md-12">
+
+                    <div class="panel panel-blue">
+                        <div class="panel-body">
+                            <p class="icon">
+                                <img class="icon-header" src="/templates/images/moneybag2.png">
+                            </p>
+                            <p class="description">
+                                    <b>Total Recived Balance : <?php echo isset($this->data['total_recived_blance'])? 1*$this->data['total_recived_blance']:0;?> BTC</b></p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-12">
+                    <div class="panel panel-pink">
+                        <div class="panel-body"><p class="icon">
+                                <img class="icon-header" src="/templates/images/moneybag.png" height="60"></p>
+                            <b>Total Send Balance : <?php echo isset($this->data['total_send_balance'])? 1*$this->data['total_send_balance']:0;?> BTC  </b></p>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div></div>
+    </div>
+    <hr class="title-hr">
+    <div class="title-label">Transaction report</div>
+    <div class="row col-md-12">
+        <div class="col-md-6">
+            <div class="panel panel-blue">
+                <div class="panel-body pan">
+                    <!-- REPORT AREA-->
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <tbody>
+                                <tr>
+                                    <th width="60%">Total Waiting Transaction</th>
+                                    <td width="40%">
+                                        <?php echo isset($this->data['total_waiting'])? 1*$this->data['total_waiting']:0;?>  Transactions
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th width="60%">Total Confirmed Transaction</th>
+                                    <td width="40%">
+                                        <?php echo isset($this->data['total_confrimed'])? 1*$this->data['total_confrimed']:0;?>  Transactions
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th width="60%">Total PH Transaction</th>
+                                    <td width="40%">
+                                        <?php echo isset($this->data['total_PH'])? 1*$this->data['total_PH']:0;?>  Transactions
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr class="title-hr">
+    <div class="title-label">Spin Information</div>
+    <div class="row col-md-12">
+        <div class="col-md-6">
+            <div class="panel panel-blue">
+                <div class="panel-body pan">
+                    <!-- REPORT AREA-->
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <tbody>
+                            <tr>
+                                <th width="15%">Transaction Type</th>
+                                <th width="20%">Transaction Name</th>
+                                <th width="20%">Duration (days)</th>
+                                <th width="20%">Sent (BTC)</th>
+                                <th width="">Recived (BTC)</th>
+                            </tr>
+                            <?php if(isset($this->listfee) && !empty($this->listfee)){ ?>
+                            <?php foreach ($this->listfee as $row){ ?>
+                            <tr>
+                                <td width="15%"><?php echo isset($row['transaction_typ'])? $row['transaction_typ']:0;?></td>
+                                <td width="15%"><?php echo isset($row['name'])? $row['name']:'';?></td>
+                                <td width="20%">
+                                    <?php echo isset($row['duration'])? $row['duration']:0;?>  days
+                                </td>
+                                <td width="20%">
+                                    <?php echo isset($row['amount'])? $row['amount']:0;?>  BTC
+                                </td>
+                                <td width="40%">
+                                    <?php echo isset($row['recived'])? $row['recived']:0;?>  BTC
+                                </td>
+                            </tr>
+                                <?php } ?>
+                            <?php } ?>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

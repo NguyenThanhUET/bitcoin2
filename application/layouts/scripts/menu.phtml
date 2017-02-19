@@ -1,0 +1,51 @@
+<?php $menu = $this->menu;?>
+<nav class="navbar navbar-inverse container" role="navigation">
+	<div class="container">
+		<div class="row">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target="#bs-example-navbar-collapse-1">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<!-- <a class="navbar-brand" href="index.html">Start Bootstrap</a> -->
+			</div>
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse"
+				id="bs-example-navbar-collapse-1">
+				<ul class="nav navbar-nav navbar-left" style="margin-left: -15px;">
+				<?php if(!empty($menu)){?>
+					<?php foreach ($menu as $row){?>
+						<?php if($row['hassub'] == 1){?>
+						<li class="dropdown <?php echo $row['controller']==$this->controller ?'active':'';?>">
+							<i class="fa fa-angle-down"></i> 
+							<span class="dropdown-toggle" data-toggle="dropdown">
+								<i class="fa fa-angle-down"></i>
+							</span>
+							<a href=""><?php echo $row['menu_name'];?></a>
+							<ul class="dropdown-menu">
+								<?php foreach ($menu as $row2){?>
+								<?php if($row2['menu_prentid'] == $row['menu_id']){?>
+								<li><a href="<?php echo $row2['url'];?>" ><?php echo $row2['menu_name'];?></a></li>
+								<?php }?>
+								<?php }?>
+							</ul>
+						</li>
+						<?php }else{?>
+						<?php if($row['menu_prentid']==0){?>
+						<li class="<?php echo $row['controller']==$this->controller ?'active':'';?>">
+							<a href="<?php echo $row['url'];?>"><?php echo $row['menu_name'];?></a>
+						</li>
+						<?php }?>
+						<?php }?>
+					<?php }?>
+				<?php }?>
+				</ul>
+			</div>
+			<!-- /.navbar-collapse -->
+		</div>
+	</div>
+	<!-- /.container -->
+</nav>
