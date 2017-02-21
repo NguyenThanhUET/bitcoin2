@@ -53,15 +53,9 @@ function initEvents() {
             $(modal).css('display' , "none");
         });
         $(document).on('click','.confirm-btn',function(){
-            var parent  =   $(this).parents('tr.tr-record');
-            var recordID    =   $(parent).attr('record-id');
-            var subparent   =   $('tr.sub-record[record-id="'+recordID+'"]');
             jConfirm('Do you want to approve ?','Confirm',function(r){
                 if(r){
-                    sendmoneyTrans(recordID,function(){
-                        $(parent).remove();
-                        $(subparent).remove();
-                    });
+                    sendmoneyTrans();
                 }
             });
         });
@@ -82,9 +76,8 @@ function initEvents() {
         alert('initEvents' + e.message);
     }
 }
-function sendmoneyTrans(id, callback){
+function sendmoneyTrans(){
     var data    =   {};
-    data['id'] = id;
     $.ajax({
         type        :   'POST',
         url         :   '/backend/transaction/sendmoney',
@@ -101,9 +94,6 @@ function sendmoneyTrans(id, callback){
                 case 1:
                     var message =   "<div class='form-group isa_success'><i class='fa fa-times-circle'></i>Update Successfull</div>";
                     $('.message').html(message);
-                    if(callback){
-                        callback();
-                    }
                     break;
                 // error
                 case 0:
