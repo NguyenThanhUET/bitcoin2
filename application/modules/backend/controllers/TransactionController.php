@@ -137,7 +137,7 @@ class Backend_TransactionController extends Frontend_AppController {
 				$data = $this->model->executeSql('SPC_SENDMONEY_ALL',$params);
 				//result
 				if(isset($data[0][0]['success']) && 1*$data[0][0]['success']==1) {
-					$this->respon[]['status'] = 1;
+					$this->respon['status'] = 1;
 					$this->respon['error']  = 'Update Successfull';
 				}else{
 					$this->respon['status'] = 0;

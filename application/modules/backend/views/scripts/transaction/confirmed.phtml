@@ -83,7 +83,7 @@ $uri = $this->serverUrl();
                         <tr class="tr-record" record-id="<?php echo $row['ID'];?>">
                             <td width="50px" rowspan="2"><?php echo $row['ID'];?></td>
                             <td width="150px"><?php echo $row['senddate'];?></td>
-                            <td width="150px" rowspan="2">remaining day</td>
+                            <td width="150px" rowspan="2" style="text-align: center;"><?php echo $row['remaining_day']?> day</td>
                             <td width="150px" rowspan="2"><?php echo $row['UserName'];?></td>
                             <td width="100px" rowspan="2"><?php echo $row['Mobile'];?></td>
                             <td width="100px" rowspan="2"><?php echo $row['amount'];?></td>
@@ -103,7 +103,7 @@ $uri = $this->serverUrl();
                                 </div>
                                 <img class="myImg" src="data:image;base64,<?php echo base64_encode($contents);?>" style="display: none;">
                             </td>
-                            <td rowspan="2" class="text-center"><input type="checkbox" class="active-flg"></td>
+                            <td rowspan="2" class="text-center"><input type="checkbox" class="active-flg" <?php if($row['active_sendmoney'] == 1){?> checked="checked" <?php } ?>></td>
                             <td rowspan="2" width="50px" class="text-center"><span class="delete-btn label label-sm label-info" style="cursor: pointer; width: 40px;">X</span></td>
                         </tr>
                         <tr class="sub-record" record-id="<?php echo $row['ID'];?>">
