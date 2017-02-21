@@ -49,16 +49,16 @@ $uri = $this->serverUrl();
             <table id="tbl-seach-1" class="tbl-body-1 table-bordered">
                 <thead>
                 <tr>
-                    <th width="50px" rowspan="2">#</th>
+                    <th width="30px" rowspan="2">#</th>
                     <th width="150px">Date</th>
-                    <th width="150px"rowspan="2">Remaing day</th>
-                    <th width="150px"rowspan="2">User Name</th>
+                    <th width="70px"rowspan="2">Remaing day</th>
+                    <th width="130px"rowspan="2">User Name</th>
                     <th width="100px"rowspan="2">Phone</th>
                     <th width="100px"rowspan="2">Amount(BTC)</th>
                     <th width="130px">Total Profit (BTC)</th>
-                    <th width="100px"rowspan="2">Status</th>
+                    <th width="80px"rowspan="2">Status</th>
                     <th rowspan="2">Image</th>
-                    <th rowspan="2">Active SendMoney</th>
+                    <th rowspan="2">Active</th>
                     <th width="50px"rowspan="2">Delete</th>
                 </tr>
                 <tr>
@@ -81,10 +81,10 @@ $uri = $this->serverUrl();
                         fclose($handle);
                         ?>
                         <tr class="tr-record" record-id="<?php echo $row['ID'];?>">
-                            <td width="50px" rowspan="2"><?php echo $row['ID'];?></td>
+                            <td width="30px" rowspan="2"><?php echo $row['ID'];?></td>
                             <td width="150px"><?php echo $row['senddate'];?></td>
-                            <td width="150px" rowspan="2" style="text-align: center;"><?php echo $row['remaining_day']?> day</td>
-                            <td width="150px" rowspan="2"><?php echo $row['UserName'];?></td>
+                            <td width="70px" rowspan="2" style="text-align: center;"><?php echo $row['remaining_day']?> day</td>
+                            <td width="130px" rowspan="2"><?php echo $row['UserName'];?></td>
                             <td width="100px" rowspan="2"><?php echo $row['Mobile'];?></td>
                             <td width="100px" rowspan="2"><?php echo $row['amount'];?></td>
                             <td width="130px" style="text-align: right;"><?php echo $row['bonus'];?>
@@ -94,7 +94,7 @@ $uri = $this->serverUrl();
                                     }
                                 */?>
                             </td>
-                            <td width="100px" rowspan="2" class="text-center"><span class="label label-sm <?php echo $row['color'];?>"><?php echo $row['status'];?></span></td>
+                            <td width="80px" rowspan="2" class="text-center"><span class="label label-sm <?php echo $row['color'];?>"><?php echo $row['status'];?></span></td>
                             <td rowspan="2" class="image-view text-center"><span class="view-image-btn label label-sm label-info" style="cursor: pointer;">View Image</span>
                                 <div class="modal myModal">
                                     <span class="close">&times;</span>
