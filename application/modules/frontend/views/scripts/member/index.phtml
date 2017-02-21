@@ -205,7 +205,7 @@ $uri = $this->serverUrl();
             <form action="/frontend/member/invest" method="get">
                 <?php if(isset($this->listfee) && !empty($this->listfee)){ ?>
                 <?php foreach ($this->listfee as $row){ ?>
-                        <?php if($row['ID'] !=4 ){?>
+                        <?php if($row['ID'] <4 ){?>
                 <input type="radio" name="pack1" value="<?php echo $row['ID'] ?>"> <?php echo $row['duration'] ?> days
                         <?php } ?>
                     <?php } ?>

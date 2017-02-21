@@ -86,3 +86,6 @@ span.close:focus {
 .w-body-table-fix-1{
     height: 645px !important;
 }
+.title-label {
+    font-weight: bold;
+}

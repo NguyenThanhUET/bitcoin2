@@ -99,40 +99,52 @@ class Backend_TransactionController extends Frontend_AppController {
 		$this->_helper->viewRenderer->setNoRender();
 		if($this->getRequest()->isPost()){
 			try {
-				$params 					= array_slice($this->getAllParams(), 3);
-				$params['issuccess']		=	0;
+				$params = array(
+					'id'=>''
+					,'issuccess'=>'');
+				$log = array();
+				$dataWalletArr = $this->model->executeSql('SPC_GET_WALLET_BY_TRAN_ID',array());
+				if(!empty($dataWalletArr[0])){
+					foreach ($dataWalletArr[0] as $dataWallet){
+						if(isset($dataWallet['wallet_address']) && $dataWallet['wallet_address'] !=''){
+							$walletAddress	=	$dataWallet['wallet_address'];
+							$sendAmount	=	1*(isset($dataWallet['recived'])?$dataWallet['recived']:0);
+							$sendAmount	=	$sendAmount*100000000;
+							//send_money_to_wallet("135x8NpvX8V4xVMS2Ky6mpyiXLZSmUVbpZ", 293556, 0);
+							$tmpSuccess = 0;
+							$tmpSuccess = 1;//if you want to send money, please remove comment here $this->send_money_to_wallet($walletAddress, $sendAmount, 0);
 
-				$dataWallet = $this->model->executeSql('SPC_GET_WALLET_BY_TRAN_ID',array($params['id']));
-				if(isset($dataWallet[0][0]['wallet_address']) && $dataWallet[0][0]['wallet_address'] !=''){
-					$walletAddress	=	$dataWallet[0][0]['wallet_address'];
-					$sendAmount	=	1*(isset($dataWallet[0][0]['recived'])?$dataWallet[0][0]['recived']:0);
-					$sendAmount	=	$sendAmount*100000000;
-					//$this->get_total_balance();
-//					/die();
-					//send_money_to_wallet("135x8NpvX8V4xVMS2Ky6mpyiXLZSmUVbpZ", 293556, 0);
-					$params['issuccess'] = $this->send_money_to_wallet($walletAddress, $sendAmount, 0);
-					if(1*$params['issuccess'] ==1){
-						//execute store procedure
-						$data = $this->model->executeSql('SPC_TRANSACTION_SENDMONEY_ACT1',$params);
-						//result
-						if(isset($data[0][0]['success']) && 1*$data[0][0]['success']==1) {
-							$this->respon['status'] = 1;
-							$this->respon['error']  = 'Update Successfull';
-						}else{
-							$this->respon['status'] = 0;
-							$this->respon['error']  = 'Update Error';
+							if(1*$tmpSuccess ==1){
+								$params['id'] = $params['id'].$dataWallet['ID'].'	';
+								$params['issuccess'] = $params['issuccess'].$tmpSuccess.'	';
+								$currentLog = array(
+									'trans_id'=>$dataWallet['ID'],
+									'status'=>1
+								);
+								//execute store procedure
+							}else{
+								$currentLog = array(
+									'trans_id'=>$dataWallet['ID'],
+									'status'=>0
+								);
+								$this->respon['status'] = 0;
+								$this->respon['error']  = 'Sendmoney Error';
+							}
+							$log[] = $currentLog;
 						}
-					}else{
-						$this->respon['status'] = 0;
-						$this->respon['error']  = 'Sendmoney Error';
 					}
-
+				}
+				$data = $this->model->executeSql('SPC_SENDMONEY_ALL',$params);
+				//result
+				if(isset($data[0][0]['success']) && 1*$data[0][0]['success']==1) {
+					$this->respon[]['status'] = 1;
+					$this->respon['error']  = 'Update Successfull';
 				}else{
 					$this->respon['status'] = 0;
-					$this->respon['error']  = 'Can not send money';
+					$this->respon['error']  = 'Update Error';
 				}
-
-
+				//write log here
+				//some thing
 			} catch (Exception $e){
 				$this->respon['status'] 	= 0;
 				$this->respon['error']  = 'Exception Error';
@@ -236,6 +248,7 @@ class Backend_TransactionController extends Frontend_AppController {
 
 	function send_money_to_wallet($account, $amount, $db){
 		try {
+			return 1;
 			//extract data from the post
 			//set POST variables
 			$url = 'http://127.0.0.1:3000/merchant/0f24de6a-9aa6-4b81-b606-84f0e92e20c1/payment';

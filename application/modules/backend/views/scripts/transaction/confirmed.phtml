@@ -6,41 +6,59 @@ $uri = $this->serverUrl();
 <?php $noimage=$this->noimage; ?>
 <div class="page-content-admin">
     <div class="message"></div>
+    <div style="text-align: right"><span class="confirm-btn label label-sm label-info" style="cursor: pointer;">Send Money</span></div>
+    <div class="day-plan-area" style="padding-left: 30px;">
+        <div class="title-label">Plan in current day</div>
+        <div class="row col-md-12">
+            <div class="col-md-6">
+                <div class="panel panel-blue">
+                    <div class="panel-body pan">
+                        <!-- REPORT AREA-->
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+                                <tbody>
+                                <tr>
+                                    <th width="60%">Total Waiting Transaction</th>
+                                    <td width="40%">
+                                        <?php echo isset($this->data['total_waiting'])? 1*$this->data['total_waiting']:0;?>  Transactions
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th width="60%">Total Confirmed Transaction</th>
+                                    <td width="40%">
+                                        <?php echo isset($this->data['total_confrimed'])? 1*$this->data['total_confrimed']:0;?>  Transactions
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th width="60%">Total PH Transaction</th>
+                                    <td width="40%">
+                                        <?php echo isset($this->data['total_PH'])? 1*$this->data['total_PH']:0;?>  Transactions
+                                    </td>
+                                </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="w-data-table">
-        <!--<div class="w-header-table-fix-1">
-            <table class="tbl-header-1 table-bordered main-color">
-                <thead>
-                    <tr>
-                        <th width="50px" rowspan="2">#</th>
-                        <th width="150px">Date</th>
-                        <th width="150px"rowspan="2">User Name</th>
-                        <th width="100px"rowspan="2">Phone</th>
-                        <th width="100px"rowspan="2">Amount(BTC)</th>
-                        <th width="130px"rowspan="2">Total Profit (BTC)</th>
-                        <th width="100px"rowspan="2">Status</th>
-                        <th rowspan="2">Details Image</th>
-                        <th width="150px"rowspan="2">Send Money</th>
-                        <th width="50px"rowspan="2">Delete</th>
-                    </tr>
-                    <tr>
-                        <th width="150px">Durations (days)</th>
-                    </tr>
-                </thead>
-            </table>
-        </div>-->
         <div class="w-body-table-fix-1 tbl-data-search" >
             <table id="tbl-seach-1" class="tbl-body-1 table-bordered">
                 <thead>
                 <tr>
                     <th width="50px" rowspan="2">#</th>
                     <th width="150px">Date</th>
+                    <th width="150px"rowspan="2">Remaing day</th>
                     <th width="150px"rowspan="2">User Name</th>
                     <th width="100px"rowspan="2">Phone</th>
                     <th width="100px"rowspan="2">Amount(BTC)</th>
                     <th width="130px">Total Profit (BTC)</th>
                     <th width="100px"rowspan="2">Status</th>
                     <th rowspan="2">Image</th>
-                    <th width="90px"rowspan="2">Send Money</th>
+                    <th rowspan="2">Active SendMoney</th>
                     <th width="50px"rowspan="2">Delete</th>
                 </tr>
                 <tr>
@@ -65,6 +83,7 @@ $uri = $this->serverUrl();
                         <tr class="tr-record" record-id="<?php echo $row['ID'];?>">
                             <td width="50px" rowspan="2"><?php echo $row['ID'];?></td>
                             <td width="150px"><?php echo $row['senddate'];?></td>
+                            <td width="150px" rowspan="2">remaining day</td>
                             <td width="150px" rowspan="2"><?php echo $row['UserName'];?></td>
                             <td width="100px" rowspan="2"><?php echo $row['Mobile'];?></td>
                             <td width="100px" rowspan="2"><?php echo $row['amount'];?></td>
@@ -84,7 +103,7 @@ $uri = $this->serverUrl();
                                 </div>
                                 <img class="myImg" src="data:image;base64,<?php echo base64_encode($contents);?>" style="display: none;">
                             </td>
-                            <td rowspan="2" width="90px" class="text-center"><span class="confirm-btn label label-sm label-info" style="cursor: pointer;">Send Money</span></td>
+                            <td rowspan="2" class="text-center"><input type="checkbox" class="active-flg"></td>
                             <td rowspan="2" width="50px" class="text-center"><span class="delete-btn label label-sm label-info" style="cursor: pointer; width: 40px;">X</span></td>
                         </tr>
                         <tr class="sub-record" record-id="<?php echo $row['ID'];?>">
