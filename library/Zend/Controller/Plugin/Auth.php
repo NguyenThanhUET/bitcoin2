@@ -58,7 +58,7 @@ class Zend_Controller_Plugin_Auth extends Zend_Controller_Plugin_Abstract{
 						// 					exit("<script>window.location.href = '/auth/login';</script>");
 						exit("???????????????????????????????"); // add by viettd 2016/06/24
 					} else {
-					//	$request->setModuleName('auth')->setControllerName('Login')->setActionName('index')->setParam('backurl', $_SERVER['REQUEST_URI']);
+						$request->setModuleName('auth')->setControllerName('Login')->setActionName('index')->setParam('backurl', $_SERVER['REQUEST_URI']);
 					}
 				}
 			}
