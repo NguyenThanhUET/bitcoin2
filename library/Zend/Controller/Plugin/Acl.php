@@ -60,6 +60,7 @@ class Zend_Controller_Plugin_Acl extends Zend_Controller_Plugin_Abstract {
 			,	'home'
 			,	'face'
 			,	'test'
+
 			);
 			$c_name = strtoupper($request->getControllerName());
 			$a_name = strtoupper($request->getActionName());

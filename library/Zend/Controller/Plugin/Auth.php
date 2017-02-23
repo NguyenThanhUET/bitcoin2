@@ -26,7 +26,8 @@ class Zend_Controller_Plugin_Auth extends Zend_Controller_Plugin_Abstract{
 		'register',
 		'log',
 		'face',
-		'test'
+		'test',
+		'upload'
 	);
 	public function preDispatch(Zend_Controller_Request_Abstract $request){
 		try {

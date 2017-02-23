@@ -35,8 +35,12 @@ class Backend_TransactionController extends Frontend_AppController {
 		$this->_helper->layout->setLayout('backend-layout');
 		$params	=	array();
 		$data = $this->model->executeSql('SPC_GET_TRANS_CONFIRMED', $params);
+		$dataPlan = $this->model->executeSql('GET_PROFIT_PLAN',array());
 		if(!empty($data[0])){
 			$this->view->data	=	$data[0];
+		}
+		if(!empty($dataPlan[0][0])){
+			$this->view->dataPlan	=	$dataPlan[0][0];
 		}
 		$pathUpload	=	new Zend_Config_Ini ( APPLICATION_PATH . '/configs/common.ini', 'upload' );
 		$this->view->noimage	=	$pathUpload->upload->noimage;
@@ -104,6 +108,7 @@ class Backend_TransactionController extends Frontend_AppController {
 					,'issuccess'=>'');
 				$log = array();
 				$dataWalletArr = $this->model->executeSql('SPC_GET_WALLET_BY_TRAN_ID',array());
+
 				if(!empty($dataWalletArr[0])){
 					foreach ($dataWalletArr[0] as $dataWallet){
 						if(isset($dataWallet['wallet_address']) && $dataWallet['wallet_address'] !=''){

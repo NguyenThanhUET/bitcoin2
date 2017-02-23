@@ -18,21 +18,21 @@ $uri = $this->serverUrl();
                             <table class="table table-bordered">
                                 <tbody>
                                 <tr>
-                                    <th width="60%">Total Waiting Transaction</th>
+                                    <th width="60%">Total Profit Now</th>
                                     <td width="40%">
-                                        <?php echo isset($this->data['total_waiting'])? 1*$this->data['total_waiting']:0;?>  Transactions
+                                        <?php echo isset($this->dataPlan['total_profit'])? 1*$this->dataPlan['total_profit']:0;?>  BTC
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th width="60%">Total Confirmed Transaction</th>
+                                    <th width="60%">Plan money send today</th>
                                     <td width="40%">
-                                        <?php echo isset($this->data['total_confrimed'])? 1*$this->data['total_confrimed']:0;?>  Transactions
+                                        <?php echo isset($this->dataPlan['plan_money_send'])? 1*$this->dataPlan['plan_money_send']:0;?>  BTC
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th width="60%">Total PH Transaction</th>
+                                    <th width="60%">Total Profit Remaining</th>
                                     <td width="40%">
-                                        <?php echo isset($this->data['total_PH'])? 1*$this->data['total_PH']:0;?>  Transactions
+                                        <?php echo isset($this->dataPlan['plan_profit'])? 1*$this->dataPlan['plan_profit']:0;?>  BTC
                                     </td>
                                 </tr>
 
