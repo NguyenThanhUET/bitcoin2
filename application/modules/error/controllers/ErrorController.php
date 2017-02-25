@@ -66,10 +66,10 @@ class Error_ErrorController extends Zend_Controller_Action{
     }
     public function page403Action() {
         $this->_helper->_layout->disableLayout();
-        /*if ($this->auth->hasIdentity()) {
+        if ($this->auth->hasIdentity()) {
             $this->auth->clearIdentity();
         }
         $this->auth->clearIdentity();
-        $this->redirect('/');*/
+        $this->redirect('/');
     }
 }

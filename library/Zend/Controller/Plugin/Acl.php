@@ -113,7 +113,7 @@ class Zend_Controller_Plugin_Acl extends Zend_Controller_Plugin_Abstract {
 	 * @see         :   remark
 	 */
 	protected function permissionDeny() {
-		$this->_auth->clearIdentity();
+		//$this->_auth->clearIdentity();
 		return Zend_Controller_Action_HelperBroker::getStaticHelper('redirector')->setGotoUrl('/error/Error/page403');
 	}
 }
