@@ -59,6 +59,18 @@ function initEvents() {
                 }
             });
         });
+        $(document).on('click','.active-flg',function(){
+            var id = 1*$(this).parents('tr.tr-record').attr('record-id');
+            var value = 0;
+            if($(this).prop('checked')==true){
+                value= 1;
+            }
+            jConfirm('Do you want to change ?','Confirm',function(r){
+                if(r){
+                    changeActive(id,value);
+                }
+            });
+        });
         $(document).on('click','.delete-btn',function(){
             var parent  =   $(this).parents('tr.tr-record');
             var recordID    =   $(parent).attr('record-id');
@@ -94,6 +106,8 @@ function sendmoneyTrans(){
                 case 1:
                     var message =   "<div class='form-group isa_success'><i class='fa fa-times-circle'></i>Update Successfull</div>";
                     $('.message').html(message);
+                    setTimeout(1000);
+                    location.reload(true);
                     break;
                 // error
                 case 0:
@@ -137,6 +151,45 @@ function deleteTrans(id, callback){
                 // error
                 case 0:
                     var message =   "<div class='form-group isa_error'><i class='fa fa-times-circle'></i>Delete Error</div>";
+                    $('.message').html(message);
+                    break;
+                // Exception
+                case EX:
+                    jError(res['Exception']);
+                    break;
+                default:
+                    break;
+            }
+        }
+    });
+}
+
+function changeActive(id,value,callback){
+    var data    =   {};
+    data['id'] = id;
+    data['value'] = value;
+    $.ajax({
+        type        :   'POST',
+        url         :   '/backend/transaction/activesendmoney',
+        dataType    :   'json',
+        loading     :   true,
+        data        :   data,
+        success: function(res) {
+            switch (res['status']){
+                //not perssion
+                case PE:
+                    jMessage(23);
+                    break;
+                // success
+                case 1:
+                    var message =   "<div class='form-group isa_success'><i class='fa fa-times-circle'></i>Update Successfull</div>";
+                    $('.message').html(message);
+                    setTimeout(1000);
+                    location.reload(true);
+                    break;
+                // error
+                case 0:
+                    var message =   "<div class='form-group isa_error'><i class='fa fa-times-circle'></i>Update Error</div>";
                     $('.message').html(message);
                     break;
                 // Exception
