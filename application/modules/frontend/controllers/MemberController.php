@@ -59,17 +59,18 @@ class Frontend_MemberController extends Frontend_AppController {
 			$this->user['ID']
 		);
 		$this->view->adminWallet = $this->user['adminWallet'];
-		$this->view->investPackage = $this->getParam('pack1',1);
-		$investData = $this->model->executeSql('SPC_GET_FEE_BY_ID', array($this->view->investPackage));
+		$investData = $this->model->executeSql('GET_FEE_AMOUNT_INVEST_LIST');
 		$data = $this->model->executeSql('SPC_GET_RAND_ADMIN_WALLET', $params);
 		if(isset($data[0][0]['admin_wallet']) && $data[0][0]['admin_wallet'] !=''){
 			$this->view->adminWallet =	$data[0][0]['admin_wallet'];
 		}
+		$this->view->investValid = 1;
 		if (! isset($data[0][0]['invest_valid']) || 1*$data[0][0]['invest_valid'] < 1){
-			$this->redirect('/frontend/member');
+			$this->view->investValid = 0;
+			//$this->redirect('/frontend/member');
 		}
-		if (isset($investData[0][0]) && !empty($investData[0][0]) ){
-			$this->view->investData	=	$investData[0][0];
+		if (isset($investData[0]) && !empty($investData[0]) ){
+			$this->view->investData	=	$investData[0];
 		}
 	}
 	/**

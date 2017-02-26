@@ -16,78 +16,37 @@ $blockchain="https://wallet.btc.com/?gclid=Cj0KEQiAy53DBRCo4en29Zvcla0BEiQAVIDcc
                                 <div style="padding-bottom:24px;" class="bgcab">
                                     <div style="font-size:16px;">
                                         <div class="cabh" style="clear: both;">New deposit section</div>
-                                        <form method="post" name="spendform">
+                                        <div method="post" name="spendform">
                                             <input type="hidden" name="a" value="deposit">
                                             <b>Select a plan:</b><br>
-
+                                            <?php $i = 0;
+                                            if(!empty($this->investData)){?>
+                                                <?php foreach($this->investData as $row){
+                                                    $i++;
+                                                    ?>
                                             <table cellspacing="1" cellpadding="2" border="0" width="100%"><tbody><tr>
                                                     <td colspan="3">
-                                                        <input type="radio" name="h_id" value="1" checked="" onclick="updateCompound()">
+                                                        <input type="radio" class="feemode" name="feemode" value="<?php echo $row['ID'];?>" amount="<?php echo $row['amount'];?>" checked="">
                                                         <!--	<input type=radio name=h_id value='1'  checked  > -->
 
-                                                        <b>PLAN A 10% HOURLY 24 HOURS 240%</b></td>
+                                                        <b>PLAN <?php echo $i;?> : SEND <?php echo $row['amount'];?>(BTC) , RECIVE <?php echo $row['recived'];?>(BTC) A DAY IN <?php echo $row['duration'];?> DAYS</b></td>
                                                 </tr><tr>
                                                     <td class="inheader">Plan</td>
                                                     <td class="inheader" width="200">Spent Amount (BTC)</td>
-                                                    <td class="inheader" width="100" nowrap=""><nobr>Hourly Profit (%)</nobr></td>
+                                                    <td class="inheader" width="100" nowrap=""><nobr>Day Profit (BTC)</nobr></td>
                                                 </tr>
                                                 <tr>
-                                                    <td class="item">PLAN A 10% HOURLY 24 HOURS 240%</td>
-                                                    <td class="item" align="right">$20.00 - $10000.00</td>
-                                                    <td class="item" align="right">10.00</td>
+                                                    <td class="item">PLAN <?php echo $i;?> : SEND <?php echo $row['amount'];?>(BTC) , RECIVE <?php echo $row['recived'];?>(BTC) A DAY IN <?php echo $row['duration'];?> DAYS</td>
+                                                    <td class="item" align="right"><?php echo $row['amount'];?></td>
+                                                    <td class="item" align="right"><?php echo $row['recived_day'];?></td>
                                                 </tr>
                                                 </tbody></table><br><br>
-                                            <script>
-                                                cps[1] = [];
-                                            </script>
-                                            <table cellspacing="1" cellpadding="2" border="0" width="100%"><tbody><tr>
-                                                    <td colspan="3">
-                                                        <input type="radio" name="h_id" value="4" onclick="updateCompound()">
-                                                        <!--	<input type=radio name=h_id value='4'  > -->
-
-                                                        <b>PLAN B 15% HOURLY 48 HOURS 720%</b></td>
-                                                </tr><tr>
-                                                    <td class="inheader">Plan</td>
-                                                    <td class="inheader" width="200">Spent Amount (BTC)</td>
-                                                    <td class="inheader" width="100" nowrap=""><nobr>Hourly Profit (%)</nobr></td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="item">PLAN B 15% HOURLY 48 HOURS 720%</td>
-                                                    <td class="item" align="right">$20.00 - $10000.00</td>
-                                                    <td class="item" align="right">15.00</td>
-                                                </tr>
-
-                                                </tbody></table><br><br>
-                                            <script>
-                                                cps[4] = [];
-                                            </script>
-                                            <table cellspacing="1" cellpadding="2" border="0" width="100%"><tbody><tr>
-                                                    <td colspan="3">
-                                                        <input type="radio" name="h_id" value="5" onclick="updateCompound()">
-                                                        <!--	<input type=radio name=h_id value='5'  > -->
-
-                                                        <b>PLAN C 20% HOURLY 72 HOURS 1440</b></td>
-                                                </tr><tr>
-                                                    <td class="inheader">Plan</td>
-                                                    <td class="inheader" width="200">Spent Amount (BTC)</td>
-                                                    <td class="inheader" width="100" nowrap=""><nobr>Hourly Profit (%)</nobr></td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="item">PLAN C 20% HOURLY 72 HOURS 1440</td>
-                                                    <td class="item" align="right">$20.00 - $10000.00</td>
-                                                    <td class="item" align="right">20.00</td>
-                                                </tr>
-
-                                                </tbody></table><br><br>
-                                            <script>
-                                                cps[5] = [];
-                                            </script>
-
-
+                                                <?php }?>
+                                            <?php }?>
                                             <table cellspacing="0" cellpadding="2" border="0">
                                                 <tbody><tr>
                                                     <td>Your account balance (BTC):</td>
-                                                    <td align="right">0.00</td>
+                                                    <td align="right" id="choose-amount">0.00</td>
                                                 </tr>
                                                 <tr><td>&nbsp;</td>
                                                     <td align="right">
@@ -95,6 +54,7 @@ $blockchain="https://wallet.btc.com/?gclid=Cj0KEQiAy53DBRCo4en29Zvcla0BEiQAVIDcc
                                                         </small>
                                                     </td>
                                                 </tr>
+                                                <?php if($this->investValid == 1){?>
                                                 <tr class="coin_no" style="border-top: 1px solid green;">
                                                     <td valign="top" style="padding-top: 5px;">
                                                         <div class="intro">
@@ -125,26 +85,16 @@ $blockchain="https://wallet.btc.com/?gclid=Cj0KEQiAy53DBRCo4en29Zvcla0BEiQAVIDcc
                                                         </div>
                                                     </td>
                                                 </tr>
+                                                <?php }else{ ?>
+                                                    <tr style="border-top: 1px solid green;">
+                                                        <td colspan="2" style="color: red; padding-top: 30px;">You has invest</td>
+                                                    </tr>
+                                                <?php } ?>
                                                 </tbody></table>
-                                        </form>
-
-                                        <script language="javascript">
-                                            for (i = 0; i<document.spendform.type.length; i++) {
-                                                if ((document.spendform.type[i].value.match(/^process_/))) {
-                                                    document.spendform.type[i].checked = true;
-                                                    break;
-                                                }
-                                            }
-                                            updateCompound();
-                                        </script>
-
+                                        </div>
                                     </div>
-
                                 </div>
-
                             </div>
-
-
                         </div>
                     </div>
                 </div>
@@ -155,7 +105,6 @@ $blockchain="https://wallet.btc.com/?gclid=Cj0KEQiAy53DBRCo4en29Zvcla0BEiQAVIDcc
 </div>
 <script>
     //new Clipboard('.btn-copy');
-    var _packageMode = "<?php echo $this->investPackage;?>";
     $(document).ready(function() {
         try {
             $(document).on('click','#upload-image-img',function(){
@@ -175,7 +124,13 @@ $blockchain="https://wallet.btc.com/?gclid=Cj0KEQiAy53DBRCo4en29Zvcla0BEiQAVIDcc
             $(document).on('click','#submittran',function(){
                 //var reader = new FileReader();
                 //reader.readAsDataURL($('#upload-image').context.files[0]);
-                uploadFile('#upload-image',function(){
+                var _packageMode = 1;
+                $('.feemode').each(function(){
+                  if($(this).is(':checked')){
+                      _packageMode = $(this).val();
+                  }
+                })
+                uploadFile('#upload-image',_packageMode,function(){
                     $('#submittran').prop('disabled',true);
                     jAlert('Upload successfull','Success',function(r){
                             if(r){
@@ -197,8 +152,9 @@ $blockchain="https://wallet.btc.com/?gclid=Cj0KEQiAy53DBRCo4en29Zvcla0BEiQAVIDcc
      * @param
      * @return
      */
-    function uploadFile(input,callback) {
+    function uploadFile(input,_packageMode,callback) {
             var data = new FormData();
+
             data.append('fileUpload', $(input).get(0).files[0]);
             data.append('_packageMode',  _packageMode);
             $.ajax({
