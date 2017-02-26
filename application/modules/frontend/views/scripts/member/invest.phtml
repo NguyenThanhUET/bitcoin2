@@ -59,10 +59,10 @@ $blockchain="https://wallet.btc.com/?gclid=Cj0KEQiAy53DBRCo4en29Zvcla0BEiQAVIDcc
                                                     <td valign="top" style="padding-top: 5px;">
                                                         <div class="intro">
                                                             1.	Go to <a target="_blank" href="https://localbitcoins.com/?ch=4rwv">localbitcoins.com</a> and get Bitcoins (BTC) if you don't have it.<br>
-                                                            2.	<a target="_blank" class="tooltip-right2" title="" href="https://bitcoin.org/#download">Send</a> <?php echo $amount?> Bitcoins (in ONE payment) to the address below.<br>
+                                                            2.	<a target="_blank" class="tooltip-right2" title="" href="https://bitcoin.org/#download">Send</a> <span class="send-1"><?php echo $amount?></span> Bitcoins (in ONE payment) to the address below.<br>
                                                             &nbsp; &nbsp; If you send <b>any other bitcoin amount</b>, payment system will <b>ignore it</b> !<br>
                                                         </div>
-                                                        <div class="intro_send">Send EXACTLY <span class="font12"><?php echo $amount?></span> BTC (<a class="tooltip-fee" href="#" title="" style="font-weight: normal;">plus fees</a>) to:</div>
+                                                        <div class="intro_send">Send EXACTLY <span class="font12 send-1"><?php echo $amount?></span> BTC (<a class="tooltip-fee" href="#" title="" style="font-weight: normal;">plus fees</a>) to:</div>
                                                         <div style="text-align: left">
                                                             <table cellpadding="0" cellspacing="0"><tbody><tr>
                                                                     <td>
@@ -107,9 +107,22 @@ $blockchain="https://wallet.btc.com/?gclid=Cj0KEQiAy53DBRCo4en29Zvcla0BEiQAVIDcc
     //new Clipboard('.btn-copy');
     $(document).ready(function() {
         try {
+            $('.feemode').each(function(){
+                if($(this).is(':checked')){
+                    var amount = $(this).attr('amount');
+                    $('#choose-amount').html(amount);
+                    $('.send-1').html(amount);
+                }
+            })
             $(document).on('click','#upload-image-img',function(){
                 $('#upload-image').trigger('click');
             });
+            $(document).on('click','.feemode',function(){
+                var amount = $(this).attr('amount');
+                $('#choose-amount').html(amount);
+                $('.send-1').html(amount);
+            });
+
             $(document).on('change','#upload-image',function(){
                 var reader = new FileReader();
                 reader.onload = function (e) {
