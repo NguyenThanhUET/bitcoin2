@@ -3,58 +3,100 @@ $amountInit =   0.15;
 $amount  = isset($this->investData['amount'])?$this->investData['amount']:$amountInit;
 $blockchain="https://wallet.btc.com/?gclid=Cj0KEQiAy53DBRCo4en29Zvcla0BEiQAVIDccwlfeEAUAvoUsm-YJDfhcSxYlTRmdvQ9TsQaUyfrdhUaAk0f8P8HAQ#/setup/login";
 ?>
-<link type="text/css" rel="stylesheet" href="/templates/css/form/invest.css">
+<link rel="stylesheet" type="text/css" href="/templates/css/form/frontend/invest.css"/>
+<!--<link type="text/css" rel="stylesheet" href="/templates/css/form/invest.css">-->
 <div class="page-content">
     <div style="background: transparent; border: 0; box-shadow: none !important" class="tab-content pan mtl mbn responsive">
         <div id="tab-form-actions" class="tab-pane fade active in">
-            <div class="row">
+            <div style="width: 100%">
                 <div class="col-lg-12">
                     <div class="panel panel-blue">
-                        <div class="panel-heading">Invest</div>
                         <div class="panel-body pan">
-                            <div class="col-md-3">
-                                <img id="upload-image-img" src="/templates/images/no-image.png" style="cursor: pointer; width: 306px;height: 170px ;margin-top: 35px;" />
-                                <input type="file" id="upload-image" style="display: none; margin-top: 10px;" />
-                                <button id="submittran" class="btn-wait tooltip-top3" style="margin-top: 5px;margin-left: 35px; " title=""> &nbsp; <span class="btn-spinner"></span><span id="btn-text">Waiting Verify Image From You &nbsp; </span> </button>
-                            </div>
-                            <div class="col-md-9">
-                                <table class="table table-striped table-bordered table-hover"></table>
-                                <!-- /.table-resonsive -->
+                            <div class="">
+                                <div style="padding-bottom:24px;" class="bgcab">
+                                    <div style="font-size:16px;">
+                                        <div class="cabh" style="clear: both;">New deposit section</div>
+                                        <form method="post" name="spendform">
+                                            <input type="hidden" name="a" value="deposit">
+                                            <b>Select a plan:</b><br>
 
-                                <script src="/templates/js/cryptoapi_php/cryptobox.min.js" type="text/javascript"></script>
-                                <hr>
-                                <!-- Awaiting Payment -->
-                                <div align="center" style="min-width:540px">
-                                    <div align="center">
-                                        <table width="500" cellpadding="0" cellspacing="7">
-                                            <tbody>
+                                            <table cellspacing="1" cellpadding="2" border="0" width="100%"><tbody><tr>
+                                                    <td colspan="3">
+                                                        <input type="radio" name="h_id" value="1" checked="" onclick="updateCompound()">
+                                                        <!--	<input type=radio name=h_id value='1'  checked  > -->
+
+                                                        <b>PLAN A 10% HOURLY 24 HOURS 240%</b></td>
+                                                </tr><tr>
+                                                    <td class="inheader">Plan</td>
+                                                    <td class="inheader" width="200">Spent Amount (BTC)</td>
+                                                    <td class="inheader" width="100" nowrap=""><nobr>Hourly Profit (%)</nobr></td>
+                                                </tr>
                                                 <tr>
-                                                    <td colspan="2"><div class="refresh" style="display:none"><a href="#"><img border="0" width="150" height="150" alt="Refresh" src="/images/refresh.png"></a></div>
-                                                        <table width="100%" cellpadding="0" cellspacing="5">
-                                                            <tbody>
-                                                            <tr>
-                                                                <td valign="bottom" class="sum">Total:<span class="font12"><?php echo $amount?></span> BTC</td><td>
-                                                                    <a target="_blank" href="https://gourl.io/" class="tooltip-bottom" title="">
-                                                                        <img class="logo" border="0" alt="Bitcoin Payment System" src="/templates/images/payment.png">
-                                                                    </a>
-                                                                </td>
-                                                            </tr>
-                                                            </tbody>
-                                                        </table>
+                                                    <td class="item">PLAN A 10% HOURLY 24 HOURS 240%</td>
+                                                    <td class="item" align="right">$20.00 - $10000.00</td>
+                                                    <td class="item" align="right">10.00</td>
+                                                </tr>
+                                                </tbody></table><br><br>
+                                            <script>
+                                                cps[1] = [];
+                                            </script>
+                                            <table cellspacing="1" cellpadding="2" border="0" width="100%"><tbody><tr>
+                                                    <td colspan="3">
+                                                        <input type="radio" name="h_id" value="4" onclick="updateCompound()">
+                                                        <!--	<input type=radio name=h_id value='4'  > -->
+
+                                                        <b>PLAN B 15% HOURLY 48 HOURS 720%</b></td>
+                                                </tr><tr>
+                                                    <td class="inheader">Plan</td>
+                                                    <td class="inheader" width="200">Spent Amount (BTC)</td>
+                                                    <td class="inheader" width="100" nowrap=""><nobr>Hourly Profit (%)</nobr></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="item">PLAN B 15% HOURLY 48 HOURS 720%</td>
+                                                    <td class="item" align="right">$20.00 - $10000.00</td>
+                                                    <td class="item" align="right">15.00</td>
+                                                </tr>
+
+                                                </tbody></table><br><br>
+                                            <script>
+                                                cps[4] = [];
+                                            </script>
+                                            <table cellspacing="1" cellpadding="2" border="0" width="100%"><tbody><tr>
+                                                    <td colspan="3">
+                                                        <input type="radio" name="h_id" value="5" onclick="updateCompound()">
+                                                        <!--	<input type=radio name=h_id value='5'  > -->
+
+                                                        <b>PLAN C 20% HOURLY 72 HOURS 1440</b></td>
+                                                </tr><tr>
+                                                    <td class="inheader">Plan</td>
+                                                    <td class="inheader" width="200">Spent Amount (BTC)</td>
+                                                    <td class="inheader" width="100" nowrap=""><nobr>Hourly Profit (%)</nobr></td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="item">PLAN C 20% HOURLY 72 HOURS 1440</td>
+                                                    <td class="item" align="right">$20.00 - $10000.00</td>
+                                                    <td class="item" align="right">20.00</td>
+                                                </tr>
+
+                                                </tbody></table><br><br>
+                                            <script>
+                                                cps[5] = [];
+                                            </script>
+
+
+                                            <table cellspacing="0" cellpadding="2" border="0">
+                                                <tbody><tr>
+                                                    <td>Your account balance (BTC):</td>
+                                                    <td align="right">0.00</td>
+                                                </tr>
+                                                <tr><td>&nbsp;</td>
+                                                    <td align="right">
+                                                        <small>
+                                                        </small>
                                                     </td>
                                                 </tr>
-                                                <tr class="coin_yes" style="display:none">
-                                                    <td width="170" class="top5" align="center"><img border="0" alt="Payment Successfully Received!" src="/images/paid.png">
-                                                    </td>
-                                                    <td align="center" valign="top">
-                                                        <div class="result1">Payment Successfully Received!</div>
-                                                        <div class="result2">Received on&nbsp; <span id="dt"><b></b></span></div>
-                                                        <div class="top15"><button class="btn-res tooltip-top2" title="">View Transaction Details</button></div
-                                                            >
-                                                    </td>
-                                                </tr>
-                                                <tr class="coin_no">
-                                                    <td valign="top">
+                                                <tr class="coin_no" style="border-top: 1px solid green;">
+                                                    <td valign="top" style="padding-top: 5px;">
                                                         <div class="intro">
                                                             1.	Go to <a target="_blank" href="https://localbitcoins.com/?ch=4rwv">localbitcoins.com</a> and get Bitcoins (BTC) if you don't have it.<br>
                                                             2.	<a target="_blank" class="tooltip-right2" title="" href="https://bitcoin.org/#download">Send</a> <?php echo $amount?> Bitcoins (in ONE payment) to the address below.<br>
@@ -64,34 +106,45 @@ $blockchain="https://wallet.btc.com/?gclid=Cj0KEQiAy53DBRCo4en29Zvcla0BEiQAVIDcc
                                                         <div style="text-align: left">
                                                             <table cellpadding="0" cellspacing="0"><tbody><tr>
                                                                     <td>
-                                                                        <div class="addr tooltip-top" title="">
+                                                                        <div class="addr tooltip-top" title="" style="margin-right: 12px;">
                                                                             <a id="adminaddress" value="<?php echo $this->adminWallet;?>" href="bitcoin:<?php echo $this->adminWallet;?>?amount=<?php echo $amount?>&amp;label=Payment"><?php echo $this->adminWallet;?></a>
                                                                         </div>
                                                                     </td>
                                                                     <td style="min-width:80px">
-                                                                            <button  class="btn-wallet tooltip-top4" onclick="window.open('<?php echo $blockchain;?>','_blank', 'location=yes,height=570,width=520' );" title="">Open Wallet</button></td>
+                                                                        <button  class="btn-wallet tooltip-top4 btn" onclick="window.open('<?php echo $blockchain;?>','_blank', 'location=yes,height=570,width=520' );" title="">Open Wallet</button></td>
                                                                 </tr>
                                                                 </tbody>
                                                             </table>
                                                         </div>
                                                     </td>
+                                                    <td style="text-align: center; padding-top: 5px;">
+                                                        <div class="">
+                                                            <img id="upload-image-img" src="/templates/images/no-image.png" style="cursor: pointer; width: 306px;height: 170px ;" />
+                                                            <input type="file" id="upload-image" style="display: none; margin-top: 10px;" />
+                                                            <button id="submittran" class="btn-wait tooltip-top3 btn2" style="margin-top: 5px; " title=""> &nbsp; <span class="btn-spinner"></span><span id="btn-text">Waiting Verify Image From You &nbsp; </span> </button>
+                                                        </div>
+                                                    </td>
                                                 </tr>
-                                            </tbody>
-                                        </table>
-                                        <!--<div class="coin_no top12">
-                                            <button class="btn-copy tooltip-top" data-clipboard-target="#adminaddress" title="">Copy Address</button>
-                                        </div>-->
-                                    </div>
-                                    <hr><br>
-                                    <div class="table-responsive">
-                                        <table class="table table-striped">
-                                            <tbody>
-                                            </tbody>
-                                        </table>
-                                    </div> <!-- /.table-responsive -->
+                                                </tbody></table>
+                                        </form>
 
-                                </div> <!-- /.row -->
+                                        <script language="javascript">
+                                            for (i = 0; i<document.spendform.type.length; i++) {
+                                                if ((document.spendform.type[i].value.match(/^process_/))) {
+                                                    document.spendform.type[i].checked = true;
+                                                    break;
+                                                }
+                                            }
+                                            updateCompound();
+                                        </script>
+
+                                    </div>
+
+                                </div>
+
                             </div>
+
+
                         </div>
                     </div>
                 </div>
@@ -100,7 +153,6 @@ $blockchain="https://wallet.btc.com/?gclid=Cj0KEQiAy53DBRCo4en29Zvcla0BEiQAVIDcc
         </div>
     </div>
 </div>
-<script src="/templates/js/jquery-1.11.0.min.js"></script>
 <script>
     //new Clipboard('.btn-copy');
     var _packageMode = "<?php echo $this->investPackage;?>";

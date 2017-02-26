@@ -51,7 +51,6 @@ class Frontend_HomeController extends Frontend_AppController {
 					$userName
 				,   crypt($password, $txt)
 				);
-
 				$data = $this->model->executeSql('SPC_LOGIN_CUSTOMER_LST1', $params);
 				if(isset($data[0][0]['islogin']) && 1*$data[0][0]['islogin']==1) {
 					$this->respon['auth']['ID'] 					= $data[0][0]['ID'];
