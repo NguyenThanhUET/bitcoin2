@@ -1,106 +1,514 @@
 <?php
  $param = isset($this->params)?$this->params:array();
 ?>
+
 <!DOCTYPE html>
-<html lang="en">
-<head><title>Register</title>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="shortcut icon" href="/templates/images/green_dollar.ico" type="image/x-icon">
-	<!--Loading bootstrap css-->
-	<link type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,800italic,400,700,800">
-	<link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Oswald:400,700,300">
-	<link type="text/css" rel="stylesheet" href="vendors/jquery-ui-1.10.3.custom/css/ui-lightness/jquery-ui-1.10.3.custom.css">
-	<link type="text/css" rel="stylesheet" href="/templates/font-awesome/css/font-awesome.min.css">
-	<link type="text/css" rel="stylesheet" href="/templates/css/bootstrap.css">
-	<!--Loading style vendors-->
-	<link type="text/css" rel="stylesheet" href="/templates/vendors/animate.css/animate.css">
-	<link type="text/css" rel="stylesheet" href="/templates/vendors/iCheck/skins/all.css">
-	<!--Loading style-->
-	<link type="text/css" rel="stylesheet" href="/templates/css/themes/style1/green-blue.css" id="theme-change" class="style-change color-change">
-	<link type="text/css" rel="stylesheet" href="/templates/css/style-responsive.css">
-	<link type="text/css" rel="stylesheet" href="/templates/css/common.css">
-	<link type="text/css" rel="stylesheet" href="/templates/css/form/login_common.css">
-	<link rel="shortcut icon" href="images/favicon.ico">
+
+<html class="html" lang="en-US">
+<head>
+
+    <!-- jQuery library -->
+    <script src="/templates/assets/js/jquery.2.1.3.min.js" type="text/javascript"></script>
+    <script src="/templates/assets/js/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+    <script src="/templates/assets/js/jquery.scrollbar.js"></script>
+
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
+
+    <title>Iglama Limited - Official web page</title>
+    <!-- icos -->
+    <link href="/templates/images/57.jpg" rel="apple-touch-icon" sizes="57x57"/>
+    <link href="/templates/images/114.jpg" rel="apple-touch-icon" sizes="114x114"/>
+    <link href="/templates/images/72.jpg" rel="apple-touch-icon" sizes="72x72"/>
+    <link href="/templates/images/144.jpg" rel="apple-touch-icon" sizes="144x144"/>
+    <link href="/templates/images/60.jpg" rel="apple-touch-icon" sizes="60x60"/>
+    <link href="/templates/images/120.jpg" rel="apple-touch-icon" sizes="120x120"/>
+    <link href="/templates/images/76.jpg" rel="apple-touch-icon" sizes="76x76"/>
+    <link href="/templates/images/152.jpg" rel="apple-touch-icon" sizes="152x152"/>
+    <link href="/templates/images/180.jpg" rel="apple-touch-icon" sizes="180x180"/>
+    <link href="/templates/images/fav192.jpg" rel="icon" sizes="192x192" type="image/jpg"/>
+    <link href="/templates/images/fav160.jpg" rel="icon" sizes="160x160" type="image/jpg"/>
+    <link href="/templates/images/fav96.jpg" rel="icon" sizes="96x96" type="image/jpg"/>
+    <link href="/templates/images/fav32.jpg" rel="icon" sizes="32x32" type="image/jpg"/>
+    <link style="border-radius:4px;" href="apple/fav16.jpg" rel="icon" sizes="16x16" type="image/jpg"/>
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/templates/css/site_global.css"/>
+    <link rel="stylesheet" type="text/css" href="/templates/css/index.css" id="pagesheet"/>
+    <link rel="stylesheet" type="text/css" href="/templates/css/my.css" id="pagesheet"/>
+    <!--[if lt IE 9]>
+    <link rel="stylesheet" type="text/css" href="css/iefonts_index.css?196463317"/>
+    <![endif]-->
+    <!-- Other scripts -->
+
+    <link href='https://fonts.googleapis.com/css?family=Roboto:900,400,300,100,700&amp;subset=cyrillic-ext,latin' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/templates/css/morris.css">
+    <!--[if lt IE 9]>
+    <script src="/js/ie.html5.js?4241844378" type="text/javascript"></script>
+    <![endif]-->
+    <style>
+        .clinkedcolors{color:#2B6F98 !important;
+            border-bottom:1px dashed #484848;}
+    </style>
+
+    <script src="/templates/js/plugin.acc.js" type="text/javascript"></script>
+    <script src="/templates/js/plugin.progress.js" type="text/javascript"></script>
+
+    <script src="/templates/js/morris.js"></script>
+    <script src="/templates/js/javascript22c1.js?4241844378" type="text/javascript"></script>
+
+    <audio id="audio-notify" controls="controls" preload="auto">
+        <source src="audio/notify.html"></source>
+        <source src="audio/notify-2.html"></source>
+    </audio>
+
+
 </head>
-<body id="signin-page">
+<body>
 
-<div class="page-form">
+<div class="alertb">
 
-	<form action="/frontend/register" method="post" class="form">
-		<div class="header-content"><h1>REGISTER</h1></div>
-		<div class="body-content">
-			<?php if(isset($this->successMessage)){?>
-				<div class="form-group isa_success">
-					<i class="fa fa-times-circle"></i>
-					<?php echo $this->successMessage; ?>
-				</div>
-			<?php }?>
-			<?php if(isset($this->errorMessage)){?>
-				<div class="form-group isa_error">
-					<i class="fa fa-times-circle"></i>
-					<?php echo $this->errorMessage; ?>
-				</div>
-			<?php }?>
-			<div class="form-group">
-				<div class="input-icon right"><i class="fa fa-user"></i><input type="text" required placeholder="Username" maxlength="20" name="username" value="<?php echo !empty($param)?$param['username']:'';?>" class="form-control"></div>
-			</div>
-			<div class="form-group">
-				<div class="input-icon right"><i class="fa fa-male"></i><input type="text" required placeholder="Full Name" name="fullname" value="<?php echo !empty($param)?$param['fullname']:'';?>" class="form-control"></div>
-			</div>
-			<div class="form-group">
-				<div class="input-icon right"><i class="fa fa-male"></i><input type="password" required placeholder="Password" name="pass" class="form-control"></div></div>
-			<div class="form-group">
-				<div class="input-icon right"><i class="fa fa-male"></i><input type="password" required placeholder="Sercurity" name="pin" class="form-control"></div>
-			</div>
-			<div class="form-group">
-				<div class="input-icon right"><i class="fa fa-envelope"></i><input type="email" required placeholder="Email" name="email" value="<?php echo !empty($param)?$param['email']:'';?>"  class="form-control"></div>
-			</div>
-			<div class="form-group">
-				<div class="input-icon right"><i class="fa fa-phone"></i><input type="text" required placeholder="Phone" name="phone" value="<?php echo !empty($param)?$param['phone']:'';?>" class="form-control"></div>
-			</div>
-			<div class="form-group">
-				<div class="input-icon right"><i class="fa fa-bitcoin"></i><input type="text" required placeholder="Bitcoin Address" value="<?php echo !empty($param)?$param['bitaddress']:'';?>" name="bitcoin" class="form-control"></div>
-			</div>
+    <a href="#" id="notifies" class="alert-o">
+        <span class="popamount"><span class="notifycount">0</span></span>
+    </a>
 
 
-			<div class="form-group">
-				<div class="input-icon right"><i class="fa fa-trophy"></i>
-					<input type="text" placeholder="Sponsor"
-						   value="<?php echo isset($this->referer)?$this->referer:''; ?>"
-						   name="referer" class="form-control"
-						<?php if(isset($this->referer)){?> disabled="disabled" <?php }?>
-				</div>
-			</div>
+    <span id="notifies_block" class="intern" style = "display:none" >
 
-			<div class="form-group pull-left">
-				<div class="checkbox-list"></div>
-			</div>
-			<div class="form-group pull-right">
-				<button type="submit" class="btn btn-info" style="margin-top: 10px;">Register
-					&nbsp;<i class="fa fa-chevron-circle-right"></i></button>
-			</div>
-			<div class="clearfix"></div>
 
-			<div class="forget-password"><h4>Lost your Password?</h4>
+<div class="tooltipy2 bottom in2 poppad">
 
-				<p><a href='/customer/resetpassword' class='btn-forgot-pwd'>Reset your password.</a></p></div>
-			<hr>
-			<p><a id="btn-register" href="/customer/login">Login</a></p></div>
-	</form>
+<div class="bgpop"></div>
+
+<div class="tooltip-inner2">
+
+
+<div class="nonews">
+	<div class="nonews_block">No more notifications</div>
+	<img src="../ssl.gstatic.com/s2/oz/images/notifications/jingles_eb4e5306b38f83915d82034fa93390d9/desktop_static_1x.png" alt="*" class="axb m4a"/>
 </div>
-<script src="/templates/js/jquery-1.11.0.min.js"></script>
-<script src="/templates/js/jquery-migrate-1.2.1.min.js"></script>
-<script src="/templates/js/jquery-ui.js"></script>
-<!--loading bootstrap js-->
-<script src="/templates/js/bootstrap.min.js"></script>
-<script src="/templates/bootstrap-hover-dropdown.js"></script>
-<script src="/templates/js/html5shiv.js"></script>
-<script src="/templates/js/respond.min.js"></script>
-<script src="/templates/vendors/iCheck/icheck.min.js"></script>
-<script src="/templates/vendors/iCheck/custom.min.js"></script>
+
+
+<div class="yesnews">
+
+<div style="width:100%; text-align: left;margin-bottom: 5px;"><div style="text-transform:uppercase;font-size:13px;font-weight:300;color: #494949;">You have <b><span class="notifycount">0</span></b> new notifications</div>
+</div>
+<div class="fixedheight scrollbar-inner">
+
+
+
+
+
+
+
+</div>
+<a href="#" id="closeall" class="butbut">Close all</a>
+</div>
+</div>
+</div></span>
+</div>
+
+
+
+<div class="menubgin"><div style="width:940px; margin:0 auto; height:100%;">
+        <a id="u107" href="support" style=""></a>
+
+        <div class="bgxs">
+            <ul id="langbar">
+                <li id="langbar" style="position: relative;height: 40px;" class="drop">
+
+                    <a href="#" class="bgkx"><img style="margin: 0px 8px 0px -6px;" src="/templates/images/en.png">EN</a>
+
+                    <div class="dropdownContain">
+                        <div class="dropOut">
+                            <ul id="langbar">
+                                <a href="#" class=""><li id="langbar"><img style="margin: 0px 8px 0px -6px;" src="/templates/images/ru.png">RU</li></a>
+                                <a href="#" class=""><li id="langbar"><img style="margin: 0px 8px 0px -6px;" src="/templates/images/de.png">DE</li></a>
+                                <a href="#" class=""><li id="langbar"><img style="margin: 0px 8px 0px -6px;" src="/templates/images/pt.png">PT</li></a>
+                            </ul>
+                        </div>
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+
+        <nav class="indiv menuu119"><!-- horizontal box -->
+            <ul class="hr">
+                <li><a class="selected" href="support">Home</a></li>
+                <li><a  href="aboutus">About us</a></li>
+                <li><a  href="features">Features</a></li>
+                <li><a  href="faq">FAQ</a></li>
+                <li><a  href="support">Feedback</a></li>
+            </ul>
+
+        </nav>
+
+
+    </div></div><div class="shadow Featured-In clearfix" id="page">
+    <!-- column -->
+
+
+    <div class="browser_width colelem" id="u93-bw">
+        <div class="u92x2"><!-- boxy -->
+            <div class="clearfix" id="u93_align_to_page">
+                <a class="anchor_item grpelem" id="features"></a>
+            </div>
+        </div>
+
+
+        <div style="width:100%;">     </div>
+    </div>
+
+    <script src="js/nanobar.js"></script>
+    <script>
+        var nanobar = new Nanobar();
+        nanobar.go(100);
+    </script>
+
+    <script>
+        $( function()
+        {
+            var targets = $( '[rel~=tooltip]' ),
+                target  = false,
+                tooltip = false,
+                title   = false;
+
+            targets.bind( 'mouseenter', function()
+            {
+                target  = $( this );
+                tip     = target.attr( 'title' );
+                tooltip = $( '<div id="tooltip"></div>' );
+
+                if( !tip || tip == '' )
+                    return false;
+
+                target.removeAttr( 'title' );
+                tooltip.css( 'opacity', 0 )
+                    .html( tip )
+                    .appendTo( 'body' );
+
+                var init_tooltip = function()
+                {
+                    if( $( window ).width() < tooltip.outerWidth() * 1.5 )
+                        tooltip.css( 'max-width', $( window ).width() / 2 );
+                    else
+                        tooltip.css( 'max-width', 340 );
+
+                    var pos_left = target.offset().left + ( target.outerWidth() / 2 ) - ( tooltip.outerWidth() / 2 ),
+                        pos_top  = target.offset().top - tooltip.outerHeight() - 20;
+
+                    if( pos_left < 0 )
+                    {
+                        pos_left = target.offset().left + target.outerWidth() / 2 - 20;
+                        tooltip.addClass( 'left' );
+                    }
+                    else
+                        tooltip.removeClass( 'left' );
+
+                    if( pos_left + tooltip.outerWidth() > $( window ).width() )
+                    {
+                        pos_left = target.offset().left - tooltip.outerWidth() + target.outerWidth() / 2 + 20;
+                        tooltip.addClass( 'right' );
+                    }
+                    else
+                        tooltip.removeClass( 'right' );
+
+                    if( pos_top < 0 )
+                    {
+                        var pos_top  = target.offset().top + target.outerHeight();
+                        tooltip.addClass( 'top' );
+                    }
+                    else
+                        tooltip.removeClass( 'top' );
+
+                    tooltip.css( { left: pos_left, top: pos_top } )
+                        .animate( { top: '+=10', opacity: 1 }, 50 );
+                };
+
+                init_tooltip();
+                $( window ).resize( init_tooltip );
+
+                var remove_tooltip = function()
+                {
+                    tooltip.animate( { top: '-=10', opacity: 0 }, 50, function()
+                    {
+                        $( this ).remove();
+                    });
+
+                    target.attr( 'title', tip );
+                };
+
+                target.bind( 'mouseleave', remove_tooltip );
+                tooltip.bind( 'click', remove_tooltip );
+            });
+        });
+    </script>
+
+    <style>
+        .margin-top24{
+            margin-top:24px;}
+        .hin{
+            color: #258FD8 !important;
+            border-bottom: dashed 1px;}
+        .hin:hover {
+            color: rgba(37, 143, 216, 0.65) !important;
+
+        }
+    </style>
+
+    <div class="clearfix colelem" id="pu106-6">
+        <!-- group -->
+        <div style="text-align:center;" class="Heading-H1 clearfix mse_pre_init u106-6"><!-- content -->
+            <h2 style="margin-bottom:15px;"><span class="animated fadeInUp" style="padding: 0 20px;">Registration at Iglama Limited</span></h2>
+
+
+        </div>
+    </div>
+    <div style="
+    background: url(images/ilx.jpg) no-repeat left top white;  float: left;  width: 100%;  padding: 30px 0;  margin: 0;
+">
+
+        <div class="ppage">
+
+
+
+            <div class="clearfix"></div>
+            <div class="row">
+
+
+
+
+
+                <script language=javascript>
+                    function checkform() {
+                        if (document.regform.fullname.value == '') {
+                            alert("Please enter your full name!");
+                            document.regform.fullname.focus();
+                            return false;
+                        }
+
+
+                        if (document.regform.username.value == '') {
+                            alert("Please enter your username!");
+                            document.regform.username.focus();
+                            return false;
+                        }
+                        if (document.regform.password.value == '') {
+                            alert("Please enter your password!");
+                            document.regform.password.focus();
+                            return false;
+                        }
+                        if (document.regform.password.value != document.regform.password2.value) {
+                            alert("Please check your password!");
+                            document.regform.password2.focus();
+                            return false;
+                        }
+
+
+                        if (document.regform.email.value == '') {
+                            alert("Please enter your e-mail address!");
+                            document.regform.email.focus();
+                            return false;
+                        }
+                        if (document.regform.email.value != document.regform.email1.value) {
+                            alert("Please retupe your e-mail!");
+                            document.regform.email.focus();
+                            return false;
+                        }
+                        if (document.regform.agree.checked == false) {
+                            alert("You have to agree with the Terms and Conditions!");
+                            return false;
+                        }
+                        return true;
+                    }
+
+                    function IsNumeric(sText) {
+                        var ValidChars = "0123456789";
+                        var IsNumber=true;
+                        var Char;
+                        if (sText == '') return false;
+                        for (i = 0; i < sText.length && IsNumber == true; i++) {
+                            Char = sText.charAt(i);
+                            if (ValidChars.indexOf(Char) == -1) {
+                                IsNumber = false;
+                            }
+                        }
+                        return IsNumber;
+                    }
+                </script>
+
+
+
+
+
+
+                <div class="clearfix"></div>
+                <div style="margin-top: -11px;
+clear: both;" class="row">
+                    <div class="col-md-6" style="
+    border: 1px solid #E8E8E8;
+    border-radius: 3px;
+    padding: 10px 30px;
+    background: #fff;
+">
+
+                        <form method=post onsubmit="return checkform()" name="regform" action="/frontend/register">
+                            <?php if(isset($this->successMessage)){?>
+                                <div class="form-group isa_success">
+                                    <i class="fa fa-times-circle"></i>
+                                    <?php echo $this->successMessage; ?>
+                                </div>
+                            <?php }?>
+                            <?php if(isset($this->errorMessage)){?>
+                                <div class="form-group isa_error">
+                                    <i class="fa fa-times-circle"></i>
+                                    <?php echo $this->errorMessage; ?>
+                                </div>
+                            <?php }?>
+                            <input type=hidden name=a value="signup">
+                            <input type=hidden name=action value="signup">
+
+                            <div class="cls500">Your Full Name:<br/>
+                                <input type="text" required placeholder="Full Name" name="fullname" value="<?php echo !empty($param)?$param['fullname']:'';?>"></div>
+                            <div class="cls500">Your Username:<br/>
+                                <input type="text" required placeholder="Username" maxlength="20" name="username" value="<?php echo !empty($param)?$param['username']:'';?>"></div>
+                            <div class="cls500">Define Password:<br/>
+                                <input type="password" required placeholder="Password" name="pass"></div>
+                            <div class="cls500">Retype Password:<br/>
+                                <input type="password" required placeholder="Password2" name="pass"></div>
+                            </tr><div class="cls500">Your Bitcoin Account:<br/>
+                                <input type="text" required placeholder="Bitcoin Address" value="<?php echo !empty($param)?$param['bitaddress']:'';?>" name="bitcoin"></div>
+                            </tr>
+                            <div class="cls500">Your E-mail Address:<br/>
+                                <input type=text name=email value="" placeholder="Your E-mail Address" maxlength="100"></div>
+                            <div class="cls500">Retype Your E-mail:<br/>
+                                <input type="email" required placeholder="Email" name="email" value="<?php echo !empty($param)?$param['email']:'';?>"></div>
+                            <div class="cls500">Secret key:<br/>
+                                <input type="password" required placeholder="Sercurity" name="pin"></div>
+
+                            <tr>
+                                <td>Your Upline:</td>
+                                <td>Hyip Monitor (hyip.tc)</td>
+                            </tr>
+
+
+                            <div class="relative check-terms" style="margin-top: 5px;height: 54px;">
+                                <input type="checkbox" id="checkboxG4" class="css-checkbox" name=agree value=1    />
+                                <label for="checkboxG4" class="css-label">
+                                    By passing registration form you agree with <a class="ind" style="text-decoration:underline;" target="_blank" href="../terms">terms of use</a> Iglama Limited. Company</label>
+                            </div>
+                    </div>
+
+
+                    <h2 style="
+    color: #214999;  font-size: 26px;  padding: 0;  };
+">
+                            <span style="
+    font-size: 28px;  line-height: 34px;  color: white;  background: #253550;  background: rgba(37,53,90,0.8);  display: inline-block;  margin-bottom: 1px;  padding: 5px 10px;  white-space: nowrap;
+">Discover</span><br>
+                        <span style="
+    font-size: 28px;  line-height: 34px;  color: white;  background: #253550;  background: rgba(37,53,90,0.8);  display: inline-block;  margin-bottom: 1px;  padding: 5px 10px;  white-space: nowrap;
+">new advantages with us</span>
+
+                        <span style="
+    font-size: 28px;  line-height: 34px;  color: white;  background: #253550;  background: rgba(37,53,90,0.8);  display: inline-block;  margin-bottom: 1px;  padding: 5px 10px;  white-space: nowrap;
+">2315 people enjoy program</span>
+                    </h2>
+                    <style>
+                        .lis li {list-style: circle;}
+                    </style>
+                    <ul class="lis" style="
+margin: 19px 0px 0 56px;
+  line-height: 28px;
+  float: left;
+  font-size: 18px;
+  font-weight: 400;
+  color: #5A5A5A;
+  text-shadow: 1px 1px 1px #FFF;
+">
+                        <li style="
+">Сonvenient way to start earning</li>
+                        <li>Reliable and trusted partner</li>
+                        <li>Multi-level affiliate program</li>
+                        <li>Unique balance booster</li>
+                        <li>Real-time accruals</li>
+                        <li>Stage by stage multiplier upgrade</li>
+                        <li>Safe operation with investments</li>
+                        <li>Qualified support team</li>
+                        <li>Popular payment system integration</li>
+                    </ul>
+
+                    <input type=submit value="ACCEPT AND GET ACCESS TO ACCOUNT" class="submitta" style="border: 5px solid #fff;border-radius:2px;">
+
+                </div>
+                </form></div></div>
+
+    </div>
+</div>
+
+
+</div><!-- column -->
+<div class="clearfix"></div>
+<div class="osd widj">
+
+    <div class="footer" style="padding-bottom: 25px;"><!-- column -->
+        <div class="clearfix" id="u320_align_to_page" style="padding: 20px 0;">
+
+            <div style="" class="Subheading-White clearfix colelem" id="u825-4"><!-- content -->
+                <h4><span style="background: rgba(255, 255, 255, 0.11);padding: 0 20px;">Accepting payment systems like</span></h4>
+                <div style="padding: 22px 0px 0 140px;">
+<!--                    <div style="background:url('../templates/images/pm.png') no-repeat; width: 171px; height:50px;float:left;padding-right: 70px;"></div>-->
+                    <div style="background:url('../templates/images/bt.png') no-repeat; width: 129px; height:50px;float:left;padding-right: 70px;"></div>
+<!--                    <div style="background:url('../templates/images/pe.png') no-repeat; width: 253px; height:50px;float:left;top: 3px;position: relative;"></div>-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="margin-top: -37px;"><!-- column -->
+        <footer>
+
+            <div class="footero">
+                <div class="contain">
+                    <div class="stpnw"><img width="170" src="../templates/images/logo.png" class="instq"> © 2017
+                        <div style="padding-top: 27px;">Superiority and uniqueness, is the slogan of our company.</div>
+                    </div>
+                    <div class="fixtd3">
+
+                        <div style="padding: 2px 0px;"><a href="/" class="footerlink">Home</a></div>
+                        <div style="padding: 2px 0px;"><a href="aboutus" class="footerlink">About us</a></div>
+                        <div style="padding: 2px 0px;"><a href="support" class="footerlink">Feedback</a></div>
+
+                    </div>
+
+
+
+                    <div class="fixtd2">
+
+                        <div style="padding: 2px 0px;"><a href="faq" class="footerlink">FAQ</a></div>
+                        <div style="padding: 2px 0px;"><a href="terms" class="footerlink">Terms of use</a></div>
+
+                    </div><div style=" position:relative; top: 25px; float: left; width: 110px; padding: 0 25px;">
+                        <div style="padding: 2px 0px;"><a href="features" class="footerlink">Features</a></div>
+                        <div style="padding: 2px 0px;"></div>
+
+                    </div>
+
+
+                    <div class="fixtd">
+
+                        <div style="padding: 2px 0px;"><a href="#" class="footerlink">Adress: 207 NL. Lincoln Blvd. UK</a></div>
+                        <div style="padding: 2px 0px;"><a href="#" class="footerlink">Phone: +447056105150</a></div>
+                        <div style="padding: 2px 0px;"><a href="#" class="footerlink">Iglama Limited Limited</a></div>
+
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+
+</div>
+
 
 </body>
 </html>
- 
+

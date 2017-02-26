@@ -46,21 +46,34 @@ class Frontend_FaceController extends Frontend_AppController {
 			$this->view->listPolicy = $listPolicy[0];
 		}
 	}
+
 	public function aboutusAction(){
 		$this->view->title = 'About Us';
-		$this->_helper->layout->setLayout('face_layout');
+        $this->_helper->layout->disablelayout();
+		///$this->_helper->layout->setLayout('face_layout');
 	}
+
+    public function featuresAction(){
+        $this->view->title = 'Features';
+        $this->_helper->layout->disablelayout();
+        ///$this->_helper->layout->setLayout('face_layout');
+    }
+
 	public function termsAction(){
 		$this->view->title = 'Terms & Conditions';
-		$this->_helper->layout->setLayout('face_layout');
+        $this->_helper->layout->disablelayout();
+//		$this->_helper->layout->setLayout('face_layout');
 	}
+
 	public function faqAction(){
 		$this->view->title = 'FQA';
-		$this->_helper->layout->setLayout('face_layout');
+        $this->_helper->layout->disablelayout();
+//		$this->_helper->layout->setLayout('face_layout');
 	}
 	public function supportcentreAction(){
 		$this->view->title = 'Support Centre';
-		$this->_helper->layout->setLayout('face_layout');
+        $this->_helper->layout->disablelayout();
+//		$this->_helper->layout->setLayout('face_layout');
 	}
 
 }
