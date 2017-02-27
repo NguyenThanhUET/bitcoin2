@@ -7039,7 +7039,7 @@ a:hover.tooltips2 div {
 .fixne{
     top: 65px;box-shadow: 1px 1px 4px rgba(0,0,0,.5);}
 .btstat {
-    background: url(../images/btstat.png) 4px center no-repeat;
+    background: url(/templates/images/btstat.png) 4px center no-repeat;
     height: 29px;
     width: 32px;
     opacity: 0.8;
@@ -7222,19 +7222,19 @@ span:hover.helptip div{
         top: 0;}
 
     .pl1 {
-        background: url("../images/plan3.png") repeat scroll 0 0%, radial-gradient(ellipse at center center , #a4cdef 0%, #5b89b1 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
+        background: url("/templates/images/plan3.png") repeat scroll 0 0%, radial-gradient(ellipse at center center , #a4cdef 0%, #5b89b1 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
         border-radius: 2px 2px 0 0;
         height: 146px;
         margin-top: -66px;
     }
     .pl2 {
-        background: url("../images/plan2.png") repeat scroll 0 0%, radial-gradient(ellipse at center center , #7ed5fa 0%, #5b89b1 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
+        background: url("/templates/images/plan2.png") repeat scroll 0 0%, radial-gradient(ellipse at center center , #7ed5fa 0%, #5b89b1 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
         border-radius: 2px 2px 0 0;
         height: 146px;
         margin-top: -66px;
     }
     .pl3 {
-        background: url("../images/plan1.png") repeat scroll 0 0%, radial-gradient(ellipse at center center , #56ccff 0%, #5b89b1 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
+        background: url("/templates/images/plan1.png") repeat scroll 0 0%, radial-gradient(ellipse at center center , #56ccff 0%, #5b89b1 100%) repeat scroll 0 0 rgba(0, 0, 0, 0);
         border-radius: 2px 2px 0 0;
         height: 146px;
         margin-top: -66px;
@@ -7250,14 +7250,14 @@ span:hover.helptip div{
 }
 .exc1:hover #hover-content {
     display:block;
-    background:  url(../images/plan3.png), #a4cdef; /* Old browsers */
-    background:  url(../images/plan3.png), -moz-radial-gradient(center, ellipse cover, #a4cdef 0%, #5b89b1 100%); /* FF3.6+ */
-    background:  url(../images/plan3.png), -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#a4cdef), color-stop(100%,#5b89b1)); /* Chrome,Safari4+ */
-    background:  url(../images/plan3.png), -webkit-radial-gradient(center, ellipse cover, #a4cdef 0%,#5b89b1 100%); /* Chrome10+,Safari5.1+ */
-    background:  url(../images/plan3.png), -o-radial-gradient(center, ellipse cover, #a4cdef 0%,#5b89b1 100%); /* Opera 12+ */
-    background:  url(../images/plan3.png), -ms-radial-gradient(center, ellipse cover, #a4cdef 0%,#5b89b1 100%); /* IE10+ */
-    background:  url(../images/plan3.png), radial-gradient(ellipse at center, #a4cdef 0%,#5b89b1 100%); /* W3C */
-    filter:  url(../images/plan3.png), progid:DXImageTransform.Microsoft.gradient( startColorstr='#a4cdef', endColorstr='#5b89b1',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    background:  url(/templates/images/plan3.png), #a4cdef; /* Old browsers */
+    background:  url(/templates/images/plan3.png), -moz-radial-gradient(center, ellipse cover, #a4cdef 0%, #5b89b1 100%); /* FF3.6+ */
+    background:  url(/templates/images/plan3.png), -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#a4cdef), color-stop(100%,#5b89b1)); /* Chrome,Safari4+ */
+    background:  url(/templates/images/plan3.png), -webkit-radial-gradient(center, ellipse cover, #a4cdef 0%,#5b89b1 100%); /* Chrome10+,Safari5.1+ */
+    background:  url(/templates/images/plan3.png), -o-radial-gradient(center, ellipse cover, #a4cdef 0%,#5b89b1 100%); /* Opera 12+ */
+    background:  url(/templates/images/plan3.png), -ms-radial-gradient(center, ellipse cover, #a4cdef 0%,#5b89b1 100%); /* IE10+ */
+    background:  url(/templates/images/plan3.png), radial-gradient(ellipse at center, #a4cdef 0%,#5b89b1 100%); /* W3C */
+    filter:  url(/templates/images/plan3.png), progid:DXImageTransform.Microsoft.gradient( startColorstr='#a4cdef', endColorstr='#5b89b1',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 
     height: 146px;
     border-radius: 2px 2px 0 0;
@@ -7265,29 +7265,29 @@ span:hover.helptip div{
 }
 .exc2:hover #hover-content {
     display:block;
-    background: url(../images/plan2.png), #7ed5fa; /* Old browsers */
-    background: url(../images/plan2.png), -moz-radial-gradient(center, ellipse cover, #7ed5fa 0%, #5b89b1 100%); /* FF3.6+ */
-    background: url(../images/plan2.png), -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#7ed5fa), color-stop(100%,#5b89b1)); /* Chrome,Safari4+ */
-    background: url(../images/plan2.png), -webkit-radial-gradient(center, ellipse cover, #7ed5fa 0%,#5b89b1 100%); /* Chrome10+,Safari5.1+ */
-    background: url(../images/plan2.png), -o-radial-gradient(center, ellipse cover, #7ed5fa 0%,#5b89b1 100%); /* Opera 12+ */
-    background: url(../images/plan2.png), -ms-radial-gradient(center, ellipse cover, #7ed5fa 0%,#5b89b1 100%); /* IE10+ */
-    background: url(../images/plan2.png), radial-gradient(ellipse at center, #7ed5fa 0%,#5b89b1 100%); /* W3C */
-    filter: url(../images/plan2.png), progid:DXImageTransform.Microsoft.gradient( startColorstr='#7ed5fa', endColorstr='#5b89b1',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    background: url(/templates/images/plan2.png), #7ed5fa; /* Old browsers */
+    background: url(/templates/images/plan2.png), -moz-radial-gradient(center, ellipse cover, #7ed5fa 0%, #5b89b1 100%); /* FF3.6+ */
+    background: url(/templates/images/plan2.png), -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#7ed5fa), color-stop(100%,#5b89b1)); /* Chrome,Safari4+ */
+    background: url(/templates/images/plan2.png), -webkit-radial-gradient(center, ellipse cover, #7ed5fa 0%,#5b89b1 100%); /* Chrome10+,Safari5.1+ */
+    background: url(/templates/images/plan2.png), -o-radial-gradient(center, ellipse cover, #7ed5fa 0%,#5b89b1 100%); /* Opera 12+ */
+    background: url(/templates/images/plan2.png), -ms-radial-gradient(center, ellipse cover, #7ed5fa 0%,#5b89b1 100%); /* IE10+ */
+    background: url(/templates/images/plan2.png), radial-gradient(ellipse at center, #7ed5fa 0%,#5b89b1 100%); /* W3C */
+    filter: url(/templates/images/plan2.png), progid:DXImageTransform.Microsoft.gradient( startColorstr='#7ed5fa', endColorstr='#5b89b1',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
     height: 146px;
     border-radius: 2px 2px 0 0;
     margin-top: -65px;
 }
 .exc3:hover #hover-content {
     display:block;
-    background: url(../images/plan1.png), #70BFC8;
-    background: url(../images/plan1.png), #56ccff; /* Old browsers */
-    background: url(../images/plan1.png), -moz-radial-gradient(center, ellipse cover, #56ccff 0%, #5b89b1 100%); /* FF3.6+ */
-    background: url(../images/plan1.png), -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#56ccff), color-stop(100%,#5b89b1)); /* Chrome,Safari4+ */
-    background: url(../images/plan1.png), -webkit-radial-gradient(center, ellipse cover, #56ccff 0%,#5b89b1 100%); /* Chrome10+,Safari5.1+ */
-    background: url(../images/plan1.png), -o-radial-gradient(center, ellipse cover, #56ccff 0%,#5b89b1 100%); /* Opera 12+ */
-    background: url(../images/plan1.png), -ms-radial-gradient(center, ellipse cover, #56ccff 0%,#5b89b1 100%); /* IE10+ */
-    background: url(../images/plan1.png), radial-gradient(ellipse at center, #56ccff 0%,#5b89b1 100%); /* W3C */
-    filter: url(../images/plan1.png), progid:DXImageTransform.Microsoft.gradient( startColorstr='#56ccff', endColorstr='#5b89b1',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    background: url(/templates/images/plan1.png), #70BFC8;
+    background: url(/templates/images/plan1.png), #56ccff; /* Old browsers */
+    background: url(/templates/images/plan1.png), -moz-radial-gradient(center, ellipse cover, #56ccff 0%, #5b89b1 100%); /* FF3.6+ */
+    background: url(/templates/images/plan1.png), -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#56ccff), color-stop(100%,#5b89b1)); /* Chrome,Safari4+ */
+    background: url(/templates/images/plan1.png), -webkit-radial-gradient(center, ellipse cover, #56ccff 0%,#5b89b1 100%); /* Chrome10+,Safari5.1+ */
+    background: url(/templates/images/plan1.png), -o-radial-gradient(center, ellipse cover, #56ccff 0%,#5b89b1 100%); /* Opera 12+ */
+    background: url(/templates/images/plan1.png), -ms-radial-gradient(center, ellipse cover, #56ccff 0%,#5b89b1 100%); /* IE10+ */
+    background: url(/templates/images/plan1.png), radial-gradient(ellipse at center, #56ccff 0%,#5b89b1 100%); /* W3C */
+    filter: url(/templates/images/plan1.png), progid:DXImageTransform.Microsoft.gradient( startColorstr='#56ccff', endColorstr='#5b89b1',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
     height: 146px;
     border-radius: 2px 2px 0 0;
     margin-top: -65px;
@@ -7317,69 +7317,69 @@ span:hover.helptip div{
 }
 
 .balbooster{
-    background:url(../images/plan2.png), #77d4c5; /* Old browsers */
-    background:url(../images/plan2.png), -moz-radial-gradient(center, ellipse cover, #77d4c5 0%, #14a18a 100%); /* FF3.6+ */
-    background:url(../images/plan2.png), -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#77d4c5), color-stop(100%,#14a18a)); /* Chrome,Safari4+ */
-    background:url(../images/plan2.png), -webkit-radial-gradient(center, ellipse cover, #77d4c5 0%,#14a18a 100%); /* Chrome10+,Safari5.1+ */
-    background:url(../images/plan2.png), -o-radial-gradient(center, ellipse cover, #77d4c5 0%,#14a18a 100%); /* Opera 12+ */
-    background:url(../images/plan2.png), -ms-radial-gradient(center, ellipse cover, #77d4c5 0%,#14a18a 100%); /* IE10+ */
-    background:url(../images/plan2.png), radial-gradient(ellipse at center, #77d4c5 0%,#14a18a 100%); /* W3C */
-    filter:url(../images/plan2.png), progid:DXImageTransform.Microsoft.gradient( startColorstr='#77d4c5', endColorstr='#14a18a',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    background:url(/templates/images/plan2.png), #77d4c5; /* Old browsers */
+    background:url(/templates/images/plan2.png), -moz-radial-gradient(center, ellipse cover, #77d4c5 0%, #14a18a 100%); /* FF3.6+ */
+    background:url(/templates/images/plan2.png), -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#77d4c5), color-stop(100%,#14a18a)); /* Chrome,Safari4+ */
+    background:url(/templates/images/plan2.png), -webkit-radial-gradient(center, ellipse cover, #77d4c5 0%,#14a18a 100%); /* Chrome10+,Safari5.1+ */
+    background:url(/templates/images/plan2.png), -o-radial-gradient(center, ellipse cover, #77d4c5 0%,#14a18a 100%); /* Opera 12+ */
+    background:url(/templates/images/plan2.png), -ms-radial-gradient(center, ellipse cover, #77d4c5 0%,#14a18a 100%); /* IE10+ */
+    background:url(/templates/images/plan2.png), radial-gradient(ellipse at center, #77d4c5 0%,#14a18a 100%); /* W3C */
+    filter:url(/templates/images/plan2.png), progid:DXImageTransform.Microsoft.gradient( startColorstr='#77d4c5', endColorstr='#14a18a',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
     text-shadow: 1px 1px 3px #1F9A81;}
 .balbooster2{
-    background:url(../images/plan2.png), #77d4a5; /* Old browsers */
-    background:url(../images/plan2.png), -moz-radial-gradient(center, ellipse cover, #77d4a5 0%, #228f5b 100%); /* FF3.6+ */
-    background:url(../images/plan2.png), -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#77d4a5), color-stop(100%,#228f5b)); /* Chrome,Safari4+ */
-    background:url(../images/plan2.png), -webkit-radial-gradient(center, ellipse cover, #77d4a5 0%,#228f5b 100%); /* Chrome10+,Safari5.1+ */
-    background:url(../images/plan2.png), -o-radial-gradient(center, ellipse cover, #77d4a5 0%,#228f5b 100%); /* Opera 12+ */
-    background:url(../images/plan2.png), -ms-radial-gradient(center, ellipse cover, #77d4a5 0%,#228f5b 100%); /* IE10+ */
-    background:url(../images/plan2.png), radial-gradient(ellipse at center, #77d4a5 0%,#228f5b 100%); /* W3C */
-    filter:url(../images/plan2.png), progid:DXImageTransform.Microsoft.gradient( startColorstr='#77d4a5', endColorstr='#228f5b',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    background:url(/templates/images/plan2.png), #77d4a5; /* Old browsers */
+    background:url(/templates/images/plan2.png), -moz-radial-gradient(center, ellipse cover, #77d4a5 0%, #228f5b 100%); /* FF3.6+ */
+    background:url(/templates/images/plan2.png), -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#77d4a5), color-stop(100%,#228f5b)); /* Chrome,Safari4+ */
+    background:url(/templates/images/plan2.png), -webkit-radial-gradient(center, ellipse cover, #77d4a5 0%,#228f5b 100%); /* Chrome10+,Safari5.1+ */
+    background:url(/templates/images/plan2.png), -o-radial-gradient(center, ellipse cover, #77d4a5 0%,#228f5b 100%); /* Opera 12+ */
+    background:url(/templates/images/plan2.png), -ms-radial-gradient(center, ellipse cover, #77d4a5 0%,#228f5b 100%); /* IE10+ */
+    background:url(/templates/images/plan2.png), radial-gradient(ellipse at center, #77d4a5 0%,#228f5b 100%); /* W3C */
+    filter:url(/templates/images/plan2.png), progid:DXImageTransform.Microsoft.gradient( startColorstr='#77d4a5', endColorstr='#228f5b',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
     text-shadow: 1px 1px 3px #1F9A81;
 }
 .balbooster3{
-    background:url(../images/plan2.png), #7bd477; /* Old browsers */
-    background:url(../images/plan2.png), -moz-radial-gradient(center, ellipse cover, #7bd477 0%, #228f42 100%); /* FF3.6+ */
-    background:url(../images/plan2.png), -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#7bd477), color-stop(100%,#228f42)); /* Chrome,Safari4+ */
-    background:url(../images/plan2.png), -webkit-radial-gradient(center, ellipse cover, #7bd477 0%,#228f42 100%); /* Chrome10+,Safari5.1+ */
-    background:url(../images/plan2.png), -o-radial-gradient(center, ellipse cover, #7bd477 0%,#228f42 100%); /* Opera 12+ */
-    background:url(../images/plan2.png), -ms-radial-gradient(center, ellipse cover, #7bd477 0%,#228f42 100%); /* IE10+ */
-    background:url(../images/plan2.png), radial-gradient(ellipse at center, #7bd477 0%,#228f42 100%); /* W3C */
-    filter:url(../images/plan2.png), progid:DXImageTransform.Microsoft.gradient( startColorstr='#7bd477', endColorstr='#228f42',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    background:url(/templates/images/plan2.png), #7bd477; /* Old browsers */
+    background:url(/templates/images/plan2.png), -moz-radial-gradient(center, ellipse cover, #7bd477 0%, #228f42 100%); /* FF3.6+ */
+    background:url(/templates/images/plan2.png), -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#7bd477), color-stop(100%,#228f42)); /* Chrome,Safari4+ */
+    background:url(/templates/images/plan2.png), -webkit-radial-gradient(center, ellipse cover, #7bd477 0%,#228f42 100%); /* Chrome10+,Safari5.1+ */
+    background:url(/templates/images/plan2.png), -o-radial-gradient(center, ellipse cover, #7bd477 0%,#228f42 100%); /* Opera 12+ */
+    background:url(/templates/images/plan2.png), -ms-radial-gradient(center, ellipse cover, #7bd477 0%,#228f42 100%); /* IE10+ */
+    background:url(/templates/images/plan2.png), radial-gradient(ellipse at center, #7bd477 0%,#228f42 100%); /* W3C */
+    filter:url(/templates/images/plan2.png), progid:DXImageTransform.Microsoft.gradient( startColorstr='#7bd477', endColorstr='#228f42',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
     text-shadow: 1px 1px 3px #1F9A81;
 }
 
 .affiliates1{
-    background:url(../images/plan1.png), #ede859; /* Old browsers */
-    background:url(../images/plan1.png), -moz-radial-gradient(center, ellipse cover, #ede859 0%, #db7f00 100%); /* FF3.6+ */
-    background:url(../images/plan1.png), -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#ede859), color-stop(100%,#db7f00)); /* Chrome,Safari4+ */
-    background:url(../images/plan1.png), -webkit-radial-gradient(center, ellipse cover, #ede859 0%,#db7f00 100%); /* Chrome10+,Safari5.1+ */
-    background:url(../images/plan1.png), -o-radial-gradient(center, ellipse cover, #ede859 0%,#db7f00 100%); /* Opera 12+ */
-    background:url(../images/plan1.png), -ms-radial-gradient(center, ellipse cover, #ede859 0%,#db7f00 100%); /* IE10+ */
-    background:url(../images/plan1.png), radial-gradient(ellipse at center, #ede859 0%,#db7f00 100%); /* W3C */
-    filter:url(../images/plan1.png), progid:DXImageTransform.Microsoft.gradient( startColorstr='#ede859', endColorstr='#db7f00',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    background:url(/templates/images/plan1.png), #ede859; /* Old browsers */
+    background:url(/templates/images/plan1.png), -moz-radial-gradient(center, ellipse cover, #ede859 0%, #db7f00 100%); /* FF3.6+ */
+    background:url(/templates/images/plan1.png), -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#ede859), color-stop(100%,#db7f00)); /* Chrome,Safari4+ */
+    background:url(/templates/images/plan1.png), -webkit-radial-gradient(center, ellipse cover, #ede859 0%,#db7f00 100%); /* Chrome10+,Safari5.1+ */
+    background:url(/templates/images/plan1.png), -o-radial-gradient(center, ellipse cover, #ede859 0%,#db7f00 100%); /* Opera 12+ */
+    background:url(/templates/images/plan1.png), -ms-radial-gradient(center, ellipse cover, #ede859 0%,#db7f00 100%); /* IE10+ */
+    background:url(/templates/images/plan1.png), radial-gradient(ellipse at center, #ede859 0%,#db7f00 100%); /* W3C */
+    filter:url(/templates/images/plan1.png), progid:DXImageTransform.Microsoft.gradient( startColorstr='#ede859', endColorstr='#db7f00',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
     text-shadow: 1px 1px 3px #DC8404;
 }
 .affiliates2{
-    background:url(../images/plan1.png), #bce255; /* Old browsers */
-    background:url(../images/plan1.png), -moz-radial-gradient(center, ellipse cover, #bce255 0%, #51af00 100%); /* FF3.6+ */
-    background:url(../images/plan1.png), -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#bce255), color-stop(100%,#51af00)); /* Chrome,Safari4+ */
-    background:url(../images/plan1.png), -webkit-radial-gradient(center, ellipse cover, #bce255 0%,#51af00 100%); /* Chrome10+,Safari5.1+ */
-    background:url(../images/plan1.png), -o-radial-gradient(center, ellipse cover, #bce255 0%,#51af00 100%); /* Opera 12+ */
-    background:url(../images/plan1.png), -ms-radial-gradient(center, ellipse cover, #bce255 0%,#51af00 100%); /* IE10+ */
-    background:url(../images/plan1.png), radial-gradient(ellipse at center, #bce255 0%,#51af00 100%); /* W3C */
-    filter:url(../images/plan1.png),  progid:DXImageTransform.Microsoft.gradient( startColorstr='#bce255', endColorstr='#51af00',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    background:url(/templates/images/plan1.png), #bce255; /* Old browsers */
+    background:url(/templates/images/plan1.png), -moz-radial-gradient(center, ellipse cover, #bce255 0%, #51af00 100%); /* FF3.6+ */
+    background:url(/templates/images/plan1.png), -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#bce255), color-stop(100%,#51af00)); /* Chrome,Safari4+ */
+    background:url(/templates/images/plan1.png), -webkit-radial-gradient(center, ellipse cover, #bce255 0%,#51af00 100%); /* Chrome10+,Safari5.1+ */
+    background:url(/templates/images/plan1.png), -o-radial-gradient(center, ellipse cover, #bce255 0%,#51af00 100%); /* Opera 12+ */
+    background:url(/templates/images/plan1.png), -ms-radial-gradient(center, ellipse cover, #bce255 0%,#51af00 100%); /* IE10+ */
+    background:url(/templates/images/plan1.png), radial-gradient(ellipse at center, #bce255 0%,#51af00 100%); /* W3C */
+    filter:url(/templates/images/plan1.png),  progid:DXImageTransform.Microsoft.gradient( startColorstr='#bce255', endColorstr='#51af00',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
     text-shadow: 1px 1px 3px #7AA700;
 }
 .affiliates3{
-    background:url(../images/plan1.png), #59edeb; /* Old browsers */
-    background:url(../images/plan1.png), -moz-radial-gradient(center, ellipse cover, #59edeb 0%, #1a91cb 100%); /* FF3.6+ */
-    background:url(../images/plan1.png), -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#59edeb), color-stop(100%,#1a91cb)); /* Chrome,Safari4+ */
-    background:url(../images/plan1.png), -webkit-radial-gradient(center, ellipse cover, #59edeb 0%,#1a91cb 100%); /* Chrome10+,Safari5.1+ */
-    background:url(../images/plan1.png), -o-radial-gradient(center, ellipse cover, #59edeb 0%,#1a91cb 100%); /* Opera 12+ */
-    background:url(../images/plan1.png), -ms-radial-gradient(center, ellipse cover, #59edeb 0%,#1a91cb 100%); /* IE10+ */
-    background:url(../images/plan1.png), radial-gradient(ellipse at center, #59edeb 0%,#1a91cb 100%); /* W3C */
-    filter:url(../images/plan1.png), progid:DXImageTransform.Microsoft.gradient( startColorstr='#59edeb', endColorstr='#1a91cb',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    background:url(/templates/images/plan1.png), #59edeb; /* Old browsers */
+    background:url(/templates/images/plan1.png), -moz-radial-gradient(center, ellipse cover, #59edeb 0%, #1a91cb 100%); /* FF3.6+ */
+    background:url(/templates/images/plan1.png), -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#59edeb), color-stop(100%,#1a91cb)); /* Chrome,Safari4+ */
+    background:url(/templates/images/plan1.png), -webkit-radial-gradient(center, ellipse cover, #59edeb 0%,#1a91cb 100%); /* Chrome10+,Safari5.1+ */
+    background:url(/templates/images/plan1.png), -o-radial-gradient(center, ellipse cover, #59edeb 0%,#1a91cb 100%); /* Opera 12+ */
+    background:url(/templates/images/plan1.png), -ms-radial-gradient(center, ellipse cover, #59edeb 0%,#1a91cb 100%); /* IE10+ */
+    background:url(/templates/images/plan1.png), radial-gradient(ellipse at center, #59edeb 0%,#1a91cb 100%); /* W3C */
+    filter:url(/templates/images/plan1.png), progid:DXImageTransform.Microsoft.gradient( startColorstr='#59edeb', endColorstr='#1a91cb',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
     text-shadow: 1px 1px 3px #0084A7;
 }
 .afdetails{
@@ -7416,7 +7416,7 @@ span:hover.helptip div{
     padding-bottom: 10px;}
 .boxytitle{
     padding: 7px 0px;text-align: center;
-    background: url(../images/stripes.png), rgb(44, 77, 104);
+    background: url(/templates/images/stripes.png), rgb(44, 77, 104);
     color: #fff;
     font-weight: 700;text-transform: uppercase;}
 .boxes{
@@ -7553,7 +7553,7 @@ span:hover.helptip div{
     position: fixed;
     z-index: 9999;
     position: fixed;
-    background: rgba(35, 35, 35, 0.47) url(../images/notofies.png) 8px center no-repeat;
+    background: rgba(35, 35, 35, 0.47) url(/templates/images/notofies.png) 8px center no-repeat;
     background-size: 26px;
     height: 45px;
     width: 45px;
@@ -7803,7 +7803,7 @@ span:hover.helptip div{
 }
 .closepop{
     float: right;
-    background: url('../images/closeit2.html') no-repeat;
+    background: url('/templates/images/closeit2.html') no-repeat;
     width: 10px;
     height: 10px;
     background-size: 10px;
@@ -7820,14 +7820,14 @@ span:hover.helptip div{
 }
 /*notipop icons*/
 .popinf{
-    background:url(../images/startr.html) 8px no-repeat, #fffa00; /* Old browsers */
-    background:url(../images/startr.html) 8px no-repeat, -moz-radial-gradient(center, ellipse cover, #fffa00 0%, #ffbb32 100%); /* FF3.6+ */
-    background:url(../images/startr.html) 8px no-repeat, -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#fffa00), color-stop(100%,#ffbb32)); /* Chrome,Safari4+ */
-    background:url(../images/startr.html) 8px no-repeat, -webkit-radial-gradient(center, ellipse cover, #fffa00 0%,#ffbb32 100%); /* Chrome10+,Safari5.1+ */
-    background:url(../images/startr.html) 8px no-repeat, -o-radial-gradient(center, ellipse cover, #fffa00 0%,#ffbb32 100%); /* Opera 12+ */
-    background:url(../images/startr.html) 8px  no-repeat, -ms-radial-gradient(center, ellipse cover, #fffa00 0%,#ffbb32 100%); /* IE10+ */
-    background:url(../images/startr.html) 8px  no-repeat, radial-gradient(ellipse at center, #fffa00 0%,#ffbb32 100%); /* W3C */
-    filter:url(../images/startr.html) 8px no-repeat, progid:DXImageTransform.Microsoft.gradient( startColorstr='#fffa00', endColorstr='#ffbb32',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    background:url(/templates/images/startr.html) 8px no-repeat, #fffa00; /* Old browsers */
+    background:url(/templates/images/startr.html) 8px no-repeat, -moz-radial-gradient(center, ellipse cover, #fffa00 0%, #ffbb32 100%); /* FF3.6+ */
+    background:url(/templates/images/startr.html) 8px no-repeat, -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#fffa00), color-stop(100%,#ffbb32)); /* Chrome,Safari4+ */
+    background:url(/templates/images/startr.html) 8px no-repeat, -webkit-radial-gradient(center, ellipse cover, #fffa00 0%,#ffbb32 100%); /* Chrome10+,Safari5.1+ */
+    background:url(/templates/images/startr.html) 8px no-repeat, -o-radial-gradient(center, ellipse cover, #fffa00 0%,#ffbb32 100%); /* Opera 12+ */
+    background:url(/templates/images/startr.html) 8px  no-repeat, -ms-radial-gradient(center, ellipse cover, #fffa00 0%,#ffbb32 100%); /* IE10+ */
+    background:url(/templates/images/startr.html) 8px  no-repeat, radial-gradient(ellipse at center, #fffa00 0%,#ffbb32 100%); /* W3C */
+    filter:url(/templates/images/startr.html) 8px no-repeat, progid:DXImageTransform.Microsoft.gradient( startColorstr='#fffa00', endColorstr='#ffbb32',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 
     height: 40px;
     width: 40px;
@@ -7835,46 +7835,46 @@ span:hover.helptip div{
     margin-left: 8px;}
 
 .popinf1{
-    background:url(../images/urs.html) 8px  no-repeat, #ffd300; /* Old browsers */
-    background:url(../images/urs.html) 8px  no-repeat, -moz-radial-gradient(center, ellipse cover, #ffd300 0%, #ea8a20 100%); /* FF3.6+ */
-    background:url(../images/urs.html) 8px  no-repeat, -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#ffd300), color-stop(100%,#ea8a20)); /* Chrome,Safari4+ */
-    background:url(../images/urs.html) 8px  no-repeat, -webkit-radial-gradient(center, ellipse cover, #ffd300 0%,#ea8a20 100%); /* Chrome10+,Safari5.1+ */
-    background:url(../images/urs.html) 8px no-repeat, -o-radial-gradient(center, ellipse cover, #ffd300 0%,#ea8a20 100%); /* Opera 12+ */
-    background:url(../images/urs.html) 8px  no-repeat, -ms-radial-gradient(center, ellipse cover, #ffd300 0%,#ea8a20 100%); /* IE10+ */
-    background:url(../images/urs.html) 8px  no-repeat, radial-gradient(ellipse at center, #ffd300 0%,#ea8a20 100%); /* W3C */
-    filter:url(../images/urs.html) 8px no-repeat, progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffd300', endColorstr='#ea8a20',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    background:url(/templates/images/urs.html) 8px  no-repeat, #ffd300; /* Old browsers */
+    background:url(/templates/images/urs.html) 8px  no-repeat, -moz-radial-gradient(center, ellipse cover, #ffd300 0%, #ea8a20 100%); /* FF3.6+ */
+    background:url(/templates/images/urs.html) 8px  no-repeat, -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#ffd300), color-stop(100%,#ea8a20)); /* Chrome,Safari4+ */
+    background:url(/templates/images/urs.html) 8px  no-repeat, -webkit-radial-gradient(center, ellipse cover, #ffd300 0%,#ea8a20 100%); /* Chrome10+,Safari5.1+ */
+    background:url(/templates/images/urs.html) 8px no-repeat, -o-radial-gradient(center, ellipse cover, #ffd300 0%,#ea8a20 100%); /* Opera 12+ */
+    background:url(/templates/images/urs.html) 8px  no-repeat, -ms-radial-gradient(center, ellipse cover, #ffd300 0%,#ea8a20 100%); /* IE10+ */
+    background:url(/templates/images/urs.html) 8px  no-repeat, radial-gradient(ellipse at center, #ffd300 0%,#ea8a20 100%); /* W3C */
+    filter:url(/templates/images/urs.html) 8px no-repeat, progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffd300', endColorstr='#ea8a20',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 
     height: 40px;width: 40px;border-radius: 10px;margin-left: 8px;}
 .popinf3{
-    background:url(../images/multi.html) 8px no-repeat, #f5caff; /* Old browsers */
-    background:url(../images/multi.html) 8px no-repeat, -moz-radial-gradient(center, ellipse cover, #f5caff 0%, #c622d3 100%); /* FF3.6+ */
-    background:url(../images/multi.html) 8px no-repeat, -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#f5caff), color-stop(100%,#c622d3)); /* Chrome,Safari4+ */
-    background:url(../images/multi.html) 8px no-repeat, -webkit-radial-gradient(center, ellipse cover, #f5caff 0%,#c622d3 100%); /* Chrome10+,Safari5.1+ */
-    background:url(../images/multi.html) 8px no-repeat, -o-radial-gradient(center, ellipse cover, #f5caff 0%,#c622d3 100%); /* Opera 12+ */
-    background:url(../images/multi.html) 8px no-repeat, -ms-radial-gradient(center, ellipse cover, #f5caff 0%,#c622d3 100%); /* IE10+ */
-    background:url(../images/multi.html) 8px  no-repeat, radial-gradient(ellipse at center, #f5caff 0%,#c622d3 100%); /* W3C */
-    filter:url(../images/multi.html) 8px no-repeat, progid:DXImageTransform.Microsoft.gradient( startColorstr='#f5caff', endColorstr='#c622d3',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    background:url(/templates/images/multi.html) 8px no-repeat, #f5caff; /* Old browsers */
+    background:url(/templates/images/multi.html) 8px no-repeat, -moz-radial-gradient(center, ellipse cover, #f5caff 0%, #c622d3 100%); /* FF3.6+ */
+    background:url(/templates/images/multi.html) 8px no-repeat, -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#f5caff), color-stop(100%,#c622d3)); /* Chrome,Safari4+ */
+    background:url(/templates/images/multi.html) 8px no-repeat, -webkit-radial-gradient(center, ellipse cover, #f5caff 0%,#c622d3 100%); /* Chrome10+,Safari5.1+ */
+    background:url(/templates/images/multi.html) 8px no-repeat, -o-radial-gradient(center, ellipse cover, #f5caff 0%,#c622d3 100%); /* Opera 12+ */
+    background:url(/templates/images/multi.html) 8px no-repeat, -ms-radial-gradient(center, ellipse cover, #f5caff 0%,#c622d3 100%); /* IE10+ */
+    background:url(/templates/images/multi.html) 8px  no-repeat, radial-gradient(ellipse at center, #f5caff 0%,#c622d3 100%); /* W3C */
+    filter:url(/templates/images/multi.html) 8px no-repeat, progid:DXImageTransform.Microsoft.gradient( startColorstr='#f5caff', endColorstr='#c622d3',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
     height: 40px;width: 40px;border-radius: 10px;margin-left: 8px;}
 .popinf4{
-    background:url(../images/incm2.html) 6px no-repeat, background: #a6f2a4; /* Old browsers */
-    background:url(../images/incm2.html) 6px no-repeat, -moz-radial-gradient(center, ellipse cover, #a6f2a4 0%, #1dad24 100%); /* FF3.6+ */
-    background:url(../images/incm2.html) 6px no-repeat, -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#a6f2a4), color-stop(100%,#1dad24)); /* Chrome,Safari4+ */
-    background:url(../images/incm2.html) 6px no-repeat, -webkit-radial-gradient(center, ellipse cover, #a6f2a4 0%,#1dad24 100%); /* Chrome10+,Safari5.1+ */
-    background:url(../images/incm2.html) 6px no-repeat, -o-radial-gradient(center, ellipse cover, #a6f2a4 0%,#1dad24 100%); /* Opera 12+ */
-    background:url(../images/incm2.html) 6px no-repeat, -ms-radial-gradient(center, ellipse cover, #a6f2a4 0%,#1dad24 100%); /* IE10+ */
-    background:url(../images/incm2.html) 6px no-repeat, radial-gradient(ellipse at center, #a6f2a4 0%,#1dad24 100%); /* W3C */
-    filter:url(../images/incm2.html) 6px no-repeat, progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6f2a4', endColorstr='#1dad24',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    background:url(/templates/images/incm2.html) 6px no-repeat, background: #a6f2a4; /* Old browsers */
+    background:url(/templates/images/incm2.html) 6px no-repeat, -moz-radial-gradient(center, ellipse cover, #a6f2a4 0%, #1dad24 100%); /* FF3.6+ */
+    background:url(/templates/images/incm2.html) 6px no-repeat, -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#a6f2a4), color-stop(100%,#1dad24)); /* Chrome,Safari4+ */
+    background:url(/templates/images/incm2.html) 6px no-repeat, -webkit-radial-gradient(center, ellipse cover, #a6f2a4 0%,#1dad24 100%); /* Chrome10+,Safari5.1+ */
+    background:url(/templates/images/incm2.html) 6px no-repeat, -o-radial-gradient(center, ellipse cover, #a6f2a4 0%,#1dad24 100%); /* Opera 12+ */
+    background:url(/templates/images/incm2.html) 6px no-repeat, -ms-radial-gradient(center, ellipse cover, #a6f2a4 0%,#1dad24 100%); /* IE10+ */
+    background:url(/templates/images/incm2.html) 6px no-repeat, radial-gradient(ellipse at center, #a6f2a4 0%,#1dad24 100%); /* W3C */
+    filter:url(/templates/images/incm2.html) 6px no-repeat, progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6f2a4', endColorstr='#1dad24',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
     height: 40px;width: 40px;border-radius: 10px;margin-left: 8px;}
 
 .popinf5{
-    background:url(../images/plbal1.html) 8px no-repeat, #98dce0; /* Old browsers */
-    background:url(../images/plbal1.html) 8px no-repeat, -moz-radial-gradient(center, ellipse cover, #98dce0 0%, #00aaaf 100%); /* FF3.6+ */
-    background:url(../images/plbal1.html) 8px no-repeat, -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#98dce0), color-stop(100%,#00aaaf)); /* Chrome,Safari4+ */
-    background:url(../images/plbal1.html) 8px no-repeat, -webkit-radial-gradient(center, ellipse cover, #98dce0 0%,#00aaaf 100%); /* Chrome10+,Safari5.1+ */
-    background:url(../images/plbal1.html) 8px no-repeat, -o-radial-gradient(center, ellipse cover, #98dce0 0%,#00aaaf 100%); /* Opera 12+ */
-    background:url(../images/plbal1.html) 8px no-repeat, -ms-radial-gradient(center, ellipse cover, #98dce0 0%,#00aaaf 100%); /* IE10+ */
-    background:url(../images/plbal1.html) 8px no-repeat, radial-gradient(ellipse at center, #98dce0 0%,#00aaaf 100%); /* W3C */
-    filter:url(../images/plbal1.html) 8px no-repeat, progid:DXImageTransform.Microsoft.gradient( startColorstr='#98dce0', endColorstr='#00aaaf',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    background:url(/templates/images/plbal1.html) 8px no-repeat, #98dce0; /* Old browsers */
+    background:url(/templates/images/plbal1.html) 8px no-repeat, -moz-radial-gradient(center, ellipse cover, #98dce0 0%, #00aaaf 100%); /* FF3.6+ */
+    background:url(/templates/images/plbal1.html) 8px no-repeat, -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#98dce0), color-stop(100%,#00aaaf)); /* Chrome,Safari4+ */
+    background:url(/templates/images/plbal1.html) 8px no-repeat, -webkit-radial-gradient(center, ellipse cover, #98dce0 0%,#00aaaf 100%); /* Chrome10+,Safari5.1+ */
+    background:url(/templates/images/plbal1.html) 8px no-repeat, -o-radial-gradient(center, ellipse cover, #98dce0 0%,#00aaaf 100%); /* Opera 12+ */
+    background:url(/templates/images/plbal1.html) 8px no-repeat, -ms-radial-gradient(center, ellipse cover, #98dce0 0%,#00aaaf 100%); /* IE10+ */
+    background:url(/templates/images/plbal1.html) 8px no-repeat, radial-gradient(ellipse at center, #98dce0 0%,#00aaaf 100%); /* W3C */
+    filter:url(/templates/images/plbal1.html) 8px no-repeat, progid:DXImageTransform.Microsoft.gradient( startColorstr='#98dce0', endColorstr='#00aaaf',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
     height: 40px;width: 40px;border-radius: 10px;margin-left: 8px;}
 
 .faqnav {background: rgba(0, 0, 0, 0.45);
@@ -8079,7 +8079,7 @@ span:hover.helptip div{
 
 .paddings td {padding:8px;}
 .trstyling tr{text-align: center;
-    background: url(../images/stripes.png), rgb(115, 131, 144);
+    background: url(/templates/images/stripes.png), rgb(115, 131, 144);
     color: #fff;
     font-weight: 700;
     text-transform: uppercase;
@@ -8123,7 +8123,7 @@ span:hover.helptip div{
 
 .closepop24 {
     float: right;
-    background: url('../images/closeit2.html') no-repeat;
+    background: url('/templates/images/closeit2.html') no-repeat;
     width: 10px;
     height: 10px;
     background-size: 8px;
@@ -8134,7 +8134,7 @@ span:hover.helptip div{
 
 .witsty {
     text-align: center;
-    background: url(../images/stripes.png), rgb(115, 131, 144);
+    background: url(/templates/images/stripes.png), rgb(115, 131, 144);
     color: #fff;
     font-weight: 700;
     text-transform: uppercase;
@@ -8174,7 +8174,7 @@ span:hover.helptip div{
     width: 46px;
     height: 46px;
     border-radius: 500px;
-    background: url(../images/pluss.html) 14px center no-repeat #fff;
+    background: url(/templates/images/pluss.html) 14px center no-repeat #fff;
     position: absolute;
     z-index: 3;
 }
@@ -8227,7 +8227,7 @@ span:hover.helptip div{
 
 .pedep{
     border: 1px solid rgba(255,255,255,0.2);
-    background: rgba(255, 255, 255, 0.15) url(../images/newdep.png) 5px center no-repeat;
+    background: rgba(255, 255, 255, 0.15) url(/templates/images/newdep.png) 5px center no-repeat;
     background-size: 24px;
     padding: 5px 6px 8px 25px;margin-top: 10px;
     -webkit-transition: all 0.2s ease;
@@ -8235,7 +8235,7 @@ span:hover.helptip div{
     -o-transition: all 0.2s ease;
     transition: all 0.2s ease;border-radius:3px;}
 .pedep:hover{
-    border: 1px solid rgba(255,255,255,0.2);background: rgba(255, 255, 255, 0.1) url(../images/newdep.png) 5px center no-repeat;
+    border: 1px solid rgba(255,255,255,0.2);background: rgba(255, 255, 255, 0.1) url(/templates/images/newdep.png) 5px center no-repeat;
     background-size: 24px;
     padding: 5px 6px 8px 25px;margin-top: 10px;
     -webkit-transition: all 0.2s ease;
@@ -8244,7 +8244,7 @@ span:hover.helptip div{
     transition: all 0.2s ease;border-radius:3px;}
 .peref{
     border: 1px solid rgba(255,255,255,0.2);
-    background: rgba(255, 255, 255, 0.15) url(../images/refs.png) 5px center no-repeat;
+    background: rgba(255, 255, 255, 0.15) url(/templates/images/refs.png) 5px center no-repeat;
     background-size: 22px;
     padding: 5px 6px 8px 25px;margin-top: 10px;
     -webkit-transition: all 0.2s ease;
@@ -8252,7 +8252,7 @@ span:hover.helptip div{
     -o-transition: all 0.2s ease;
     transition: all 0.2s ease;border-radius:3px;}
 .peref:hover{
-    border: 1px solid rgba(255,255,255,0.2);background: rgba(255, 255, 255, 0.1) url(../images/refs.png) 5px center no-repeat;
+    border: 1px solid rgba(255,255,255,0.2);background: rgba(255, 255, 255, 0.1) url(/templates/images/refs.png) 5px center no-repeat;
     background-size: 22px;
     padding: 5px 6px 8px 25px;margin-top: 10px;
     -webkit-transition: all 0.2s ease;
@@ -8261,14 +8261,14 @@ span:hover.helptip div{
     transition: all 0.2s ease;border-radius:3px;}
 .peacc{
     border: 1px solid rgba(255,255,255,0.2);
-    background: rgba(255, 255, 255, 0.15) url(../images/main.png) 4px center no-repeat;  background-size: 24px;
+    background: rgba(255, 255, 255, 0.15) url(/templates/images/main.png) 4px center no-repeat;  background-size: 24px;
     padding: 5px 6px 8px 25px;margin-top: 10px;
     -webkit-transition: all 0.2s ease;
     -moz-transition: all 0.2s ease;
     -o-transition: all 0.2s ease;
     transition: all 0.2s ease;border-radius:3px;}
 .peacc:hover{
-    border: 1px solid rgba(255,255,255,0.2);background: rgba(255, 255, 255, 0.1) url(../images/main.png) 4px center no-repeat;
+    border: 1px solid rgba(255,255,255,0.2);background: rgba(255, 255, 255, 0.1) url(/templates/images/main.png) 4px center no-repeat;
     background-size: 24px;
     padding: 5px 6px 8px 25px;margin-top: 10px;
     -webkit-transition: all 0.2s ease;
@@ -8278,14 +8278,14 @@ span:hover.helptip div{
 
 .accou{
     border: 1px solid rgba(255,255,255,0.2);
-    background: rgba(255, 255, 255, 0.15) url(../images/signout.png) 5px center no-repeat;   background-size: 22px;
+    background: rgba(255, 255, 255, 0.15) url(/templates/images/signout.png) 5px center no-repeat;   background-size: 22px;
     padding: 5px 6px 8px 25px;margin-top: 10px;
     -webkit-transition: all 0.2s ease;
     -moz-transition: all 0.2s ease;
     -o-transition: all 0.2s ease;
     transition: all 0.2s ease;border-radius:3px;}
 .accou:hover{
-    border: 1px solid rgba(255,255,255,0.2);background: rgba(255, 255, 255, 0.1) url(../images/signout.png) 5px center no-repeat;
+    border: 1px solid rgba(255,255,255,0.2);background: rgba(255, 255, 255, 0.1) url(/templates/images/signout.png) 5px center no-repeat;
     background-size: 22px;
     padding: 5px 6px 8px 25px;margin-top: 10px;
     -webkit-transition: all 0.2s ease;
@@ -8363,7 +8363,7 @@ span:hover.helptip div{
 
 
 .playit {
-    background: #fff url(../images/play-btn.png) no-repeat 60% 50%;
+    background: #fff url(/templates/images/play-btn.png) no-repeat 60% 50%;
     background-size: 20px;
     width: 50px;
     height: 50px;
@@ -8470,7 +8470,7 @@ input[type=checkbox].css-checkbox9 + label.css-label9 {
     font-weight: 300;
 }
 label.css-label9 {
-    background-image: url(../images/rbox.png);
+    background-image: url(/templates/images/rbox.png);
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -khtml-user-select: none;
@@ -8509,24 +8509,24 @@ input[type=checkbox].css-checkbox9 {
     padding: 8px 5px 8px 10px;
     border-radius: 20px;}
 .bgdol{background: #7aed00;
-    background:url(../images/plan2.png),  -moz-radial-gradient(center, ellipse cover, #7aed00 0%, #169e07 100%);
-    background:url(../images/plan2.png),  -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#7aed00), color-stop(100%,#169e07));
-    background:url(../images/plan2.png),  -webkit-radial-gradient(center, ellipse cover, #7aed00 0%,#169e07 100%);
-    background:url(../images/plan2.png),  -o-radial-gradient(center, ellipse cover, #7aed00 0%,#169e07 100%);
-    background:url(../images/plan2.png),  -ms-radial-gradient(center, ellipse cover, #7aed00 0%,#169e07 100%);
-    background:url(../images/plan2.png),  radial-gradient(ellipse at center, #7aed00 0%,#169e07 100%);
-    filter:url(../images/plan2.png),  progid:DXImageTransform.Microsoft.gradient( startColorstr='#7aed00', endColorstr='#169e07',GradientType=1 );
+    background:url(/templates/images/plan2.png),  -moz-radial-gradient(center, ellipse cover, #7aed00 0%, #169e07 100%);
+    background:url(/templates/images/plan2.png),  -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#7aed00), color-stop(100%,#169e07));
+    background:url(/templates/images/plan2.png),  -webkit-radial-gradient(center, ellipse cover, #7aed00 0%,#169e07 100%);
+    background:url(/templates/images/plan2.png),  -o-radial-gradient(center, ellipse cover, #7aed00 0%,#169e07 100%);
+    background:url(/templates/images/plan2.png),  -ms-radial-gradient(center, ellipse cover, #7aed00 0%,#169e07 100%);
+    background:url(/templates/images/plan2.png),  radial-gradient(ellipse at center, #7aed00 0%,#169e07 100%);
+    filter:url(/templates/images/plan2.png),  progid:DXImageTransform.Microsoft.gradient( startColorstr='#7aed00', endColorstr='#169e07',GradientType=1 );
     border: 4px solid rgba(255, 255, 255, 0.38);
     border-radius:100%}
 .bgbit{
-    background:url(../images/plan2.png),   #f7e600; /* Old browsers */
-    background:url(../images/plan2.png),   -moz-radial-gradient(center, ellipse cover,  #f7e600 0%, #ed740b 100%); /* FF3.6+ */
-    background:url(../images/plan2.png),   -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#f7e600), color-stop(100%,#ed740b)); /* Chrome,Safari4+ */
-    background:url(../images/plan2.png),   -webkit-radial-gradient(center, ellipse cover,  #f7e600 0%,#ed740b 100%); /* Chrome10+,Safari5.1+ */
-    background:url(../images/plan2.png),   -o-radial-gradient(center, ellipse cover,  #f7e600 0%,#ed740b 100%); /* Opera 12+ */
-    background:url(../images/plan2.png),   -ms-radial-gradient(center, ellipse cover,  #f7e600 0%,#ed740b 100%); /* IE10+ */
-    background:url(../images/plan2.png),   radial-gradient(ellipse at center,  #f7e600 0%,#ed740b 100%); /* W3C */
-    filter:url(../images/plan2.png),   progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7e600', endColorstr='#ed740b',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    background:url(/templates/images/plan2.png),   #f7e600; /* Old browsers */
+    background:url(/templates/images/plan2.png),   -moz-radial-gradient(center, ellipse cover,  #f7e600 0%, #ed740b 100%); /* FF3.6+ */
+    background:url(/templates/images/plan2.png),   -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#f7e600), color-stop(100%,#ed740b)); /* Chrome,Safari4+ */
+    background:url(/templates/images/plan2.png),   -webkit-radial-gradient(center, ellipse cover,  #f7e600 0%,#ed740b 100%); /* Chrome10+,Safari5.1+ */
+    background:url(/templates/images/plan2.png),   -o-radial-gradient(center, ellipse cover,  #f7e600 0%,#ed740b 100%); /* Opera 12+ */
+    background:url(/templates/images/plan2.png),   -ms-radial-gradient(center, ellipse cover,  #f7e600 0%,#ed740b 100%); /* IE10+ */
+    background:url(/templates/images/plan2.png),   radial-gradient(ellipse at center,  #f7e600 0%,#ed740b 100%); /* W3C */
+    filter:url(/templates/images/plan2.png),   progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7e600', endColorstr='#ed740b',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
     border-radius:100%;
     border: 4px solid rgba(255, 255, 255, 0.38);
 
@@ -8605,13 +8605,13 @@ input[type=checkbox].css-checkbox9 {
 
 .axe2{margin-top: 11px;
     margin-left: 5px;font-size:15px;}
-.aper{    background: rgba(171, 229, 52, 1) url(../images/profd.html) 4px center no-repeat;
+.aper{    background: rgba(171, 229, 52, 1) url(/templates/images/profd.html) 4px center no-repeat;
     height: 22px;
     width: 22px;
     border-radius: 8px;  background-size: 14px;
     margin-top: 9px;}
 .askp{
-    background: rgba(90, 175, 220, 1) url(../images/skype.html) 4px center no-repeat;
+    background: rgba(90, 175, 220, 1) url(/templates/images/skype.html) 4px center no-repeat;
     height: 22px;
     width: 22px;
     border-radius: 8px;  background-size: 14px;
@@ -8638,7 +8638,7 @@ input[type=checkbox].css-checkbox9 {
     background-size: 14px;
     margin-top: -4px;
     margin-right: 6px;}
-.aprof{background: rgba(171, 229, 52, 1) url(../images/profd.html) 4px center no-repeat;
+.aprof{background: rgba(171, 229, 52, 1) url(/templates/images/profd.html) 4px center no-repeat;
     height: 22px;
     width: 22px;
     border-radius: 8px;  background-size: 14px;

@@ -156,17 +156,17 @@
 
 			<div class="animated fadeInUp" style="float:left; margin-left: 114px;">
 				<div class="boxed">
-					<span class="hbox">USD BALANCE</span>
-					<span class="countbox"><span id="usd_balance">0.00<span> $</span><span class="ibox1">Deposited: <b>0.00 $</b></span><span class="ibox2">Withdrawn: <b>0.00 $</b></span></span></span>
+					<span class="hbox">TOTAL BALANCE</span>
+					<span class="countbox"><span class="usd_balance"><?php echo isset($this->dataReportMember['amountInvest'])?$this->dataReportMember['amountInvest']:0;?><span> <span class="dv">BTC</span></span><span class="ibox1">Deposited: <b><?php echo isset($this->dataReportMember['amountInvest'])?$this->dataReportMember['amountInvest']:0;?> <span class="dv">BTC</span></b></span><span class="ibox2">Withdrawn: <b><?php echo isset($this->dataReportMember['amountSuccessRecived'])?$this->dataReportMember['amountSuccessRecived']:0;?> <span class="dv">BTC</span></b></span></span></span>
 				</div>
 			</div>
 
 			<div class="animated fadeInUp" style="float:left;margin-left:30px;">
 				<div class="boxed">
 					<span class="hbox">EARNED TOTAL</span>
-					<span class="countbox"><span id="btc_balance">0.00</span> $</span>
-					<span class="ibox1">Last Deposited: <b> $</b></span>
-					<span class="ibox2">Last Withdrawn: <b> $</b></span>
+					<span class="countbox"><span class="btc_balance"><?php echo isset($this->dataReportMember['amountSuccessRecived'])?$this->dataReportMember['amountSuccessRecived']:0;?><span> <span class="dv">BTC</span></span></span>
+					<span class="ibox1">Last Deposited: <b> <span class="btc_balance"><?php echo isset($this->dataReportMember['amountConfirmedInvestLast'])?$this->dataReportMember['amountConfirmedInvestLast']:0;?></span><span class="dv">BTC</span></b></span>
+					<span class="ibox2">Last Withdrawn: <b> <span class="btc_balance"><?php echo isset($this->dataReportMember['amountSuccessRecivedLast'])?$this->dataReportMember['amountSuccessRecivedLast']:0;?></span><span class="dv">BTC</span></b></span>
 				</div>
 
 				<div>
@@ -192,9 +192,9 @@
 				<div class="front refblock">
 					<div class="boxed">
 						<span class="hbox">ACTIVE DEPOSIT</span>
-						<span class="countbox"><span id="usd_ref_balance">0.00</span> $</span>
-						<span class="ibox1">EARNED: <b>0.00 $</b></span>
-						<span class="ibox2">Withdrawn: <b>0.00 $</b></span>
+						<span class="countbox"><span class="btc_balance"><?php echo isset($this->dataReportMember['amountSuccessRecivedLast'])?$this->dataReportMember['amountSuccessRecivedLast']:0;?></span><span class="dv">BTC</span></span>
+						<span class="ibox1">EARNED: <b><span class="btc_balance"><?php echo isset($this->dataReportMember['amountConfirmedInvestLast'])?$this->dataReportMember['amountConfirmedInvestLast']:0;?></span><span class="dv">BTC</span></b></span>
+						<span class="ibox2">Withdrawn: <b><span class="btc_balance"><?php echo isset($this->dataReportMember['amountSuccessRecivedLast'])?$this->dataReportMember['amountSuccessRecivedLast']:0;?></span><span class="dv">BTC</span></b></span>
 
 					</div>
 					<div class="btstat toggle_ref_balance"></div>

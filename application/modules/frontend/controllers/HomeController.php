@@ -28,7 +28,7 @@ class Frontend_HomeController extends Frontend_AppController {
 			$password = $this->_getParam('password', '');
 			$isLogin	=	$this->login($userName,$password);
 			if($isLogin == 1){
-				$this->redirect('/frontend/member/');
+				$this->redirect('/frontend/member/main');
 				die();
 			}else{
 				$this->view->errorMessage	=	'Username or password invalid  <br> <span style="margin-left: 70px;">Or your account is not active</span>';
