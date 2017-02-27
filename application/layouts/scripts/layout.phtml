@@ -194,7 +194,7 @@
 						<span class="hbox">ACTIVE DEPOSIT</span>
 						<span class="countbox"><span class="btc_balance"><?php echo isset($this->dataReportMember['amountSuccessRecivedLast'])?$this->dataReportMember['amountSuccessRecivedLast']:0;?></span><span class="dv">BTC</span></span>
 						<span class="ibox1">EARNED: <b><span class="btc_balance"><?php echo isset($this->dataReportMember['amountConfirmedInvestLast'])?$this->dataReportMember['amountConfirmedInvestLast']:0;?></span><span class="dv">BTC</span></b></span>
-						<span class="ibox2">Withdrawn: <b><span class="btc_balance"><?php echo isset($this->dataReportMember['amountSuccessRecivedLast'])?$this->dataReportMember['amountSuccessRecivedLast']:0;?></span><span class="dv">BTC</span></b></span>
+						<span class="ibox2">Withdrawn: <b><span class="btc_balance"><?php echo isset($this->dataReportMember['planRecivedLast'])?$this->dataReportMember['planRecivedLast']:0;?></span><span class="dv">BTC</span></b></span>
 
 					</div>
 					<div class="btstat toggle_ref_balance"></div>
@@ -254,6 +254,7 @@
 			</div>
 			<div class="transactions" style="margin-top: 5px;"><div class="cabinem2">
 					<h4 style="color: #fff;    text-align: center;    padding: 14px 0px 0px 0;">New transactions</h4>
+					<?php if (!isset($this->dataReportMember['transactionGHLastID']) || 1*$this->dataReportMember['transactionGHLastID']==0){?>
 					<div style="padding: 10px 0 0 0;">
 						<div style="background: rgba(255, 255, 255, 0.2);">
 							<div style="padding: 8px 15px;">
@@ -264,6 +265,15 @@
 							</div>
 						</div>
 					</div>
+					<?php }else{?>
+					<div style="color:#fff;font-size: 15px;font-weight: 300;font-weight: 700;    padding: 25px 25px 0px 70px;">
+						<span>- EARNED: <b><span class="btc_balance"><?php echo isset($this->dataReportMember['amountConfirmedInvestLast'])?$this->dataReportMember['amountConfirmedInvestLast']:0;?></span><span class="dv">BTC</span></b></span>
+					</div>
+					<div style="color:#fff;font-size: 15px;font-weight: 300;font-weight: 700;     padding: 25px 25px 0px 70px;">
+							<span>- Total Withdrawn: <b><span class="btc_balance"><?php echo isset($this->dataReportMember['planRecivedLast'])?$this->dataReportMember['planRecivedLast']:0;?></span><span class="dv">BTC</span></b></span>
+					</div>
+
+					<?php }?>
 					<div style="text-align: center;width: 100%;padding:15px 0;clear: both;"><a class="office_load buttn butcgreen" href="?a=deposit">New deposit</a></div>
 				</div></div>
 		</div>
