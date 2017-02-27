@@ -103,6 +103,21 @@ class Frontend_MemberController extends Frontend_AppController {
 		}
 	}
 	/**
+	 * Main page
+	 */
+	public function mainAction(){
+		$this->view->title = 'Bussiness Report';
+		$this->_helper->layout->setLayout('layout');
+
+		$params	=	array(
+			$this->user['ID']
+		);
+		$data = $this->model->executeSql('SPC_GET_BUSSINESS_REPORT', $params);
+		if(!empty($data[0][0])){
+			$this->view->data	=	$data[0][0];
+		}
+	}
+	/**
 	 * history
 	 */
 	public function investstatusAction(){
