@@ -61,7 +61,10 @@
 	</audio>-->
 </head>
 <body>
+<?php header("Access-Control-Allow-Credentials: true");?>
 <script type="text/javascript">
+
+	var _globalRateType = "BTC";
 	var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
 	(function(){
 		var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
@@ -71,6 +74,34 @@
 		s1.setAttribute('crossorigin','*');
 		s0.parentNode.insertBefore(s1,s0);
 	})();
+	$(document).ready(function() {
+		try {
+			$(document).on('click', '.toggle_ref_balance', function() {
+				try {
+					var urlRate = "http://api.coindesk.com/v1/bpi/currentprice/USD.json";
+					$.ajax({
+						type		:	'POST',
+						url			:	urlRate,
+						dataType	:	'json',
+						data		:	{},
+						crossOrigin: true,
+						success: function(res) {
+							alert(res);
+						},
+						error: function(res) {
+							//nothing
+						},
+					});
+				} catch (e) {
+					alert('.toggle_ref_balance' + e.message);
+				}
+			});
+
+		} catch (e) {
+			alert('ready' + e.message);
+		}
+	});
+
 </script>
 <div class="alertb">
 
@@ -284,7 +315,7 @@
 					</div>
 
 					<?php }?>
-					<div style="text-align: center;width: 100%;padding:15px 0;clear: both;"><a class="office_load buttn butcgreen" href="?a=deposit">New deposit</a></div>
+					<div style="text-align: center;width: 100%;padding:15px 0;clear: both;"><a class="office_load buttn butcgreen" href="/frontend/member/invest">New deposit</a></div>
 				</div></div>
 		</div>
 		<div class="rght padbot">
