@@ -1,3 +1,6 @@
+<?php
+$actionName = Zend_Controller_Front::getInstance()->getRequest()->getActionName();
+?>
 
 <!DOCTYPE html>
 
@@ -61,8 +64,7 @@
 	</audio>-->
 </head>
 <body>
-<?php header("Access-Control-Allow-Credentials: true");?>
-<script type="text/javascript">
+<script type="text/javascript" crossorigin="*">
 
 	var _globalRateType = "BTC";
 	var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
@@ -78,20 +80,23 @@
 		try {
 			$(document).on('click', '.toggle_ref_balance', function() {
 				try {
-					var urlRate = "http://api.coindesk.com/v1/bpi/currentprice/USD.json";
-					$.ajax({
-						type		:	'POST',
+					var urlRate = "https://blockchain.info/tobtc?currency=USD&value=1";
+					$.get("https://blockchain.info/tobtc?currency=USD&value=1").done(function (data) {
+						console.log(data);
+					});
+					/*$.ajax({
+						type		:	'GET',
 						url			:	urlRate,
-						dataType	:	'json',
+						dataType	:	'html',
 						data		:	{},
-						crossOrigin: true,
+						crossOrigin: "*",
 						success: function(res) {
 							alert(res);
 						},
 						error: function(res) {
 							//nothing
 						},
-					});
+					});*/
 				} catch (e) {
 					alert('.toggle_ref_balance' + e.message);
 				}
@@ -153,12 +158,12 @@
 
 		<nav class="indiv menuu119"><!-- horizontal box -->
 			<ul class="hr">
-				<li><a class="selected" href="/">Home</a></li>
+				<li><a href="/">Home</a></li>
 
-				<li><a  href="/aboutus">About us</a></li>
-				<li><a  href="/terms">Features</a></li>
-				<li><a  href="/faq">FAQ</a></li>
-				<li><a  href="/support">Feedback</a></li>
+				<li><a href="/aboutus">About us</a></li>
+				<li><a href="/terms">Features</a></li>
+				<li><a href="/faq">FAQ</a></li>
+				<li><a href="/support">Feedback</a></li>
 			</ul>
 
 		</nav>
@@ -205,9 +210,9 @@
 			<div class="animated fadeInUp" style="float:left;margin-left:30px;">
 				<div class="boxed">
 					<span class="hbox">EARNED TOTAL</span>
-					<span class="countbox"><span class="btc_balance"><?php echo isset($this->dataReportMember['amountSuccessRecived'])?$this->dataReportMember['amountSuccessRecived']:0;?><span> <span class="dv">BTC</span></span></span>
-					<span class="ibox1">Last Deposited: <b> <span class="btc_balance"><?php echo isset($this->dataReportMember['amountConfirmedInvestLast'])?$this->dataReportMember['amountConfirmedInvestLast']:0;?></span><span class="dv">BTC</span></b></span>
-					<span class="ibox2">Last Withdrawn: <b> <span class="btc_balance"><?php echo isset($this->dataReportMember['amountSuccessRecivedLast'])?$this->dataReportMember['amountSuccessRecivedLast']:0;?></span><span class="dv">BTC</span></b></span>
+					<span class="countbox"><span class="usd_balance"><?php echo isset($this->dataReportMember['amountSuccessRecived'])?$this->dataReportMember['amountSuccessRecived']:0;?><span> <span class="dv">BTC</span></span></span>
+					<span class="ibox1">Last Deposited: <b> <span class="usd_balance"><?php echo isset($this->dataReportMember['amountConfirmedInvestLast'])?$this->dataReportMember['amountConfirmedInvestLast']:0;?></span><span class="dv">BTC</span></b></span>
+					<span class="ibox2">Last Withdrawn: <b> <span class="usd_balance"><?php echo isset($this->dataReportMember['amountSuccessRecivedLast'])?$this->dataReportMember['amountSuccessRecivedLast']:0;?></span><span class="dv">BTC</span></b></span>
 				</div>
 
 				<div>
@@ -233,9 +238,9 @@
 				<div class="front refblock">
 					<div class="boxed">
 						<span class="hbox">ACTIVE DEPOSIT</span>
-						<span class="countbox"><span class="btc_balance"><?php echo isset($this->dataReportMember['amountSuccessRecivedLast'])?$this->dataReportMember['amountSuccessRecivedLast']:0;?></span><span class="dv">BTC</span></span>
-						<span class="ibox1">EARNED: <b><span class="btc_balance"><?php echo isset($this->dataReportMember['amountConfirmedInvestLast'])?$this->dataReportMember['amountConfirmedInvestLast']:0;?></span><span class="dv">BTC</span></b></span>
-						<span class="ibox2">Withdrawn: <b><span class="btc_balance"><?php echo isset($this->dataReportMember['planRecivedLast'])?$this->dataReportMember['planRecivedLast']:0;?></span><span class="dv">BTC</span></b></span>
+						<span class="countbox"><span class="usd_balance"><?php echo isset($this->dataReportMember['amountSuccessRecivedLast'])?$this->dataReportMember['amountSuccessRecivedLast']:0;?></span><span class="dv">BTC</span></span>
+						<span class="ibox1">EARNED: <b><span class="usd_balance"><?php echo isset($this->dataReportMember['amountConfirmedInvestLast'])?$this->dataReportMember['amountConfirmedInvestLast']:0;?></span><span class="dv">BTC</span></b></span>
+						<span class="ibox2">Withdrawn: <b><span class="usd_balance"><?php echo isset($this->dataReportMember['planRecivedLast'])?$this->dataReportMember['planRecivedLast']:0;?></span><span class="dv">BTC</span></b></span>
 
 					</div>
 					<div class="btstat toggle_ref_balance"></div>
@@ -280,14 +285,14 @@
 		<div style="float:left;width: 30%;font-size: 19px;padding-bottom: 100px;">
 			<div class="cabinem"><div class="cabinem2">
 					<ul id="cab_nav">
-						<li class="active"><a href="/frontend/member/main"><img class="mrgn" src="/templates/images/main.png"><span class="nav">Main page</span></a></li>
-						<li ><a href="/frontend/member/invest"><img class="mrgn" src="/templates/images/newdep.png"><span class="nav">New deposit</span></a></li>
-						<li ><a href="/frontend/member/history"><img class="mrgn" src="/templates/images/cashout.png"><span class="nav">Make withdrawal</span></a></li>
+						<li class="<?php if($actionName =='main'){ ?>active<?php }?>"><a href="/frontend/member/main"><img class="mrgn" src="/templates/images/main.png"><span class="nav">Main page</span></a></li>
+						<li class="<?php if($actionName =='invest'){ ?>active<?php }?>"><a href="/frontend/member/invest"><img class="mrgn" src="/templates/images/newdep.png"><span class="nav">New deposit</span></a></li>
+						<li class="<?php if($actionName =='history'){ ?>active<?php }?>"><a href="/frontend/member/history"><img class="mrgn" src="/templates/images/cashout.png"><span class="nav">Make withdrawal</span></a></li>
 						<!--<li ><a href="?a=referals"><img class="mrgn" src="/templates/images/refs.png"><span class="nav">Referral section</span></a></li>-->
-						<li ><a href="/frontend/member/ticketlist"><img class="mrgn" src="/templates/images/imgadvert.png"><span class="nav">Ticket</span></a></li>
-						<li ><a href="/frontend/member/investstatus"><img class="mrgn" src="/templates/images/logs.png"><span class="nav">Action logs</span></a></li>
-						<li ><a href="/frontend/member"><img class="mrgn" src="/templates/images/settings.png"><span class="nav">My profile</span></a></li>
-						<li ><a href="/frontend/register/logout"><img class="mrgn" src="/templates/images/signout.png"><span class="nav">Sign out</span></a>
+						<li class="<?php if($actionName =='ticketlist'){ ?>active<?php }?>"><a href="/frontend/member/ticketlist"><img class="mrgn" src="/templates/images/imgadvert.png"><span class="nav">Ticket</span></a></li>
+						<li class="<?php if($actionName =='investstatus'){ ?>active<?php }?>"><a href="/frontend/member/investstatus"><img class="mrgn" src="/templates/images/logs.png"><span class="nav">Action logs</span></a></li>
+						<li class="<?php if($actionName =='index'){ ?>active<?php }?>"><a href="/frontend/member"><img class="mrgn" src="/templates/images/settings.png"><span class="nav">My profile</span></a></li>
+						<li class="<?php if($actionName =='logout'){ ?>active<?php }?>"><a href="/frontend/register/logout"><img class="mrgn" src="/templates/images/signout.png"><span class="nav">Sign out</span></a>
 
 						</li>
 					</ul>
