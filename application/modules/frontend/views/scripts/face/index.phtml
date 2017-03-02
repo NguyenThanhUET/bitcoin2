@@ -19,9 +19,13 @@
             <h4 class="animated fadeInRight">
                 <span>Already <b id="land-people" data-count="515"></b> people enjoy our program</span>
             </h4>
+            <?php if (1*$this->user['permission']==1){?>
+            <a  class="buttns butblue toped" href="/frontend/member"><img class="ques22" src="/templates/images/account.png">Personal account</a>
+            <a style="margin:0 0 0 15px;" class="buttns butbrown toped" href="/frontend/register/logout"><img class="ques22" src="/templates/images/signouts.png">SIGN OUT</a>
+            <?php }else{ ?>
             <a class="buttns butgreen toped" href="/customer/register"><img class="ques22" src="/templates/images/st.png">OPEN AN ACCOUNT</a>
             <a style="margin:0 0 0 15px;" class="buttns butblue toped" href="customer/login"><img class="ques22" src="/templates/images/signin.png">ENTER ACCOUNT</a>
-
+            <?php } ?>
             <h2 style="font-weight: 300;margin-top: 45px;font-size: 20px !important;color: #FFFFFF; padding: 5px 0px 5px 0px;	margin-top: 31px;">Partners already earned</h2>
             <h2 class="animated fadeInLeft" style="margin-bottom:15px;">
                 <span style="background: rgba(255, 255, 255, 0.15);padding: 0 20px;"><b><span class="credited">2824061</span> $</b></span>
@@ -284,7 +288,7 @@
                     <p style="font-size: 16px;font-weight: 300;width: 580px;">To start your first financial activity, please sign up by simple registration form.</p>
                 </div>
                 <div style="float:right;padding: 20px 0;">
-                    <a class="buttns butblue toped" href="/customer/register"><img class="ques22" src="/templates/images/account.png">Personal account</a>
+                    <a class="buttns butblue toped" href="/frontend/member"><img class="ques22" src="/templates/images/account.png">Personal account</a>
                 </div>
 
             </div>
@@ -312,7 +316,14 @@
                 <iframe width="680" height="315" frameborder="0" allowfullscreen></iframe>
 
                 <div style="text-align: center;padding: 15px 15px 15px 15px;clear: both;height: 43px;">
-                    <div style="clear: both;"><span style="font-weight: 300;font-size: 25px;position: relative;top: 4px;float: left;">Still don't have an account?</span>  <a style="float: right;" class="buttn butcgreen" href="/customer/register">Open an account</a></div></div>
+                    <div style="clear: both;"><span style="font-weight: 300;font-size: 25px;position: relative;top: 4px;float: left;">Still don't have an account?</span>
+                        <?php if (1*$this->user['permission']==1){?>
+                        <a style="float: right;" class="buttns butblue" href="/frontend/member"><img class="ques22" src="/templates/images/account.png">Personal account</a>
+                        <?php }else{ ?>
+                        <a style="float: right;" class="buttn butcgreen" href="/customer/register">Open an account</a>
+                        <?php }?>
+
+                    </div></div>
             </div>
 
 
