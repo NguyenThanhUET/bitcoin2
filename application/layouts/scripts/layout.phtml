@@ -50,6 +50,24 @@ $actionName = Zend_Controller_Front::getInstance()->getRequest()->getActionName(
 	<style>
 		.clinkedcolors{color:#2B6F98 !important;
 			border-bottom:1px dashed #484848;}
+		.label-success{
+			color: green;
+			text-shadow: none;
+			margin: 0 5px 5px !important;
+		}
+		.label-warning{
+			color: orange;
+			text-shadow: none;
+			margin: 0 5px 5px !important;
+		}
+		.label-info{
+			color: #227294;
+			text-shadow: none;
+			margin: 0 5px 5px !important;
+		}
+		.color-success{
+
+		}
 	</style>
 
 	<script src="/templates/js/plugin.acc.js" type="text/javascript"></script>
@@ -290,8 +308,9 @@ $actionName = Zend_Controller_Front::getInstance()->getRequest()->getActionName(
 						<li class="<?php if($actionName =='invest'){ ?>active<?php }?>"><a href="/frontend/member/invest"><img class="mrgn" src="/templates/images/newdep.png"><span class="nav">New deposit</span></a></li>
 						<li class="<?php if($actionName =='history'){ ?>active<?php }?>"><a href="/frontend/member/history"><img class="mrgn" src="/templates/images/cashout.png"><span class="nav">Make withdrawal</span></a></li>
 						<!--<li ><a href="?a=referals"><img class="mrgn" src="/templates/images/refs.png"><span class="nav">Referral section</span></a></li>-->
-						<li class="<?php if($actionName =='ticketlist'){ ?>active<?php }?>"><a href="/frontend/member/ticketlist"><img class="mrgn" src="/templates/images/imgadvert.png"><span class="nav">Ticket</span></a></li>
+
 						<li class="<?php if($actionName =='investstatus'){ ?>active<?php }?>"><a href="/frontend/member/investstatus"><img class="mrgn" src="/templates/images/logs.png"><span class="nav">Action logs</span></a></li>
+						<li class="<?php if($actionName =='ticketlist'){ ?>active<?php }?>"><a href="/frontend/member/ticketlist"><img class="mrgn" src="/templates/images/imgadvert.png"><span class="nav">Ticket</span></a></li>
 						<li class="<?php if($actionName =='index'){ ?>active<?php }?>"><a href="/frontend/member"><img class="mrgn" src="/templates/images/settings.png"><span class="nav">My profile</span></a></li>
 						<li class="<?php if($actionName =='logout'){ ?>active<?php }?>"><a href="/frontend/register/logout"><img class="mrgn" src="/templates/images/signout.png"><span class="nav">Sign out</span></a>
 

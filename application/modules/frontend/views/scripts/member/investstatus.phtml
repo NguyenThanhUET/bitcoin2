@@ -7,20 +7,19 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="panel panel-blue">
-                        <div class="panel-heading">Latest Transactions</div>
                         <div class="panel-body">
 
                             <div class="table-responsive">
-                                <table class="table table-hover table-bordered">
+                                <table class="table table-hover table-bordered" style="width: 95%">
                                     <thead>
                                     <tr>
-                                        <th style="text-align: center">#</th>
-                                        <th style="text-align: center">Date</th>
-                                        <th style="text-align: center">Spin (days)</th>
-                                        <th style="text-align: center">Amount (BTC)</th>
-                                        <th style="text-align: center">Total Profit (BTC)</th>
-                                        <th style="text-align: center">Status</th>
-                                        <th style="text-align: center">Details Image</th>
+                                        <th class="inheader" style="text-align: center">#</th>
+                                        <th class="inheader" style="text-align: center">Date</th>
+                                        <th class="inheader" style="text-align: center">Spin (days)</th>
+                                        <th class="inheader" style="text-align: center">Amount (BTC)</th>
+                                        <th class="inheader" style="text-align: center">Total Profit (BTC)</th>
+                                        <th class="inheader" style="text-align: center">Status</th>
+                                        <th class="inheader" style="text-align: center">Details Image</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -38,13 +37,13 @@
                                                 fclose($handle);
                                                 ?>
                                         <tr>
-                                            <td style="text-align: center"><?php echo $i;?></td>
-                                            <td style="text-align: center"><?php echo $row['senddate'];?></td>
-                                            <td style="text-align: center"><?php echo $row['duration'];?> days</td>
-                                            <td style="text-align: center"><?php echo $row['amount'];?></td>
-                                            <td style="text-align: center"><?php echo $row['bonus'];?></td>
-                                            <td style="text-align: center"><span class="label label-sm <?php echo $row['color'];?>"><?php echo $row['status'];?></span></td>
-                                            <td style="text-align: center" class="image-view" width="60px"><span class="view-image-btn label label-sm label-info" style="cursor: pointer;">View Image</span>
+                                            <td class="item" style="text-align: center"><?php echo $i;?></td>
+                                            <td class="item" style="text-align: center"><?php echo $row['senddate'];?></td>
+                                            <td class="item" style="text-align: center"><?php echo $row['duration'];?> days</td>
+                                            <td class="item" style="text-align: center"><?php echo $row['amount'];?></td>
+                                            <td class="item" style="text-align: center"><?php echo $row['bonus'];?></td>
+                                            <td class="item" style="text-align: center"><span class="label label-sm <?php echo $row['color'];?>"><?php echo $row['status'];?></span></td>
+                                            <td style="text-align: center" class="image-view item" width="60px"><span class="view-image-btn label label-sm label-info" style="cursor: pointer;">View Image</span>
                                                 <div class="modal myModal">
                                                     <span class="close">&times;</span>
                                                     <img class="modal-content img01">
@@ -63,11 +62,8 @@
 
 
                 </div>
-                <!--END CONTENT--><!--BEGIN FOOTER-->
-                <div id="footer">
-                    <div class="copyright">2016 © btc-powerup.com - POWER UP YOUR BTC</div>
-                </div>
-                <!--END FOOTER--></div>
+                <!--END CONTENT-->
+               </div>
             <!--END PAGE WRAPPER--></div>
     </div>
 
