@@ -60,7 +60,9 @@
 
 </head>
 <body>
-
+<?php
+$actionName = Zend_Controller_Front::getInstance()->getRequest()->getActionName();
+?>
 <div class="alertb">
 
     <a href="#" id="notifies" class="alert-o">
