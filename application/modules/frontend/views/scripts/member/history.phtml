@@ -5,19 +5,17 @@
 
                 <div class="col-lg-12">
                     <div class="panel panel-blue">
-                        <div class="panel-heading control-label"> <h1>PROFIT DETAILS </h1></div>
-                        <br><br>
                         <div class="panel-body">
                             <div class="table-responsive">
-                                <table class="table table-hover table-bordered">
+                                <table class="table table-hover table-bordered" style="width: 95%">
                                     <thead>
                                     <tr>
-                                        <th width="10%" style="text-align: center">#</th>
-                                        <th width="30%" style="text-align: center">DATE</th>
+                                        <th class="inheader" width="10%" style="text-align: center">#</th>
+                                        <th class="inheader" width="30%" style="text-align: center">DATE</th>
 <!--                                        <th>BTC Wallet</th>-->
-                                        <th width="30%" style="text-align: center">AMOUNT</th>
-                                        <th width="20%" style="text-align: center">LEVEL</th>
-                                        <th width="10%" style="text-align: center">STATE</th>
+                                        <th class="inheader" width="30%" style="text-align: center">AMOUNT</th>
+                                        <th class="inheader" width="20%" style="text-align: center">LEVEL</th>
+                                        <th class="inheader" width="10%" style="text-align: center">STATE</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -25,11 +23,11 @@
                                     <?php foreach($this->data as $row){ $i++;
                                     ?>
                                     <tr>
-                                        <td style="text-align: center"><?php echo $i;?></td>
-                                        <td style="text-align: center"><?php echo $row['senddate'];?></td>
-                                        <td style="text-align: center"><?php echo number_format($row['amount'], 3, "," ,"");?></td>
-                                        <td style="text-align: center"><?php echo $row['level'];?></td>
-                                        <td style="text-align: center"><span class="label label-sm label-blue <?php echo $row['color'];?>"><?php echo $row['issuccess'];?></span></td>
+                                        <td class="item" style="text-align: center"><?php echo $i;?></td>
+                                        <td class="item" style="text-align: center"><?php echo $row['senddate'];?></td>
+                                        <td class="item" style="text-align: center"><?php echo $row['amount'];?></td>
+                                        <td class="item" style="text-align: center"><?php echo $row['level'];?></td>
+                                        <td class="item" style="text-align: center"><span class="label label-sm label-blue <?php echo $row['color'];?>"><?php echo $row['issuccess'];?></span></td>
 
                                     </tr>
                                         <?php } ?>
@@ -39,11 +37,7 @@
                                 <br><br>
                             </div></div></div>
                 </div>
-                <!--END CONTENT--><!--BEGIN FOOTER-->
-                <div id="footer">
-                    <div class="copyright">2017 © walkfunds.com - POWER UP YOUR BTC</div>
-                </div>
-                <!--END FOOTER--></div>
+            </div>
             <!--END PAGE WRAPPER--></div>
     </div>
 </div>

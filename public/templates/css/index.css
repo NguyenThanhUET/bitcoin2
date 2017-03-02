@@ -5001,7 +5001,7 @@ hr.grey {
 
 .text-center {
     text-align: center;
-    text-shadow: 1px 1px 1px #488BB7;
+    /*text-shadow: 1px 1px 1px #488BB7;*/
 }
 .rower {
     width: 960px;
