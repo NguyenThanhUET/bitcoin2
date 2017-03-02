@@ -377,7 +377,7 @@ clear: both;" class="row">
                                 <input type="password" required placeholder="Password2" name="pass">
                             </div>
                             <div class="cls500">Sponsor:<br/>
-                                <input type="text" placeholder="Sponsor" name="referer" value="<?php echo isset($this->referer)?$this->referer:''; ?>"  <?php if(isset($this->referer)){?> disabled="disabled" <?php }?> />
+                                <input type="text" placeholder="Sponsor" name="referer" value="<?php echo isset($this->referer)?$this->referer:''; ?>" readonly="readonly" />
                             </div>
                             </tr><div class="cls500">Your Bitcoin Account:<br/>
                                 <input type="text" required placeholder="Bitcoin Address" value="<?php echo !empty($param)?$param['bitaddress']:'';?>" name="bitcoin"></div>

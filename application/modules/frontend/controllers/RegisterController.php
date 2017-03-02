@@ -26,7 +26,7 @@ class Frontend_RegisterController extends Frontend_AppController {
 			$params['email']			=	$this->_request->getParam('email','');
 			$params['bitaddress']		=	$this->_request->getParam('bitcoin','');
 			$params['referer']			=	$this->_request->getParam('referer','');
-			print_r($params['referer']); die();
+
 			$params['client_ip']		=	$this->get_client_ip();
 			$result	=	$this->save($params);
 			if($result	==	1){
@@ -45,8 +45,10 @@ class Frontend_RegisterController extends Frontend_AppController {
 			$this->view->params = $params;
 		}
 		$refer = $this->_request->getParam('r','-1');
+		//echo $refer;die();
 		if(1*$refer != -1){
 			$this->view->referer	=	$refer;
+			//echo $refer;die();
 		}
 	}
 	/**
