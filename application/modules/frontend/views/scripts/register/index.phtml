@@ -258,7 +258,7 @@
     <div class="clearfix colelem" id="pu106-6">
         <!-- group -->
         <div style="text-align:center;" class="Heading-H1 clearfix mse_pre_init u106-6"><!-- content -->
-            <h2 style="margin-bottom:15px;"><span class="animated fadeInUp" style="padding: 0 20px;">Registration at Iglama Limited</span></h2>
+            <h2 style="margin-bottom:15px;"><span class="animated fadeInUp" style="padding: 0 20px;">Registration at here!</span></h2>
 
 
         </div>
@@ -374,16 +374,22 @@ clear: both;" class="row">
                             <div class="cls500">Define Password:<br/>
                                 <input type="password" required placeholder="Password" name="pass"></div>
                             <div class="cls500">Retype Password:<br/>
-                                <input type="password" required placeholder="Password2" name="pass"></div>
+                                <input type="password" required placeholder="Password2" name="pass">
+                            </div>
+                            <div class="cls500">Sponsor:<br/>
+                                <input type="text" placeholder="Sponsor" name="referer" value="<?php echo isset($this->referer)?$this->referer:''; ?>"  <?php if(isset($this->referer)){?> disabled="disabled" <?php }?> />
+                            </div>
                             </tr><div class="cls500">Your Bitcoin Account:<br/>
                                 <input type="text" required placeholder="Bitcoin Address" value="<?php echo !empty($param)?$param['bitaddress']:'';?>" name="bitcoin"></div>
                             </tr>
                             <div class="cls500">Your E-mail Address:<br/>
                                 <input type=text name=email value="" placeholder="Your E-mail Address" maxlength="100"></div>
                             <div class="cls500">Retype Your E-mail:<br/>
-                                <input type="email" required placeholder="Email" name="email" value="<?php echo !empty($param)?$param['email']:'';?>"></div>
-                            <div class="cls500">Secret key:<br/>
-                                <input type="password" required placeholder="Sercurity" name="pin"></div>
+                                <input type="text" required placeholder="Email" name="email" value="" maxlength="100"></div>
+<!--                            <div class="cls500">Secret key:<br/>-->
+<!--                                <input type="password" required placeholder="Sercurity" name="pin"></div>-->
+
+
 
                             <tr>
                                 <td>Your Upline:</td>
@@ -394,8 +400,10 @@ clear: both;" class="row">
                             <div class="relative check-terms" style="margin-top: 5px;height: 54px;">
                                 <input type="checkbox" id="checkboxG4" class="css-checkbox" name=agree value=1    />
                                 <label for="checkboxG4" class="css-label">
-                                    By passing registration form you agree with <a class="ind" style="text-decoration:underline;" target="_blank" href="../terms">terms of use</a> Iglama Limited. Company</label>
+                                    By passing registration form you agree with <a class="ind" style="text-decoration:underline;" target="_blank" href="../../terms">terms of use</a> Iglama Limited. Company</label>
                             </div>
+
+
                     </div>
 
 

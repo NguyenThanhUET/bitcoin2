@@ -19,6 +19,19 @@ class Frontend_MemberController extends Frontend_AppController {
 		if(!empty($data[0][0])){
 			$this->view->dataReportMember	=	$data[0][0];
 		}
+
+		$status_user = $this->model->executeSql('SPC_GET_STATUS_USER', $params);
+        if(!empty($status_user[0][0])){
+            $this->view->username = $status_user[0][0]["fullname"];
+            $isactive = $status_user[0][0]["isactive"];
+            if ($isactive){
+                $this->view->status = "ACTIVE";
+                $this->view->state = "ON";
+            }else{
+                $this->view->status = "INACTIVE";
+                $this->view->state = "BLOCKED";
+            }
+        }
 	}
 	/**
 	 * index home

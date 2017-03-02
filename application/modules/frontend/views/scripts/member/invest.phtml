@@ -1,7 +1,7 @@
 <?php
 $amountInit =   0.15;
 $amount  = isset($this->investData['amount'])?$this->investData['amount']:$amountInit;
-$blockchain="https://wallet.btc.com/?gclid=Cj0KEQiAy53DBRCo4en29Zvcla0BEiQAVIDccwlfeEAUAvoUsm-YJDfhcSxYlTRmdvQ9TsQaUyfrdhUaAk0f8P8HAQ#/setup/login";
+$blockchain="https://blockchain.info/wallet/#/";
 ?>
 <link rel="stylesheet" type="text/css" href="/templates/css/form/frontend/invest.css"/>
 <!--<link type="text/css" rel="stylesheet" href="/templates/css/form/invest.css">-->
@@ -58,8 +58,8 @@ $blockchain="https://wallet.btc.com/?gclid=Cj0KEQiAy53DBRCo4en29Zvcla0BEiQAVIDcc
                                                 <tr class="coin_no" style="border-top: 1px solid green;">
                                                     <td valign="top" style="padding-top: 5px;">
                                                         <div class="intro">
-                                                            1.	Go to <a target="_blank" href="https://localbitcoins.com/?ch=4rwv">localbitcoins.com</a> and get Bitcoins (BTC) if you don't have it.<br>
-                                                            2.	<a target="_blank" class="tooltip-right2" title="" href="https://bitcoin.org/#download">Send</a> <span class="send-1"><?php echo $amount?></span> Bitcoins (in ONE payment) to the address below.<br>
+                                                            1.	Go to <a target="_blank" href="https://blockchain.info/wallet/#/">blockchain.info</a> and get Bitcoins (BTC) if you don't have it.<br>
+                                                            2.	<a target="_blank" title="" href="https://blockchain.info/wallet/#/">Send</a> <span class="send-1"><?php echo $amount?></span> Bitcoins (in ONE payment) to the address below.<br>
                                                             &nbsp; &nbsp; If you send <b>any other bitcoin amount</b>, payment system will <b>ignore it</b> !<br>
                                                         </div>
                                                         <div class="intro_send">Send EXACTLY <span class="font12 send-1"><?php echo $amount?></span> BTC (<a class="tooltip-fee" href="#" title="" style="font-weight: normal;">plus fees</a>) to:</div>
