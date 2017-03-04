@@ -68,6 +68,8 @@ function initEvents() {
             jConfirm('Do you want to change ?','Confirm',function(r){
                 if(r){
                     changeActive(id,value);
+                }else{
+                    location.reload();
                 }
             });
         });
@@ -89,7 +91,6 @@ function initEvents() {
     }
 }
 function sendmoneyTrans(){
-    jConfirm('Do you want to approve ?','Confirm',function(r){
         var data    =   {};
         $.ajax({
             type        :   'POST',
@@ -124,7 +125,8 @@ function sendmoneyTrans(){
                 }
             }
         });
-    });
+
+
 }
 function deleteTrans(id, callback){
     var data    =   {};
