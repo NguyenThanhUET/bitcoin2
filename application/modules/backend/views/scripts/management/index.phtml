@@ -29,7 +29,7 @@ $uri = $this->serverUrl();
                                 <img class="icon-header" src="/templates/images/moneybag2.png">
                             </p>
                             <p class="description">
-                                    <b>Total Recived Balance : <?php echo isset($this->data['total_recived_blance'])? 1*$this->data['total_recived_blance']:0;?> BTC</b></p>
+                                    <b>Total Recived: <?php echo isset($this->data['total_recived_blance'])? number_format(1*$this->data['total_recived_blance'], 3, ',', ''):0;?> BTC</b></p>
                         </div>
                     </div>
 
@@ -38,7 +38,7 @@ $uri = $this->serverUrl();
                     <div class="panel panel-pink">
                         <div class="panel-body"><p class="icon">
                                 <img class="icon-header" src="/templates/images/moneybag.png" height="60"></p>
-                            <b>Total Send Balance : <?php echo isset($this->data['total_send_balance'])? 1*$this->data['total_send_balance']:0;?> BTC  </b></p>
+                            <b>Total Sent: <?php echo isset($this->data['total_send_balance'])? number_format(1*$this->data['total_send_balance'],3,',', ''):0;?> BTC  </b></p>
 
                         </div>
                     </div>
@@ -47,7 +47,7 @@ $uri = $this->serverUrl();
             </div></div>
     </div>
     <hr class="title-hr">
-    <div class="title-label">Transaction report</div>
+    <div class="title-label" align="center">TRANSACTION REPORT</div>
     <div class="row col-md-12">
         <div class="col-md-6">
             <div class="panel panel-blue">
@@ -69,7 +69,7 @@ $uri = $this->serverUrl();
                                     </td>
                                 </tr>
                                 <tr>
-                                    <th width="60%">Total PH Transaction</th>
+                                    <th width="60%">Total Payment Transaction</th>
                                     <td width="40%">
                                         <?php echo isset($this->data['total_PH'])? 1*$this->data['total_PH']:0;?>  Transactions
                                     </td>
@@ -83,7 +83,7 @@ $uri = $this->serverUrl();
         </div>
     </div>
     <hr class="title-hr">
-    <div class="title-label">Spin Information</div>
+    <div class="title-label" align="center">POLICY INFORMATION</div>
     <div class="row col-md-12">
         <div class="col-md-6">
             <div class="panel panel-blue">
@@ -97,20 +97,20 @@ $uri = $this->serverUrl();
                                 <th width="20%">Transaction Name</th>
                                 <th width="20%">Duration (days)</th>
                                 <th width="20%">Sent (BTC)</th>
-                                <th width="">Recived (BTC)</th>
+                                <th width="25%">Recived (BTC)</th>
                             </tr>
                             <?php if(isset($this->listfee) && !empty($this->listfee)){ ?>
                             <?php foreach ($this->listfee as $row){ ?>
                             <tr>
-                                <td width="15%"><?php echo isset($row['transaction_typ'])? $row['transaction_typ']:0;?></td>
-                                <td width="15%"><?php echo isset($row['name'])? $row['name']:'';?></td>
-                                <td width="20%">
+                                <td width="15%" align="center"><?php echo isset($row['transaction_typ'])? $row['transaction_typ']:0;?></td>
+                                <td width="15%" align="center"><?php echo isset($row['name'])? $row['name']:'';?></td>
+                                <td width="20%" align="center">
                                     <?php echo isset($row['duration'])? $row['duration']:0;?>  days
                                 </td>
-                                <td width="20%">
+                                <td width="20%" align="center">
                                     <?php echo isset($row['amount'])? $row['amount']:0;?>  BTC
                                 </td>
-                                <td width="40%">
+                                <td width="40%" align="center">
                                     <?php echo isset($row['recived'])? $row['recived']:0;?>  BTC
                                 </td>
                             </tr>

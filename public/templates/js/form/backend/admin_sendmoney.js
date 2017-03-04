@@ -89,39 +89,41 @@ function initEvents() {
     }
 }
 function sendmoneyTrans(){
-    var data    =   {};
-    $.ajax({
-        type        :   'POST',
-        url         :   '/backend/transaction/sendmoney',
-        dataType    :   'json',
-        loading     :   true,
-        data        :   data,
-        success: function(res) {
-            switch (res['status']){
-                //not perssion
-                case PE:
-                    jMessage(23);
-                    break;
-                // success
-                case 1:
-                    var message =   "<div class='form-group isa_success'><i class='fa fa-times-circle'></i>Update Successfull</div>";
-                    $('.message').html(message);
-                    setTimeout(1000);
-                    location.reload(true);
-                    break;
-                // error
-                case 0:
-                    var message =   "<div class='form-group isa_error'><i class='fa fa-times-circle'></i>Update Error</div>";
-                    $('.message').html(message);
-                    break;
-                // Exception
-                case EX:
-                    jError(res['Exception']);
-                    break;
-                default:
-                    break;
+    jConfirm('Do you want to approve ?','Confirm',function(r){
+        var data    =   {};
+        $.ajax({
+            type        :   'POST',
+            url         :   '/backend/transaction/sendmoney',
+            dataType    :   'json',
+            loading     :   true,
+            data        :   data,
+            success: function(res) {
+                switch (res['status']){
+                    //not perssion
+                    case PE:
+                        jMessage(23);
+                        break;
+                    // success
+                    case 1:
+                        var message =   "<div class='form-group isa_success'><i class='fa fa-times-circle'></i>payment Successfull</div>";
+                        $('.message').html(message);
+                        setTimeout(5000);
+                        location.reload(true);
+                        break;
+                    // error
+                    case 0:
+                        var message =   "<div class='form-group isa_error'><i class='fa fa-times-circle'></i>payment Error</div>";
+                        $('.message').html(message);
+                        break;
+                    // Exception
+                    case EX:
+                        jError(res['Exception']);
+                        break;
+                    default:
+                        break;
+                }
             }
-        }
+        });
     });
 }
 function deleteTrans(id, callback){

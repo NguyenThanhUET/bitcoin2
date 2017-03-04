@@ -28,6 +28,23 @@ class Frontend_FaceController extends Frontend_AppController {
 		if(!empty($dataInvest[0][0])){
 			$this->view->dataInvest	=	$dataInvest[0][0];
 		}
+		$plans = $this->model->executeSql('SPC_GET_PLAN_FEE', array());
+		if (!empty($plans[0][0])) {
+            $this->view->planA_amount = $plans[0][0]["amount"];
+            $this->view->planA_recived = $plans[0][0]["recived"];
+            $this->view->planA_duration = $plans[0][0]["duration"];
+            $this->view->planA_daily = number_format((($this->view->planA_recived)/$this->view->planA_amount)*100/$this->view->planA_duration, 1, ",", '');
+
+            $this->view->planB_amount = $plans[0][1]["amount"];
+            $this->view->planB_recived = $plans[0][1]["recived"];
+            $this->view->planB_duration = $plans[0][1]["duration"];
+            $this->view->planB_daily = number_format((($this->view->planB_recived)/$this->view->planB_amount)*100/$this->view->planB_duration, 1, ",", '');
+
+            $this->view->planC_amount = $plans[0][2]["amount"];
+            $this->view->planC_recived = $plans[0][2]["recived"];
+            $this->view->planC_duration = $plans[0][2]["duration"];
+            $this->view->planC_daily = number_format((($this->view->planC_recived)/$this->view->planC_amount)*100/$this->view->planC_duration, 1, ",", '');
+        }
 	}
 	/**
 	 * index home

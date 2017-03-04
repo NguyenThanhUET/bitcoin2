@@ -31,18 +31,18 @@ $uri = $this->serverUrl();
             <table id="tbl-seach-1" class="tbl-body-1 table-bordered">
                 <thead>
                 <tr>
-                    <th width="50px" rowspan="2">#</th>
-                    <th width="150px">Date</th>
-                    <th width="70px" rowspan="2">Duration (days)</th>
-                    <th width="100px" rowspan="2">Amount(BTC)</th>
-                    <th width="130px" rowspan="2">Total Profit (BTC)</th>
-                    <th width="100px" rowspan="2">Status</th>
-                    <th rowspan="2">Details Image</th>
-                    <th width="150px" rowspan="2">Confirm</th>
-                    <th width="50px" rowspan="2">Delete</th>
+                    <th width="50px" rowspan="2">ID</th>
+                    <th width="150px">DATE</th>
+                    <th width="70px" rowspan="2">DURATION (days)</th>
+                    <th width="100px" rowspan="2">AMOUNT(BTC)</th>
+                    <th width="170px" rowspan="2">TOTAL PROFIT (BTC)</th>
+                    <th width="100px" rowspan="2">STATUS</th>
+                    <th rowspan="2">IMAGE</th>
+                    <th width="100px" rowspan="2">CONFIRM</th>
+                    <th width="100px" rowspan="2">DELETE</th>
                 </tr>
                 <tr>
-                    <th class="boder-top-white">User Name</th>
+                    <th class="boder-top-white">USERNAME</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -60,13 +60,13 @@ $uri = $this->serverUrl();
                         fclose($handle);
                         ?>
                         <tr class="tr-record" record-id="<?php echo $row['ID'];?>">
-                            <td width="50px" rowspan="2"><?php echo $row['ID'];?></td>
-                            <td width="150px"><?php echo $row['senddate'];?></td>
-                            <td width="70px" rowspan="2"><?php echo $row['duration'];?> (days)</td>
-                            <td width="100px" rowspan="2"><?php echo $row['amount'];?></td>
-                            <td width="130px" rowspan="2"><?php echo $row['bonus'];?></td>
+                            <td width="50px" rowspan="2" align="center"><?php echo $row['ID'];?></td>
+                            <td width="150px" align="center"><?php echo $row['senddate'];?></td>
+                            <td width="70px" rowspan="2" align="center"><?php echo $row['duration'];?> (days)</td>
+                            <td width="100px" rowspan="2" align="center"><?php echo $row['amount'];?></td>
+                            <td width="130px" rowspan="2" align="center"><?php echo $row['bonus'];?></td>
                             <td width="100px" rowspan="2" class="text-center"><span class="label label-sm <?php echo $row['color'];?>"><?php echo $row['status'];?></span></td>
-                            <td  rowspan="2"class="image-view text-center"><span class="view-image-btn label label-sm label-info" style="cursor: pointer;">View Image</span>
+                            <td  rowspan="2"class="image-view text-center"><span class="view-image-btn label label-sm label-info" style="cursor: pointer;">View IMAGE</span>
                                 <div class="modal myModal">
                                     <span class="close">&times;</span>
                                     <img class="modal-content img01">
@@ -74,11 +74,11 @@ $uri = $this->serverUrl();
                                 </div>
                                 <img class="myImg" src="data:image;base64,<?php echo base64_encode($contents);?>" style="display: none;">
                             </td>
-                            <td width="150px" rowspan="2" class="text-center"><span class="confirm-btn label label-sm label-info" style="cursor: pointer;">Click to approved</span></td>
-                            <td width="50px" rowspan="2" class="text-center"><span class="delete-btn label label-sm label-info" style="cursor: pointer; width: 40px;">X</span></td>
+                            <td width="150px" rowspan="2" class="text-center"><span class="confirm-btn label label-sm label-info" style="cursor: pointer;">CONFIRM</span></td>
+                            <td width="50px" rowspan="2" class="text-center"><span class="delete-btn label label-sm label-dark" style="cursor: pointer; width: 60px;">REMOVE</span></td>
                         </tr>
                         <tr class="sub-record" record-id="<?php echo $row['ID'];?>">
-                            <td class=""><span class="color-blue"><?php echo $row['UserName'];?></span></td>
+                            <td class="text-center"><span class="color-blue"><?php echo $row['UserName'];?></span></td>
                         </tr>
                     <?php } ?>
                 <?php } ?>

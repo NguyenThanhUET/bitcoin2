@@ -6,9 +6,9 @@ $uri = $this->serverUrl();
 <?php $noimage=$this->noimage; ?>
 <div class="page-content-admin">
     <div class="message"></div>
-    <div style="text-align: right"><span class="confirm-btn label label-sm label-info" style="cursor: pointer;">Send Money</span></div>
+    <div style="text-align: right"><button class="btn btn-sm label-danger" onclick="sendmoneyTrans()">SEND MONEY NOW</button></div>
+    <div><span style="color: red;"><b>PLAN IN CURRENT DAY. Please control your profit!</b></span></div>
     <div class="day-plan-area" style="padding-left: 30px;">
-        <div class="title-label">Plan in current day</div>
         <div class="row col-md-12">
             <div class="col-md-6">
                 <div class="panel panel-blue">
@@ -20,19 +20,19 @@ $uri = $this->serverUrl();
                                 <tr>
                                     <th width="60%">Total Profit Now</th>
                                     <td width="40%">
-                                        <?php echo isset($this->dataPlan['total_profit'])? 1*$this->dataPlan['total_profit']:0;?>  BTC
+                                        <?php echo isset($this->dataPlan['total_profit'])? number_format(1*$this->dataPlan['total_profit'], 3, ',', ''):0;?>  BTC
                                     </td>
                                 </tr>
                                 <tr>
                                     <th width="60%">Plan money send today</th>
                                     <td width="40%">
-                                        <?php echo isset($this->dataPlan['plan_money_send'])? 1*$this->dataPlan['plan_money_send']:0;?>  BTC
+                                        <?php echo isset($this->dataPlan['plan_money_send'])? number_format(1*$this->dataPlan['plan_money_send'], 3, ',', ''):0;?>  BTC
                                     </td>
                                 </tr>
                                 <tr>
                                     <th width="60%">Total Profit Remaining</th>
                                     <td width="40%">
-                                        <?php echo isset($this->dataPlan['plan_profit'])? 1*$this->dataPlan['plan_profit']:0;?>  BTC
+                                        <?php echo isset($this->dataPlan['plan_profit'])? number_format(1*$this->dataPlan['plan_profit'], 3, ',', ''):0;?>  BTC
                                     </td>
                                 </tr>
 
@@ -49,21 +49,21 @@ $uri = $this->serverUrl();
             <table id="tbl-seach-1" class="tbl-body-1 table-bordered">
                 <thead>
                 <tr>
-                    <th width="30px" rowspan="2">#</th>
-                    <th width="150px">Date</th>
-                    <th width="70px"rowspan="2">Remaing day</th>
+                    <th width="30px" rowspan="2">ID</th>
+                    <th width="200px">Date</th>
+                    <th width="100px"rowspan="2">Remaing day</th>
                     <th width="130px"rowspan="2">User Name</th>
                     <th width="100px"rowspan="2">Phone</th>
                     <th width="100px"rowspan="2">Amount(BTC)</th>
-                    <th width="130px">Total Profit (BTC)</th>
-                    <th width="80px"rowspan="2">Status</th>
+                    <th width="200px">Total Profit (BTC)</th>
+                    <th width="120px"rowspan="2">Status</th>
                     <th rowspan="2">Image</th>
                     <th rowspan="2">Active</th>
-                    <th width="50px"rowspan="2">Delete</th>
+                    <th width="100px"rowspan="2">Delete</th>
                 </tr>
                 <tr>
-                    <th width="150px" class="boder-top-white">Durations (days)</th>
-                    <th width="130px" class="boder-top-white">Parent Trans ID</th>
+                    <th width="200px" class="boder-top-white">Durations (days)</th>
+                    <th width="200px" class="boder-top-white">Parent Trans ID</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -81,13 +81,13 @@ $uri = $this->serverUrl();
                         fclose($handle);
                         ?>
                         <tr class="tr-record" record-id="<?php echo $row['ID'];?>">
-                            <td width="30px" rowspan="2"><?php echo $row['ID'];?></td>
-                            <td width="150px"><?php echo $row['senddate'];?></td>
+                            <td width="30px" rowspan="2" align="center"><?php echo $row['ID'];?></td>
+                            <td width="150px" align="center"><?php echo $row['senddate'];?></td>
                             <td width="70px" rowspan="2" style="text-align: center;"><?php echo $row['remaining_day']?> day</td>
-                            <td width="130px" rowspan="2"><?php echo $row['UserName'];?></td>
-                            <td width="100px" rowspan="2"><?php echo $row['Mobile'];?></td>
-                            <td width="100px" rowspan="2"><?php echo $row['amount'];?></td>
-                            <td width="130px" style="text-align: right;"><?php echo $row['bonus'];?>
+                            <td width="130px" rowspan="2" align="center"><?php echo $row['UserName'];?></td>
+                            <td width="100px" rowspan="2" align="center"><?php echo $row['Mobile'];?></td>
+                            <td width="100px" rowspan="2" align="center"><?php echo $row['amount'];?></td>
+                            <td width="130px" style="text-align: center;"><?php echo $row['bonus'];?>
                                <!-- --><?php
 /*                                    if($row['bonus_from'] !=''){
                                         echo '( from f1: '.$row['bonus_from'].')';
@@ -107,7 +107,7 @@ $uri = $this->serverUrl();
                             <td rowspan="2" width="50px" class="text-center"><span class="delete-btn label label-sm label-info" style="cursor: pointer; width: 40px;">X</span></td>
                         </tr>
                         <tr class="sub-record" record-id="<?php echo $row['ID'];?>">
-                            <td width="150px" style="color: red; text-align: right;"><?php echo $row['duration'];?> days</td>
+                            <td width="150px" style="color: red; text-align: center;"><?php echo $row['duration'];?> days</td>
                             <td width="130px"  style=" <?php if($row['bonus_from_transgh'] !='' && $row['bonus_from_transgh'] !=0){ ?>color: red; <?php } ?> text-align: center;">
                                 <?php
                                 if($row['bonus_from_transgh'] !='' && $row['bonus_from_transgh'] !=0){

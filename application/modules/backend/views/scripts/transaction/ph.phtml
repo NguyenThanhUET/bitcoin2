@@ -97,37 +97,19 @@ $uri = $this->serverUrl();
 <div class="page-content-admin">
 
     <div class="w-data-table">
-        <!--<div class="w-header-table-fix-1">
-            <table class="tbl-header-1 table-bordered main-color">
-                <thead>
-                <tr>
-                    <th width="50px">#</th>
-                    <th width="150px">User Invest Date</th>
-                    <th width="150px">Admin Send Date</th>
-                    <th width="150px">User Name</th>
-                    <th width="100px">Phone</th>
-                    <th width="100px">Amount(BTC)</th>
-                    <th width="130px">Total Profit (BTC)</th>
-                    <th width="100px">Status</th>
-                    <th>Details Image</th>
-
-                </tr>
-                </thead>
-            </table>
-        </div>-->
         <div class="w-body-table-fix-1 tbl-data-search" >
             <table id="tbl-seach-1" class="tbl-body-1 table-bordered">
                 <thead>
                 <tr>
                     <th width="50px">#</th>
-                    <th width="150px">User Invest Date</th>
-                    <th width="150px">Admin Send Date</th>
-                    <th width="150px">User Name</th>
-                    <th width="100px">Phone</th>
-                    <th width="100px">Amount(BTC)</th>
-                    <th width="130px">Total Profit (BTC)</th>
-                    <th width="100px">Status</th>
-                    <th>Image</th>
+                    <th width="200px">DEPOSIT DATE</th>
+                    <th width="200px">PAYMENT DATE</th>
+                    <th width="150px">USERNAME</th>
+                    <th width="150px">PHONE</th>
+                    <th width="100px">AMOUNT(BTC)</th>
+                    <th width="200px">TOTAL PROFIT (BTC)</th>
+                    <th width="100px">STATUS</th>
+                    <th>IMAGE</th>
                     <!--<th width="150px">Send Money</th>
                     <th width="50px">Delete</th>-->
                 </tr>
@@ -147,13 +129,13 @@ $uri = $this->serverUrl();
                         fclose($handle);
                         ?>
                         <tr>
-                            <td width="50px"><?php echo $row['ID'];?></td>
-                            <td width="150px"><?php echo $row['senddate'];?></td>
-                            <td width="150px"><?php echo $row['admin_senddate'];?></td>
-                            <td width="150px"><?php echo $row['UserName'];?></td>
-                            <td width="100px"><?php echo $row['Mobile'];?></td>
-                            <td width="100px"><?php echo $row['amount'];?></td>
-                            <td width="130px"><?php echo $row['bonus'];?></td>
+                            <td width="50px" align="center"><?php echo $row['ID'];?></td>
+                            <td width="150px" align="center"><?php echo $row['senddate'];?></td>
+                            <td width="150px" align="center"><?php echo $row['admin_senddate'];?></td>
+                            <td width="150px" align="center"><?php echo $row['UserName'];?></td>
+                            <td width="100px" align="center"><?php echo $row['Mobile'];?></td>
+                            <td width="100px" align="center"><?php echo $row['amount'];?></td>
+                            <td width="130px" align="center"><?php echo $row['bonus'];?></td>
                             <td width="100px" class="text-center"><span class="label label-sm <?php echo $row['color'];?>"><?php echo $row['status'];?></span></td>
                             <td class="image-view text-center"><span class="view-image-btn label label-sm label-info" style="cursor: pointer;">View Image</span>
                                 <div class="modal myModal">
