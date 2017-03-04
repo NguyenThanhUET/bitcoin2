@@ -106,8 +106,7 @@ $uri = $this->serverUrl();
                     <th width="200px">PAYMENT DATE</th>
                     <th width="150px">USERNAME</th>
                     <th width="150px">PHONE</th>
-                    <th width="100px">AMOUNT(BTC)</th>
-                    <th width="200px">TOTAL PROFIT (BTC)</th>
+                    <th width="200px">PROFIT (BTC)</th>
                     <th width="100px">STATUS</th>
                     <th>IMAGE</th>
                     <!--<th width="150px">Send Money</th>
@@ -135,7 +134,6 @@ $uri = $this->serverUrl();
                             <td width="150px" align="center"><?php echo $row['UserName'];?></td>
                             <td width="100px" align="center"><?php echo $row['Mobile'];?></td>
                             <td width="100px" align="center"><?php echo $row['amount'];?></td>
-                            <td width="130px" align="center"><?php echo $row['bonus'];?></td>
                             <td width="100px" class="text-center"><span class="label label-sm <?php echo $row['color'];?>"><?php echo $row['status'];?></span></td>
                             <td class="image-view text-center"><span class="view-image-btn label label-sm label-info" style="cursor: pointer;">View Image</span>
                                 <div class="modal myModal">
