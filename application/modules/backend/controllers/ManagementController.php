@@ -44,7 +44,7 @@ class Backend_ManagementController extends Frontend_AppController {
 	public function loggingAction(){
 		$this->view->title = 'Customer Access Log';
 		$this->_helper->layout->setLayout('backend-layout');
-		$limitPerPage = 3;
+		$limitPerPage = 20;
 		$page=$this->_getParam('page',1);
 		$params	=	array($limitPerPage,$page-1);
 		$data = $this->model->executeSql('SPC_GET_ACCESS_LOG', $params);

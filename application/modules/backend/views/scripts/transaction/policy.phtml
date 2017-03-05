@@ -48,7 +48,7 @@ $uri = $this->serverUrl();
                                             <input type="number" class="amount form-control width-70" value="<?php echo isset($row['amount'])? $row['amount']:0;?>" /> BTC
                                         </td>
                                         <td width="40%">
-                                            <input type="number" class="recived form-control width-70" value="<?php echo isset($row['recived'])? $row['recived']:0;?>" /> BTC
+                                            <input type="number" class="recived form-control width-70" value="<?php echo isset($row['recived'])? $row['recived']:0;?>" /> <?php if($row['transaction_typ']<=3){ ?>BTC <?php }else{echo '%';} ?>
                                         </td>
                                         <td width="40%">
                                             <button class="save">Update</button>
