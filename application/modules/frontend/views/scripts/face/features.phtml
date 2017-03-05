@@ -114,16 +114,6 @@
 
                     <a href="#" class="bgkx"><img style="margin: 0px 8px 0px -6px;" src="/templates/images/en.png">EN</a>
 
-                    <div class="dropdownContain">
-                        <div class="dropOut">
-                            <ul id="langbar">
-                                <a href="#" class=""><li id="langbar"><img style="margin: 0px 8px 0px -6px;" src="/templates/images/ru.png">RU</li></a>
-                                <a href="#" class=""><li id="langbar"><img style="margin: 0px 8px 0px -6px;" src="/templates/images/de.png">DE</li></a>
-                                <a href="#" class=""><li id="langbar"><img style="margin: 0px 8px 0px -6px;" src="/templates/images/pt.png">PT</li></a>
-                            </ul>
-                        </div>
-                    </div>
-
                 </li>
             </ul>
         </div>
@@ -306,7 +296,7 @@
     height: 155px;  border-radius: 7px;  margin-top: 10px;
 ">
                                     <span class="plan-name"><b>Plan </b>A</span>
-                                    <p class="plan-price2"><span class="plan-price3"><strong>10% HOURLY</strong>24 HOURS</span></p>
+                                    <p class="plan-price2"><span class="plan-price3"><strong><?php echo ($this->planA_daily) ?>% DAILY</strong><small><?php echo ($this->planA_duration) ?> DAYS</small></span></p>
 
                                 </div>
                                 <div class="arrowset mrkf fixne"></div>
@@ -317,7 +307,7 @@
     height: 155px;  border-radius: 7px;  margin-top: 10px;
 ">
                                     <span class="plan-name"><b>Plan </b>B</span>
-                                    <p class="plan-price2"><span class="plan-price3"><strong>15% HOURLY</strong><small>48 HOURS</small></span></p>
+                                    <p class="plan-price2"><span class="plan-price3"><strong><?php echo ($this->planB_daily) ?>% DAILY</strong><small><?php echo ($this->planB_duration) ?> DAYS</small></span></p>
 
                                 </div>
                                 <div class="arrowset mrkf fixne"></div>
@@ -326,7 +316,7 @@
     height: 155px;  border-radius: 7px;  margin-top: 10px;
 ">
                                     <span class="plan-name" ><b>Plan C</b></span>
-                                    <p class="plan-price2"><span class="plan-price3"><strong>20% HOURLY</strong>72 HOURS</span></p>
+                                    <p class="plan-price2"><span class="plan-price3"><strong><?php echo ($this->planC_daily) ?>% DAILY</strong><small><?php echo ($this->planC_duration) ?> DAYS</small></span></p>
 
                                 </div>
                             </div>
@@ -365,7 +355,7 @@
     filter: url(../images/plan3.png), progid:DXImageTransform.Microsoft.gradient( startColorstr='#bce255', endColorstr='#51af00',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */;
     text-shadow: 1px 1px 3px #7AA700;
 ">
-                                    <span class="plan-name" >Profit higher than <b>2.25%</b></span>
+                                    <span class="plan-name" >The Highest Profit</span>
                                     <p class="plan-price2"><strong>Instant</strong><small>Withdrawals of main investments</small></p>
 
                                 </div>
@@ -403,8 +393,8 @@ font-size: 16px;
                                 <div class="plan text-center balbooster" style="
     height: 155px;  border-radius: 7px;  margin-top: 10px;
 ">
-                                    <span class="plan-name">Balance higher than <b>1000$</b></span>
-                                    <p class="plan-price2"><strong>+5.00%</strong><small> For balance earnings</small></p>
+                                    <span class="plan-name">BALANCE <b><?php echo ($this->planA_amount) ?></b></span>
+                                    <p class="plan-price2"><strong><?php echo ($this->planA_profit) ?>%</strong><small> For balance earnings</small></p>
 
                                 </div>
                                 <div class="arrowset mrkf fixne"></div>
@@ -414,8 +404,8 @@ font-size: 16px;
                                 <div class="plan text-center balbooster2" style="
     height: 155px;  border-radius: 7px;  margin-top: 10px;
 ">
-                                    <span class="plan-name">Balance higher than <b>2000$</b></span>
-                                    <p class="plan-price2"><strong>+7.00%</strong><small> For balance earnings</small></p>
+                                    <span class="plan-name">BALANCE <b><?php echo ($this->planB_amount) ?></b></span>
+                                    <p class="plan-price2"><strong><?php echo ($this->planB_profit) ?>%</strong><small> For balance earnings</small></p>
 
                                 </div>
                                 <div class="arrowset mrkf fixne"></div>
@@ -423,8 +413,8 @@ font-size: 16px;
                                 <div class="plan text-center balbooster3" style="
     height: 155px;  border-radius: 7px;  margin-top: 10px;
 ">
-                                    <span class="plan-name">Balance higher than <b>3000$</b></span>
-                                    <p class="plan-price2"><strong>+10.00%</strong><small> For balance earnings</small></p>
+                                    <span class="plan-name">BALANCE <b><?php echo ($this->planC_amount) ?></b></span>
+                                    <p class="plan-price2"><strong><?php echo ($this->planB_profit) ?>%</strong><small> For balance earnings</small></p>
 
                                 </div>
                             </div>
@@ -514,13 +504,15 @@ font-size: 16px;
     <div class="footer" style="padding-bottom: 25px;"><!-- column -->
         <div class="clearfix" id="u320_align_to_page" style="padding: 20px 0;">
 
-            <div style="" class="Subheading-White clearfix colelem" id="u825-4"><!-- content -->
-                <h4><span style="background: rgba(255, 255, 255, 0.11);padding: 0 20px;">Accepting payment systems like</span></h4>
-                <div style="padding: 22px 0px 0 140px;">
-<!--                    <div style="background:url('images/pm.png') no-repeat; width: 171px; height:50px;float:left;padding-right: 70px;"></div>-->
-                    <div style="background:url('templates/images/bt.png') no-repeat; width: 129px; height:50px;float:left;padding-right: 70px;"></div>
-<!--                    <div style="background:url('images/pe.png') no-repeat; width: 253px; height:50px;float:left;top: 3px;position: relative;"></div>-->
-                </div>
+            <div style="display: inline-block;" class="Subheading-White clearfix colelem" id="u825-4"><!-- content -->
+                <span style="display:inline-block; font-size: x-large">Accepting payment systems with
+                        <img src='../templates/images/bt.png' style="width: 75px; height:25px;">
+                    </span>
+                <!--                <div style="padding: 22px 0px 0 140px;">-->
+                <!--                    <div style="background:url('../templates/images/pm.png') no-repeat; width: 171px; height:50px;float:left;padding-right: 70px;"></div>-->
+                <!--                    <div style="background:url('../templates/images/bt.png') no-repeat; width: 129px; height:50px;"></div>-->
+                <!--                    <div style="background:url('../templates/images/pe.png') no-repeat; width: 253px; height:50px;float:left;top: 3px;position: relative;"></div>-->
+                <!--                </div>-->
             </div>
         </div>
     </div>
@@ -530,7 +522,6 @@ font-size: 16px;
             <div class="footero">
                 <div class="contain">
                     <div class="stpnw"><img width="170" src="templates/images/logo.png" class="instq"> © 2017
-                        <div style="padding-top: 27px;">Superiority and uniqueness, is the slogan of our company.</div>
                     </div>
                     <div class="fixtd3">
 

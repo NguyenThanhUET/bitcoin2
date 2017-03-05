@@ -18,6 +18,14 @@ class Frontend_MemberController extends Frontend_AppController {
 		$data = $this->model->executeSql('SPC_GET_BUSSINESS_REPORT', $params);
 		if(!empty($data[0][0])){
 			$this->view->dataReportMember	=	$data[0][0];
+            $this->view->dataReportMember["total_balance"] = $this->view->dataReportMember['amountSuccessRecived'] + $this->view->dataReportMember['amountInvest'];
+			if (!$this->view->dataReportMember["amountConfirmedInvestLast"]){
+                $this->view->dataReportMember["amountConfirmedInvestLast"] = 0.000;
+            }
+
+            if (!$this->view->dataReportMember["planRecivedLast"]){
+                $this->view->dataReportMember["planRecivedLast"] = 0.000;
+            }
 		}
 
 		$status_user = $this->model->executeSql('SPC_GET_STATUS_USER', $params);

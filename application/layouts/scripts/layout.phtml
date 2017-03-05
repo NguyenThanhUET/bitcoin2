@@ -216,7 +216,9 @@
 			<div class="animated fadeInUp" style="float:left; margin-left: 114px;">
 				<div class="boxed">
 					<span class="hbox">TOTAL BALANCE</span>
-					<span class="countbox"><span class="usd_balance"><?php echo isset($this->dataReportMember['amountInvest'])?number_format($this->dataReportMember['amountInvest'], 3, ',', ''):0;?><span> <span class="dv">BTC</span></span><span class="ibox1">Deposited: <b><?php echo isset($this->dataReportMember['amountInvest'])?number_format($this->dataReportMember['amountInvest'], 3, ',', ''):0;?> <span class="dv">BTC</span></b></span><span class="ibox2">Withdrawn: <b><?php echo isset($this->dataReportMember['amountSuccessRecived'])?number_format($this->dataReportMember['amountSuccessRecived'], 3, ',', ''):0;?> <span class="dv">BTC</span></b></span></span></span>
+					<span class="countbox"><span class="usd_balance"><?php echo isset($this->dataReportMember['total_balance'])?number_format($this->dataReportMember['total_balance'], 3, ',', ''):0;?><span> <span class="dv">BTC</span></span>
+                    <span class="ibox1">Deposited: <b><?php echo isset($this->dataReportMember['amountInvest'])?number_format($this->dataReportMember['amountInvest'], 3, ',', ''):0;?> <span class="dv">BTC</span></b></span>
+                    <span class="ibox2">Withdrawn: <b><?php echo isset($this->dataReportMember['planRecivedLast'])?number_format($this->dataReportMember['planRecivedLast'], 3, ',', ''):0;?> <span class="dv">BTC</span></b></span></span></span>
 				</div>
 			</div>
 
@@ -251,12 +253,12 @@
 				<div class="front refblock">
 					<div class="boxed">
 						<span class="hbox">ACTIVE DEPOSIT</span>
-						<span class="countbox"><span class="btc_balance"><?php echo isset($this->dataReportMember['amountSuccessRecivedLast'])?number_format($this->dataReportMember['amountSuccessRecivedLast'], 3, ',', ''):0;?></span><span class="dv">BTC</span></span>
-						<span class="ibox1">EARNED: <b><span class="btc_balance"><?php echo isset($this->dataReportMember['amountConfirmedInvestLast'])?number_format($this->dataReportMember['amountConfirmedInvestLast'], 3, ',', ''):0;?></span><span class="dv">BTC</span></b></span>
+						<span class="countbox"><span class="btc_balance"><?php echo isset($this->dataReportMember['amountInvest'])?number_format($this->dataReportMember['amountInvest'], 3, ',', ''):0;?></span><span class="dv">BTC</span></span>
+						<span class="ibox1">EARNED: <b><span class="btc_balance"><?php echo isset($this->dataReportMember['amountSuccessRecived'])?number_format($this->dataReportMember['amountSuccessRecived'],3, ',', ''):0;?></span><span class="dv">BTC</span></b></span>
 						<span class="ibox2">Withdrawn: <b><span class="btc_balance"><?php echo isset($this->dataReportMember['planRecivedLast'])?number_format($this->dataReportMember['planRecivedLast'], 3, ',', ''):0;?></span><span class="dv">BTC</span></b></span>
 
 					</div>
-					<div class="btstat toggle_ref_balance"></div>
+                    <a href="http://www.coindesk.com/calculator/" target="_blank"><div class="btstat toggle_ref_balance"></div></a>
 				</div>
 
 
@@ -326,10 +328,10 @@
 					</div>
 					<?php }else{?>
 					<div style="color:#fff;font-size: 15px;font-weight: 300;font-weight: 700;    padding: 25px 25px 0px 70px;">
-						<span>- EARNED: <b><span class="btc_balance"><?php echo isset($this->dataReportMember['amountConfirmedInvestLast'])?$this->dataReportMember['amountConfirmedInvestLast']:0;?></span><span class="dv">BTC</span></b></span>
+						<span>- EARNED: <b><span class="btc_balance"><?php echo isset($this->dataReportMember['amountSuccessRecived'])?number_format($this->dataReportMember['amountSuccessRecived'],3, ',', ''):0;?></span><span class="dv"> BTC</span></b></span>
 					</div>
 					<div style="color:#fff;font-size: 15px;font-weight: 300;font-weight: 700;     padding: 25px 25px 0px 70px;">
-							<span>- Total Withdrawn: <b><span class="btc_balance"><?php echo isset($this->dataReportMember['planRecivedLast'])?$this->dataReportMember['planRecivedLast']:0;?></span><span class="dv">BTC</span></b></span>
+							<span>- Total Withdrawn: <b><span class="btc_balance"><?php echo isset($this->dataReportMember['planRecivedLast'])?$this->dataReportMember['planRecivedLast']:0;?></span><span class="dv"> BTC</span></b></span>
 					</div>
 
 					<?php }?>
@@ -366,14 +368,16 @@
 	<div class="footer" style="padding-bottom: 25px;"><!-- column -->
 		<div class="clearfix" id="u320_align_to_page" style="padding: 20px 0;">
 
-			<div style="" class="Subheading-White clearfix colelem" id="u825-4"><!-- content -->
-				<h4><span style="background: rgba(255, 255, 255, 0.11);padding: 0 20px;">Accepting payment systems like</span></h4>
-				<div style="padding: 22px 0px 0 140px;">
-<!--					<div style="background:url('/templates/images/pm.png') no-repeat; width: 171px; height:50px;float:left;padding-right: 70px;"></div>-->
-					<div style="background:url('/templates/images/bt.png') no-repeat; width: 129px; height:50px;float:left;padding-right: 70px;"></div>
-<!--					<div style="background:url('/templates/images/pe.png') no-repeat; width: 253px; height:50px;float:left;top: 3px;position: relative;"></div>-->
-				</div>
-			</div>
+            <div style="display: inline-block;" class="Subheading-White clearfix colelem" id="u825-4"><!-- content -->
+                <span style="display:inline-block; font-size: x-large">Accepting payment systems with
+                        <img src='../templates/images/bt.png' style="width: 75px; height:25px;">
+                    </span>
+                <!--                <div style="padding: 22px 0px 0 140px;">-->
+                <!--                    <div style="background:url('../templates/images/pm.png') no-repeat; width: 171px; height:50px;float:left;padding-right: 70px;"></div>-->
+                <!--                    <div style="background:url('../templates/images/bt.png') no-repeat; width: 129px; height:50px;"></div>-->
+                <!--                    <div style="background:url('../templates/images/pe.png') no-repeat; width: 253px; height:50px;float:left;top: 3px;position: relative;"></div>-->
+                <!--                </div>-->
+            </div>
 		</div>
 	</div>
 	<div style="margin-top: -37px;"><!-- column -->
@@ -382,7 +386,6 @@
 			<div class="footero">
 				<div class="contain">
 					<div class="stpnw"><img width="170" src="/templates/images/logo.png" class="instq"> © 2017
-						<div style="padding-top: 27px;">Superiority and uniqueness, is the slogan of our company.</div>
 					</div>
 					<div class="fixtd3">
 

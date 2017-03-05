@@ -1,5 +1,5 @@
-CREATE DATABASE  IF NOT EXISTS `bitcoin20170218` /*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci */;
-USE `bitcoin20170218`;
+#CREATE DATABASE  IF NOT EXISTS `bitcoin20170218` /*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci */;
+#USE `bitcoin20170218`;
 -- MySQL dump 10.13  Distrib 5.6.24, for Win64 (x86_64)
 --
 -- Host: 127.0.0.1    Database: bitcoin20170218
