@@ -106,31 +106,6 @@
             <!-- END RESPONSIVE MENU TOGGLER -->
             <!-- BEGIN TOP NAVIGATION MENU -->
             <ul class="nav pull-right">
-               <!-- BEGIN NOTIFICATION DROPDOWN -->
-               <!--<li class="dropdown" id="header_notification_bar">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  <i class="icon-warning-sign"></i>
-                  <span class="badge">6</span>
-                  </a>
-               </li>-->
-               <!-- END NOTIFICATION DROPDOWN -->
-               <!-- BEGIN INBOX DROPDOWN -->
-               <!--<li class="dropdown" id="header_inbox_bar">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  <i class="icon-envelope-alt"></i>
-                  <span class="badge">5</span>
-                  </a>
-               </li>-->
-               <!-- END INBOX DROPDOWN -->
-               <!-- BEGIN TODO DROPDOWN -->
-               <!--<li class="dropdown" id="header_task_bar">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  <i class="icon-tasks"></i>
-                  <span class="badge">5</span>
-                  </a>
-               </li>-->
-               <!-- END TODO DROPDOWN -->
-               <!-- BEGIN USER LOGIN DROPDOWN -->
                <li class="dropdown user">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <img style="width:29px;height:29px;" src="/templates/css/images/bussinessman.ico" />
@@ -162,34 +137,34 @@
                <!-- BEGIN SIDEBAR TOGGLER BUTTON -->
             </li>
             <li>
-				<!-- BEGIN RESPONSIVE QUICK SEARCH FORM -->
-				<form></form>
-				<!-- END RESPONSIVE QUICK SEARCH FORM -->
-			</li>
-            <li class="has-sub">
-               <a href="javascript:;">
+               <!-- BEGIN RESPONSIVE QUICK SEARCH FORM -->
+               <form></form>
+               <!-- END RESPONSIVE QUICK SEARCH FORM -->
+            </li>
+            <li class="open">
+               <a href="#">
                   <i class="icon-home"></i>
                   <span class="title">DASDBOARD</span>
-                  <span class="arrow"></span>
+                  <span class="arrow open"></span>
                </a>
-               <ul class="sub">
+               <ul class="sub" style="display: block;">
                   <li><a href="/backend/management/index" title="dashboard"><i class="icon-list-alt"></i> ANALYZE</a></li>
                   <li><a href="/backend/management/customer" title="Customer setting"><i class="icon-user"></i>CUSTOMER</a></li>
                </ul>
             </li>
-			<li class="has-sub ">
-				<a href="javascript:;">
-				<i class="icon-bookmark-empty"></i>
-				<span class="title">TRANSACTION</span>
-				<span class="arrow"></span>
-				</a>
-				<ul class="sub">
-					<li><a href="/backend/transaction/waiting" title="Đợi confirm"><i class="icon-repeat"></i> WAITING</a></li>
-					<li><a href="/backend/transaction/confirmed" title="Đã confirm, đợi gửi tiền"><i class="icon-question-sign"></i> PAYMENT</a></li>
-                    <li><a href="/backend/transaction/ph" title="Đã gửi tiền, hoàn thành giao dịch"><i class="icon-thumbs-up"></i> PAYMENT HISTORY</a></li>
-                   <li><a href="/backend/transaction/policy" title="Chỉnh sửa chính sách"><i class="icon-book"></i> POLICY</a></li>
-				</ul>
-			</li>
+            <li class="active">
+               <a href="#">
+                  <i class="icon-bookmark-empty"></i>
+                  <span class="title">TRANSACTION</span>
+                  <span class="arrow open"></span>
+                  <span class="selected"></span></a>
+               <ul class="sub">
+                  <li><a href="/backend/transaction/waiting" title="Đợi confirm"><i class="icon-repeat"></i> WAITING</a></li>
+                  <li class="active"><a href="/backend/transaction/confirmed" title="Đã confirm, đợi gửi tiền"><i class="icon-question-sign"></i> PAYMENT</a></li>
+                  <li><a href="/backend/transaction/ph" title="Đã gửi tiền, hoàn thành giao dịch"><i class="icon-thumbs-up"></i> PAYMENT HISTORY</a></li>
+                  <li><a href="/backend/transaction/policy" title="Chỉnh sửa chính sách"><i class="icon-book"></i> POLICY</a></li>
+               </ul>
+            </li>
             <li class="start">
                <a href="/backend/ticket">
                   <i class="icon-envelope"></i>
@@ -233,11 +208,11 @@
     _gaq.push(['_setDomainName', 'keenthemes.com']);
     _gaq.push(['_setAllowLinker', true]);
     _gaq.push(['_trackPageview']);
-    (function() {
+   /* (function() {
       var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
       ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
+    })();*/
 	//process url click
 	var _sideBarCurrent = 'home';
 	<?php if( isset($uri[1]) ): ?>
@@ -258,7 +233,7 @@
 
 	$('ul#dashboard-menu > li').each( function() {
 		var liobj = $(this);
-		liobj.removeClass('active');
+		liobj.addClass('active');
 		liobj.find('a > span.selected').remove();
 		liobj.find('a > span.open').removeClass('open');
 		liobj.find('ul > li').removeClass('active');
