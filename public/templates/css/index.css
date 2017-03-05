@@ -109,7 +109,7 @@ h3{
     height: 53px;
     float:left;
     margin-left: -19px;
-    background: url("../images/logo.png") no-repeat center center;
+    background: url("/templates/images/logo.png") no-repeat center center;
     margin-top: 13px;
 }
 
