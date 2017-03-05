@@ -41,6 +41,15 @@ class Backend_ManagementController extends Frontend_AppController {
 			$this->view->data	=	$data[0];
 		}
 	}
+	public function loggingAction(){
+		$this->view->title = 'Customer Access Log';
+		$this->_helper->layout->setLayout('backend-layout');
+		$params	=	array();
+		$data = $this->model->executeSql('SPC_GET_ACCESS_LOG', $params);
+		if(!empty($data[0])){
+			$this->view->data	=	$data[0];
+		}
+	}
 	public function activecustomerAction(){
 		$this->_helper->layout->disablelayout();
 		$this->_helper->viewRenderer->setNoRender();
@@ -89,5 +98,6 @@ class Backend_ManagementController extends Frontend_AppController {
 			$this->getHelper('json')->sendJson($this->respon);
 		}
 	}
+
 
 }

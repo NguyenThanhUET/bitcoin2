@@ -50,6 +50,7 @@ class Frontend_HomeController extends Frontend_AppController {
 				$params = array(
 					$userName
 				,   crypt($password, $txt)
+				,	$this->get_client_ip()
 				);
 				$data = $this->model->executeSql('SPC_LOGIN_CUSTOMER_LST1', $params);
 				if(isset($data[0][0]['islogin']) && 1*$data[0][0]['islogin']==1) {
@@ -79,6 +80,24 @@ class Frontend_HomeController extends Frontend_AppController {
 				return 0;
 			}
 		}
+	}
+	private function get_client_ip() {
+		$ipaddress = '';
+		if (getenv('HTTP_CLIENT_IP'))
+			$ipaddress = getenv('HTTP_CLIENT_IP');
+		else if(getenv('HTTP_X_FORWARDED_FOR'))
+			$ipaddress = getenv('HTTP_X_FORWARDED_FOR');
+		else if(getenv('HTTP_X_FORWARDED'))
+			$ipaddress = getenv('HTTP_X_FORWARDED');
+		else if(getenv('HTTP_FORWARDED_FOR'))
+			$ipaddress = getenv('HTTP_FORWARDED_FOR');
+		else if(getenv('HTTP_FORWARDED'))
+			$ipaddress = getenv('HTTP_FORWARDED');
+		else if(getenv('REMOTE_ADDR'))
+			$ipaddress = getenv('REMOTE_ADDR');
+		else
+			$ipaddress = 'UNKNOWN';
+		return $ipaddress;
 	}
 
 }
