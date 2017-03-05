@@ -44,11 +44,27 @@ class Backend_ManagementController extends Frontend_AppController {
 	public function loggingAction(){
 		$this->view->title = 'Customer Access Log';
 		$this->_helper->layout->setLayout('backend-layout');
-		$params	=	array();
+		$limitPerPage = 3;
+		$page=$this->_getParam('page',1);
+		$params	=	array($limitPerPage,$page-1);
 		$data = $this->model->executeSql('SPC_GET_ACCESS_LOG', $params);
+		$dataCountLog = $this->model->executeSql('GET_COUNT_LOG', array());
+
 		if(!empty($data[0])){
 			$this->view->data	=	$data[0];
+			if(isset($dataCountLog[0][0]['count_log']) && $dataCountLog[0][0]['count_log']>0 ){
+				$dataPage = array();
+				for ($i=0;$i<$dataCountLog[0][0]['count_log'];$i++){
+					$dataPage[]=1;
+				}
+				$paginator = Zend_Paginator::factory($dataPage);
+				$paginator->setItemCountPerPage($limitPerPage);
+				$paginator->setCurrentPageNumber($page);
+
+				$this->view->paginator=$paginator;
+			}
 		}
+
 	}
 	public function activecustomerAction(){
 		$this->_helper->layout->disablelayout();

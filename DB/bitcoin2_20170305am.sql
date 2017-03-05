@@ -18,6 +18,34 @@ USE `bitcoin20170218`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `access_log`
+--
+
+DROP TABLE IF EXISTS `access_log`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `access_log` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `access_date` datetime DEFAULT NULL,
+  `ip` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `user_name` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `status` int(11) DEFAULT NULL,
+  `type` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `access_log`
+--
+
+LOCK TABLES `access_log` WRITE;
+/*!40000 ALTER TABLE `access_log` DISABLE KEYS */;
+INSERT INTO `access_log` VALUES (1,'2017-03-05 11:19:52','127.0.0.1','thanh2',1,2),(2,'2017-03-05 11:22:54','127.0.0.1','admin',0,1),(3,'2017-03-05 11:23:16','127.0.0.1','admin',1,1),(4,'2017-03-05 12:34:52','127.0.0.1','thanh2',0,1),(5,'2017-03-05 12:34:56','127.0.0.1','thanh2',0,1),(6,'2017-03-05 12:34:59','127.0.0.1','thanh2',0,1),(7,'2017-03-05 12:35:01','127.0.0.1','thanh2',0,1),(8,'2017-03-05 13:06:04','127.0.0.1','admin',1,1);
+/*!40000 ALTER TABLE `access_log` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `admin`
 --
 
@@ -444,6 +472,25 @@ DELIMITER ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
 /*!50003 SET character_set_results = @saved_cs_results */ ;
 /*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `GET_COUNT_LOG` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `GET_COUNT_LOG`()
+BEGIN
+	SELECT COUNT(id) AS count_log FROM access_log;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
 /*!50003 DROP PROCEDURE IF EXISTS `GET_FEE_AMOUNT_INVEST_LIST` */;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
@@ -744,6 +791,48 @@ DELIMITER ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
 /*!50003 SET character_set_results = @saved_cs_results */ ;
 /*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `SPC_GET_ACCESS_LOG` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SPC_GET_ACCESS_LOG`(
+	limit_record INT
+,	page_index INT
+)
+BEGIN
+	DECLARE offset_index INT ;
+    SET offset_index =page_index*limit_record ;
+	SELECT
+    access_log.id,
+    access_log.access_date,
+    access_log.ip,
+    access_log.user_name,
+    CASE
+		WHEN access_log.status = 1 THEN 'Login success'
+        ELSE 'Login failed'
+	END AS access_status,
+    CASE
+		WHEN access_log.type = 1 THEN 'Admin login'
+        ELSE 'Customer login'
+	END AS access_type,
+    access_log.status AS access_status_int
+	
+    FROM access_log
+    ORDER BY
+		access_log.access_date DESC
+	LIMIT limit_record OFFSET offset_index;
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
 /*!50003 DROP PROCEDURE IF EXISTS `SPC_GET_ADMIN_TICKET_LIST` */;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
@@ -799,7 +888,7 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `SPC_GET_BUSSINESS_REPORT`(IN
 P_CustomerID	INT
 )
 BEGIN
-	DECLARE totalInvest INT DEFAULT 0;
+    DECLARE totalInvest INT DEFAULT 0;
     DECLARE waitingInvest INT DEFAULT 0;
     DECLARE confirmedInvest INT DEFAULT 0;
     DECLARE amountInvest DECIMAL(18,5) DEFAULT 0;
@@ -819,23 +908,23 @@ BEGIN
     DECLARE amountSuccessRecivedLast DECIMAL(18,5) DEFAULT 0;
     SET totalInvest = 
     (SELECT
-		 COUNT(1)
+         COUNT(1)
     FROM transaction_gh
     WHERE transaction_gh.CustomerID = P_customerID
     AND transaction_gh.del_flg <> 1);
-	
+    
     
     SET waitingInvest = 
     (SELECT
-		 COUNT(1)
+         COUNT(1)
     FROM transaction_gh
     WHERE transaction_gh.CustomerID = P_customerID
     AND transaction_gh.status = 1
     AND transaction_gh.del_flg <> 1);
-	
+    
     SET confirmedInvest = 
     (SELECT
-		 COUNT(1)
+         COUNT(1)
     FROM transaction_gh
     WHERE transaction_gh.CustomerID = P_customerID
     AND transaction_gh.status = 2
@@ -844,14 +933,15 @@ BEGIN
     
     SET amountInvest = 
     (SELECT
-		 IFNULL(SUM(transaction_gh.amount),0)
+         IFNULL(SUM(transaction_gh.amount),0)
     FROM transaction_gh
     WHERE transaction_gh.CustomerID = P_customerID
-    AND transaction_gh.del_flg <> 1);
-	
+    AND transaction_gh.del_flg <> 1
+    AND transaction_gh.status = 2);
+    
     SET amountWaitingInvest = 
     (SELECT
-		 IFNULL(SUM(transaction_gh.amount),0)
+         IFNULL(SUM(transaction_gh.amount),0)
     FROM transaction_gh
     WHERE transaction_gh.CustomerID = P_customerID
      AND transaction_gh.status = 1
@@ -859,7 +949,7 @@ BEGIN
     
     SET amountConfirmedInvest = 
     (SELECT
-		 IFNULL(SUM(transaction_gh.amount),0)
+         IFNULL(SUM(transaction_gh.amount),0)
     FROM transaction_gh
     WHERE transaction_gh.CustomerID = P_customerID
      AND transaction_gh.status = 2
@@ -867,7 +957,7 @@ BEGIN
 
     SET amountConfirmedInvestLast = 
     (SELECT 
-		 IFNULL(transaction_gh.amount,0)
+         IFNULL(transaction_gh.amount,0)
     FROM transaction_gh
     WHERE transaction_gh.CustomerID = P_customerID
      AND transaction_gh.status = 2
@@ -877,7 +967,7 @@ BEGIN
     
     SET transactionGHLastID = 
     (SELECT 
-		 IFNULL(transaction_gh.ID,0)
+         IFNULL(transaction_gh.ID,0)
     FROM transaction_gh
     WHERE transaction_gh.CustomerID = P_customerID
      AND transaction_gh.status = 2
@@ -887,14 +977,14 @@ BEGIN
     
     SET totalRecived = 
     (SELECT
-		 COUNT(1)
+         COUNT(1)
     FROM transaction_ph
     WHERE transaction_ph.CustomerID = P_customerID
     AND transaction_ph.del_flg <> 1);
     
     SET errorRecived = 
     (SELECT
-		 COUNT(1)
+         COUNT(1)
     FROM transaction_ph
     WHERE transaction_ph.CustomerID = P_customerID
     AND transaction_ph.issuccess = 0
@@ -902,7 +992,7 @@ BEGIN
     
     SET successRecived = 
     (SELECT
-		 COUNT(1)
+         COUNT(1)
     FROM transaction_ph
     WHERE transaction_ph.CustomerID = P_customerID
     AND transaction_ph.issuccess = 1
@@ -910,14 +1000,14 @@ BEGIN
     
     SET amountRecived = 
     (SELECT
-		 IFNULL(SUM(transaction_ph.amount),0)
+         IFNULL(SUM(transaction_ph.amount),0)
     FROM transaction_ph
     WHERE transaction_ph.CustomerID = P_customerID
     AND transaction_ph.del_flg <> 1);
     
     SET amountErrorRecived = 
     (SELECT
-		 IFNULL(SUM(transaction_ph.amount),0)
+         IFNULL(SUM(transaction_ph.amount),0)
     FROM transaction_ph
     WHERE transaction_ph.CustomerID = P_customerID
     AND transaction_ph.issuccess = 0
@@ -925,49 +1015,42 @@ BEGIN
     
     SET amountSuccessRecived = 
     (SELECT
-		 IFNULL(SUM(transaction_ph.amount),0)
+         IFNULL(SUM(transaction_ph.amount),0)
     FROM transaction_ph
     WHERE transaction_ph.CustomerID = P_customerID
     AND transaction_ph.issuccess = 1
     AND transaction_ph.del_flg <> 1);
     
     SET amountSuccessRecivedLast = 
-    (SELECT
-		 IFNULL(SUM(transaction_ph.amount),0)
-    FROM transaction_gh
-    INNER JOIN transaction_ph ON
-			transaction_gh.ID = transaction_ph.gh_id
-    WHERE transaction_ph.CustomerID = P_customerID
-    AND transaction_ph.issuccess = 1
-    AND transaction_ph.del_flg <> 1
-    AND transaction_gh.ID = transactionGHLastID);
+    (SELECT amount FROM transaction_ph WHERE transaction_ph.CustomerID = P_customerID ORDER BY senddate limit 1);
     
     SET planRecivedLast = 
     (SELECT 
-		 IFNULL(feeamount.recived,0)
+         IFNULL(feeamount.recived,0)
     FROM transaction_gh
     LEFT JOIN feeamount ON
-		transaction_gh.transaction_typ = feeamount.transaction_typ
+        transaction_gh.transaction_typ = feeamount.transaction_typ
     WHERE transaction_gh.CustomerID = P_customerID
      AND transaction_gh.status = 2
     AND transaction_gh.del_flg <> 1
+    AND transaction_gh.status = 2
     ORDER BY transaction_gh.senddate DESC
     LIMIT 1);
     
     
     SELECT 
-		totalInvest,
-		waitingInvest,
-		confirmedInvest, 
-		amountInvest,
-		amountWaitingInvest,
-		amountConfirmedInvest, 
-		totalRecived,
-		errorRecived, 
-		successRecived,
-		amountRecived,
-		amountErrorRecived,
-		amountSuccessRecived,
+        totalInvest,
+        waitingInvest,
+        confirmedInvest, 
+        amountInvest,
+        amountWaitingInvest,
+        amountConfirmedInvest, 
+        totalRecived,
+        errorRecived, 
+        successRecived,
+        amountRecived,
+        amountErrorRecived,
+        amountSuccessRecived,
         amountSuccessRecivedLast,
         amountConfirmedInvestLast,
         planRecivedLast,
@@ -1428,11 +1511,11 @@ DELIMITER ;
 /*!50003 SET @saved_cs_client      = @@character_set_client */ ;
 /*!50003 SET @saved_cs_results     = @@character_set_results */ ;
 /*!50003 SET @saved_col_connection = @@collation_connection */ ;
-/*!50003 SET character_set_client  = utf8mb4 */ ;
-/*!50003 SET character_set_results = utf8mb4 */ ;
-/*!50003 SET collation_connection  = utf8mb4_general_ci */ ;
+/*!50003 SET character_set_client  = utf8 */ ;
+/*!50003 SET character_set_results = utf8 */ ;
+/*!50003 SET collation_connection  = utf8_general_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = 'NO_AUTO_VALUE_ON_ZERO' */ ;
+/*!50003 SET sql_mode              = 'NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `SPC_GET_TRANS_PH`(
 IN customerId	INT
@@ -1446,17 +1529,15 @@ BEGIN
             ELSE   'Waiting'
 		END  AS issuccess
 	,	CASE
-			WHEN transaction_ph.level = 0 THEN 'Me'
+			WHEN transaction_ph.level = 0 THEN 'Normal'
             WHEN transaction_ph.level = 1 THEN 'From F1'
 		END  AS level
 	,	CASE
 			WHEN transaction_ph.issuccess = 1 THEN 'label-success'
             ELSE  'label-warning'
 		END  AS color
-    ,	transaction_gh.senddate AS deposit_date
-    FROM transaction_ph
-    LEFT JOIN transaction_gh ON
-		transaction_ph.gh_id = transaction_gh.ID
+    
+    FROM transaction_ph 
     WHERE transaction_ph.CustomerID =  customerId
     AND transaction_ph.del_flg <> 1
     AND (transaction_ph.issuccess = 1 OR level = 0)
@@ -1614,8 +1695,10 @@ DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `SPC_LOGIN_ADMIN_LST1`(IN
 	userName varchar(100)
 ,	password_in varchar(100)
+,	ip			VARCHAR(200)
 )
 BEGIN
+	DECLARE status_tmp INT DEFAULT 0;
 	SELECT
 		c1.ID
 	,	c1.Name
@@ -1628,7 +1711,28 @@ BEGIN
 	WHERE	c1.UserName = userName COLLATE utf8_unicode_ci
 		AND c1.Password = password_in COLLATE utf8_unicode_ci
 	LIMIT 1;
- 
+	IF 
+    (SELECT
+		COUNT(*)
+	FROM admin AS c1
+	WHERE	c1.UserName = userName COLLATE utf8_unicode_ci
+		AND c1.Password = password_in COLLATE utf8_unicode_ci) > 0
+    THEN
+		SET status_tmp = 1;
+	END IF;
+    INSERT INTO access_log(
+        access_date,
+        ip,
+        user_name,
+        status,
+        type
+    )
+    SELECT
+		NOW()
+	,	ip
+    ,	userName
+    ,	status_tmp
+    ,	1; -- admin access
 END ;;
 DELIMITER ;
 /*!50003 SET sql_mode              = @saved_sql_mode */ ;
@@ -1643,14 +1747,16 @@ DELIMITER ;
 /*!50003 SET character_set_results = utf8 */ ;
 /*!50003 SET collation_connection  = utf8_general_ci */ ;
 /*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
-/*!50003 SET sql_mode              = '' */ ;
+/*!50003 SET sql_mode              = 'NO_AUTO_CREATE_USER,NO_ENGINE_SUBSTITUTION' */ ;
 DELIMITER ;;
 CREATE DEFINER=`root`@`localhost` PROCEDURE `SPC_LOGIN_CUSTOMER_LST1`(IN
 	userName varchar(100)
 ,	password_in varchar(100)
+,	ip			VARCHAR(200)
 )
 BEGIN
 	DECLARE adminWallet VARCHAR(500) DEFAULT '';
+    DECLARE status_tmp INT DEFAULT 0;
     SET adminWallet =  (SELECT adminwallet.wallet FROM adminwallet ORDER BY RAND() LIMIT 1);
 	SELECT
 		c1.ID
@@ -1668,6 +1774,28 @@ BEGIN
 		AND c1.Password = password_in
         AND c1.IsActive =  1
 	LIMIT 1;
+    IF 
+    (SELECT COUNT(*) 	FROM  customer AS c1
+						WHERE	c1.UserName = userName
+							AND c1.Password = password_in
+							AND c1.IsActive =  1) > 0
+    THEN
+		SET status_tmp = 1;
+	END IF;
+    INSERT INTO access_log(
+        access_date,
+        ip,
+        user_name,
+        status,
+        type
+    )
+    SELECT
+		NOW()
+	,	ip
+    ,	userName
+    ,	status_tmp
+    ,	2; -- customer access
+   
  
 END ;;
 DELIMITER ;
@@ -2197,4 +2325,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-03-05  9:48:41
+-- Dump completed on 2017-03-05 13:55:00

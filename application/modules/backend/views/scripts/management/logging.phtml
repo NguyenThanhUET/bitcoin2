@@ -16,7 +16,7 @@ $uri = $this->serverUrl();
 <div class="page-content-admin">
     <div class="message"></div>
     <div class="w-data-table">
-        <div class="w-body-table-fix-1 tbl-data-search" >
+        <div class="w-body-table-fix-1 tbl-data-search" style="height: 636px;">
             <table id="tbl-seach-1" class="tbl-body-1 table-bordered">
                 <thead>
                 <tr>
@@ -39,7 +39,6 @@ $uri = $this->serverUrl();
                             <td width="20%" align="center"><?php echo $row['user_name'];?></td>
                             <td width="10%" align="center" class="<?php if($row['access_status_int']==1){?>success-td<?php }else {?> error-td <?php }?>"><?php echo $row['access_status'];?></td>
                             <td width="20%" align="center"><?php echo $row['access_type'];?></td>
-
                         </tr>
                     <?php } ?>
                 <?php } ?>
@@ -47,6 +46,6 @@ $uri = $this->serverUrl();
             </table>
         </div>
     </div>
-
+<?php echo  $this->paginationControl($this->paginator, 'Sliding', 'pagination.phtml'); ?>
 
 </div>
