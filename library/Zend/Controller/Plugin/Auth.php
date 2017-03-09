@@ -49,6 +49,10 @@ class Zend_Controller_Plugin_Auth extends Zend_Controller_Plugin_Abstract{
 				if( in_array($request->getControllerName(), $this->allow)) {
 					$error = false;
 				}
+				if(strtolower($request->getModuleName()) == 'frontend'
+					&& strtolower($request->getControllerName()) == 'home'){
+					$error = false;
+				}
 				//when error
 				if($error){
 					if(strtolower($request->getModuleName()) == 'common'

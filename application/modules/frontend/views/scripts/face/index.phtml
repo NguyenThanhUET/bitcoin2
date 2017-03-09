@@ -1,3 +1,8 @@
+<?php
+$amountGHInt = $this->amountGHInt;
+$amountPHInt = $this->amountPHInt;
+
+?>
 <div class="shadow Featured-In clearfix" id="page"><!-- column -->
 
 
@@ -28,7 +33,7 @@
             <?php } ?>
             <h2 style="font-weight: 300;margin-top: 45px;font-size: 20px !important;color: #FFFFFF; padding: 5px 0px 5px 0px;	margin-top: 31px;">Partners already earned</h2>
             <h2 class="animated fadeInLeft" style="margin-bottom:15px;">
-                <span style="background: rgba(255, 255, 255, 0.15);padding: 0 20px;"><b><span class="credited">2824061</span> $</b></span>
+                <span style="background: rgba(255, 255, 255, 0.15);padding: 0 20px;"><b><span class="credited"><?php echo isset($this->data['total_send_balance'])? 1*$this->data['total_send_balance']+$amountPHInt:$amountPHInt;?> </span>BTC</b></span>
             </h2>
         </div>
 
@@ -155,11 +160,11 @@
 
                 <div style="margin:20px 0;width:100%;float:left;">
                     <div style="margin: 0px auto;position: relative;left: 31px;" class="col-md-111"><img style="position: relative;top: 3px;left: -9px;float: left;" src="/templates/images/users.png">Members<br/>
-                        <b><span id="stat_count">798930</span></b></div>
-                    <div class="col-md-111" style="left: 70px;"><img style="position: relative;top: 3px;left: -9px;float: left;" src="/templates/images/income.png">Total withdraw<br/><b><span id="stat_average">2824061</span>$</b></div>
+                        <b><span id="stat_count"><?php echo (1*$this->totalPerson + 1*$this->dataInvest['total_customer']);?></span></b></div>
+                    <div class="col-md-111" style="left: 70px;"><img style="position: relative;top: 3px;left: -9px;float: left;" src="/templates/images/income.png">Total withdraw<br/><b><span id="stat_average"><?php echo isset($this->data['total_recived_blance'])? 1*$this->data['total_recived_blance']+$amountGHInt:$amountGHInt;?> </span>BTC</b></div>
                     <div class="col-md-111" style="left: 126px;"><img style="position: relative;top: 7px;left: -9px;float: left;" src="/templates/images/earn.png">Total deposited
                         <br>
-                        <b><span class="credited">14217726.47</span> $</b>
+                        <b><span class="credited"><?php echo isset($this->data['total_send_balance'])? 1*$this->data['total_send_balance']+$amountPHInt:$amountPHInt;?> </span>BTC</b>
                     </div>
                 </div>
             </div>
@@ -330,6 +335,6 @@
         </div>
     </div>
 </div>
-<script>$('.credited').accrued({speed:0.00147177,dig:6});</script>
+<script>//$('.credited').accrued({speed:0.00147177,dig:6});</script>
 <!-- column -->
 <div class="clearfix"></div>
